@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="createcompetitions container">
+    <h2>Create New Competition</h2>
+    <form action="add_competition.php" method="POST" enctype="multipart/form-data">
+
+        <label for="title">Competition Title:</label>
+        <input type="text" id="title" name="title" required />
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="4" required></textarea>
+
+        <label for="start_date">Start Date:</label>
+        <input type="date" id="start_date" name="start_date" required />
+
+        <label for="end_date">End Date:</label>
+        <input type="date" id="end_date" name="end_date" required />
+
+        <label for="eligibility">Eligibility (optional):</label>
+        <input type="text" id="eligibility" name="eligibility" placeholder="e.g., Only final year students" />
+
+        <label for="banner">Upload Banner Image (optional):</label>
+        <input type="file" id="banner" name="banner" accept="image/*" />
+
+        <button type="submit">Create Competition</button>
+    </form>
+</div>

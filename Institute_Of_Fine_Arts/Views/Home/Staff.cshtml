@@ -1,0 +1,178 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!-- Main Content Start -->
+<main class="main-content">
+    <section class="section">
+        <div class="container">
+            <h2>Welcome, Staff Member!</h2>
+
+            <!-- Manage Competitions -->
+            <div class="dashboard-section">
+                <h3>Manage Competitions</h3>
+                <button class="btn-submit"><a asp-controller="Home" asp-action="CreateCompetitions">Create New Competition</a></button>
+
+                <table class="dashboard-table">
+                    <thead>
+                        <tr>
+                            <th>Competition Name</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Annual Art Gala 2025</td>
+                            <td>May 25, 2025</td>
+                            <td>Open</td>
+                            <td>
+                                <button class="btn-small">Edit</button>
+                                <button class="btn-small btn-danger">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Modern Expressionism Contest</td>
+                            <td>June 10, 2025</td>
+                            <td>Upcoming</td>
+                            <td>
+                                <button class="btn-small">Edit</button>
+                                <button class="btn-small btn-danger">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- View and Mark Student Submissions -->
+            <div class="dashboard-section">
+                <h3>Student Submissions</h3>
+
+                <table class="dashboard-table">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Painting</th>
+                            <th>Creativity Level</th>
+                            <th>Remarks</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Emma Watson</td>
+                            <td>Sunset Dreams</td>
+                            <td>Better</td>
+                            <td>Great use of colors!</td>
+                            <td>
+                                <button class="btn-small">Mark/Remark</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>City Lights</td>
+                            <td>Moderate</td>
+                            <td>Needs sharper contrasts.</td>
+                            <td>
+                                <button class="btn-small">Mark/Remark</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Manage Awards -->
+            <div class="dashboard-section">
+                <h3>Manage Awards</h3>
+                <button class="btn-submit"><a asp-controller="Home" asp-action="CreateAwards">Add New Award</a></button>
+
+                <table class="dashboard-table">
+                    <thead>
+                        <tr>
+                            <th>Award Title</th>
+                            <th>Competition</th>
+                            <th>Winner</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Best Creativity Award</td>
+                            <td>Annual Art Gala</td>
+                            <td>Emma Watson</td>
+                            <td>
+                                <button class="btn-small">Edit</button>
+                                <button class="btn-small btn-danger">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Manage Exhibitions -->
+            <div class="dashboard-section">
+                <h3>Manage Exhibitions</h3>
+                <button class="btn-submit"><a asp-controller="Home" asp-action="CreateExhibitions">Create New Exhibition</a></button>
+
+                <table class="dashboard-table">
+                    <thead>
+                        <tr>
+                            <th>Exhibition Name</th>
+                            <th>Date</th>
+                            <th>Location</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Summer Arts 2025</td>
+                            <td>August 15, 2025</td>
+                            <td>Main Campus Hall</td>
+                            <td>
+                                <button class="btn-small">Edit</button>
+                                <button class="btn-small btn-danger">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Manage Paintings Sent to Exhibitions -->
+            <div class="dashboard-section">
+                <h3>Paintings Sent to Exhibitions</h3>
+
+                <table class="dashboard-table">
+                    <thead>
+                        <tr>
+                            <th>Painting</th>
+                            <th>Student</th>
+                            <th>Exhibition</th>
+                            <th>Status</th>
+                            <th>Buyer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sunset Dreams</td>
+                            <td>Emma Watson</td>
+                            <td>Summer Arts 2025</td>
+                            <td>Sold</td>
+                            <td>Jane Doe</td>
+                        </tr>
+                        <tr>
+                            <td>City Lights</td>
+                            <td>John Doe</td>
+                            <td>Modern Art Fiesta</td>
+                            <td>Unsold</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </section>
+</main>
+<!-- Main Content End -->

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Institute_Of_Fine_Arts.props" />
+</Project>

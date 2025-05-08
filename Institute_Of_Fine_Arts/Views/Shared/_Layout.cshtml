@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Institute_Of_Fine_Arts</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Institute_Of_Fine_Arts.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
+</head>
+<body>
+    <!-- Header Start -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Institute of Fine Arts</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a asp-controller="Home" asp-action="Competitions">Competitions</a></li>
+                    <li><a asp-controller="Home" asp-action="Exhibitions">Exhibitions</a></li>
+                    <li><a asp-controller="Home" asp-action="Awards">Awards</a></li>
+                    <li><a asp-controller="Home" asp-action="About">About</a></li>
+                    <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li><a asp-controller="Home" asp-action="Student">Student</a></li>
+                    <li><a asp-controller="Home" asp-action="Staff">Staff</a></li>
+                    <li><a asp-controller="Home" asp-action="Manager">Manager</a></li>
+                    <li><a asp-controller="Home" asp-action="Admin">Admin</a></li>
+                    <li><a asp-controller="Home" asp-action="Login" class="btn-login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Header End -->
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <br /><br /><br /><br />
+    <!-- Footer Start -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Institute of Fine Arts. All Rights Reserved.</p>
+            <p>
+                Follow us:
+                <a href="#">Instagram</a> |
+                <a href="#">Facebook</a> |
+                <a href="#">Twitter</a>
+            </p>
+        </div>
+    </footer>
+    <!-- Footer End -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

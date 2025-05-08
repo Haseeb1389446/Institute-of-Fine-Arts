@@ -1,0 +1,120 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!-- Main Content Start -->
+<main class="main-content">
+    <section class="section">
+        <div class="container">
+            <h2>Welcome, Student!</h2>
+
+            <!-- Upcoming Competitions -->
+            <div class="dashboard-section">
+                <h3>Upcoming Competitions</h3>
+                <ul class="list">
+                    <li>Annual Art Gala - 25th May 2025</li>
+                    <li>Modern Expressionism Contest - 10th June 2025</li>
+                    <li>Sketching Skills Challenge - 1st July 2025</li>
+                </ul>
+            </div>
+
+            <!-- My Paintings -->
+            <div class="dashboard-section">
+                <h3>My Paintings</h3>
+                <button class="btn-submit"><a asp-controller="Home" asp-action="SubmitPaintings">Upload New Painting</a></button>
+
+                <table class="dashboard-table">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Submission Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sunset Dreams</td>
+                            <td>Oil painting with sunset scenery</td>
+                            <td>April 5, 2025</td>
+                            <td>Reviewed</td>
+                            <td>
+                                <button class="btn-small">View</button>
+                                <button class="btn-small">Edit</button>
+                                <button class="btn-small btn-danger">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>City Lights</td>
+                            <td>Modern cityscape in watercolor</td>
+                            <td>April 20, 2025</td>
+                            <td>Pending</td>
+                            <td>
+                                <button class="btn-small">View</button>
+                                <button class="btn-small">Edit</button>
+                                <button class="btn-small btn-danger">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Awards Won -->
+            <div class="dashboard-section">
+                <h3>My Awards</h3>
+                <ul class="list">
+                    <li>1st Prize - Portrait Masters 2024</li>
+                    <li>Best Creativity Award - Spring Exhibition 2023</li>
+                </ul>
+            </div>
+
+            <!-- Feedback -->
+            <div class="dashboard-section">
+                <h3>Feedback & Ratings</h3>
+                <div class="feedback-card">
+                    <p><strong>Painting:</strong> Sunset Dreams</p>
+                    <p><strong>Rating:</strong> ⭐⭐⭐⭐☆</p>
+                    <p><strong>Remarks:</strong> Beautiful color blending! Try enhancing the background detailing next time.</p>
+                </div>
+                <div class="feedback-card">
+                    <p><strong>Painting:</strong> City Lights</p>
+                    <p><strong>Rating:</strong> ⭐⭐⭐☆☆</p>
+                    <p><strong>Remarks:</strong> Nice concept! Improve contrast in the main structures.</p>
+                </div>
+            </div>
+
+            <!-- Exhibition Status -->
+            <div class="dashboard-section">
+                <h3>Paintings in Exhibitions</h3>
+                <table class="dashboard-table">
+                    <thead>
+                        <tr>
+                            <th>Painting</th>
+                            <th>Exhibition</th>
+                            <th>Status</th>
+                            <th>Buyer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sunset Dreams</td>
+                            <td>Summer Arts 2025</td>
+                            <td>Sold</td>
+                            <td>Jane Doe</td>
+                        </tr>
+                        <tr>
+                            <td>City Lights</td>
+                            <td>Modern Art Fiesta</td>
+                            <td>Unsold</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </section>
+</main>
+<!-- Main Content End -->
