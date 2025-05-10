@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Institute_Of_Fine_Arts")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9b053edaedae22c16b651664258f87b8b5cca939")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ce15bd179157b228135bceafd7845f2916e7cfec")]
 [assembly: System.Reflection.AssemblyProductAttribute("Institute_Of_Fine_Arts")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Institute_Of_Fine_Arts")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

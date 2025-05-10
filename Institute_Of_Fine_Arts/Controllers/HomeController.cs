@@ -52,22 +52,6 @@ namespace Institute_Of_Fine_Arts.Controllers
             return View();
         }
 
-        public IActionResult Login()
-        {
-            return View();
-        }
-
-        public IActionResult Register()
-        {
-            return View();
-        }
-
-        //[HttpPost]
-        //public IActionResult Register(Model RegisterViewModel)
-        //{
-        //    return View();
-        //}
-
         public IActionResult Student()
         {
             return View();

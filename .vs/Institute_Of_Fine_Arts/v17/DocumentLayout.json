@@ -3,12 +3,40 @@
   "WorkspaceRootPath": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|e:\\code criteria\\projects\\institute_of_fine_arts\\institute_of_fine_arts\\views\\home\\createawards.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|solutionrelative:institute_of_fine_arts\\views\\home\\createawards.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|e:\\code criteria\\projects\\institute_of_fine_arts\\institute_of_fine_arts\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|solutionrelative:institute_of_fine_arts\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|e:\\code criteria\\projects\\institute_of_fine_arts\\institute_of_fine_arts\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|solutionrelative:institute_of_fine_arts\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|e:\\code criteria\\projects\\institute_of_fine_arts\\institute_of_fine_arts\\models\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|solutionrelative:institute_of_fine_arts\\models\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|e:\\code criteria\\projects\\institute_of_fine_arts\\institute_of_fine_arts\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|solutionrelative:institute_of_fine_arts\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|e:\\code criteria\\projects\\institute_of_fine_arts\\institute_of_fine_arts\\views\\auth\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|solutionrelative:institute_of_fine_arts\\views\\auth\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|e:\\code criteria\\projects\\institute_of_fine_arts\\institute_of_fine_arts\\views\\auth\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|solutionrelative:institute_of_fine_arts\\views\\auth\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|e:\\code criteria\\projects\\institute_of_fine_arts\\institute_of_fine_arts\\wwwroot\\css\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|solutionrelative:institute_of_fine_arts\\wwwroot\\css\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|e:\\code criteria\\projects\\institute_of_fine_arts\\institute_of_fine_arts\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|solutionrelative:institute_of_fine_arts\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|e:\\code criteria\\projects\\institute_of_fine_arts\\institute_of_fine_arts\\views\\home\\createawards.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|solutionrelative:institute_of_fine_arts\\views\\home\\createawards.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|e:\\code criteria\\projects\\institute_of_fine_arts\\institute_of_fine_arts\\views\\home\\createexhibitions.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -35,22 +63,6 @@
       "RelativeMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|solutionrelative:institute_of_fine_arts\\views\\home\\viewpaintings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|e:\\code criteria\\projects\\institute_of_fine_arts\\institute_of_fine_arts\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|solutionrelative:institute_of_fine_arts\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|e:\\code criteria\\projects\\institute_of_fine_arts\\institute_of_fine_arts\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|solutionrelative:institute_of_fine_arts\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|e:\\code criteria\\projects\\institute_of_fine_arts\\institute_of_fine_arts\\models\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|solutionrelative:institute_of_fine_arts\\models\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|e:\\code criteria\\projects\\institute_of_fine_arts\\institute_of_fine_arts\\views\\home\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|solutionrelative:institute_of_fine_arts\\views\\home\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|e:\\code criteria\\projects\\institute_of_fine_arts\\institute_of_fine_arts\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|solutionrelative:institute_of_fine_arts\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -63,16 +75,8 @@
       "RelativeMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|solutionrelative:institute_of_fine_arts\\institute_of_fine_arts.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|e:\\code criteria\\projects\\institute_of_fine_arts\\institute_of_fine_arts\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|solutionrelative:institute_of_fine_arts\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|e:\\code criteria\\projects\\institute_of_fine_arts\\institute_of_fine_arts\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|solutionrelative:institute_of_fine_arts\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|e:\\code criteria\\projects\\institute_of_fine_arts\\institute_of_fine_arts\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|solutionrelative:institute_of_fine_arts\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|e:\\code criteria\\projects\\institute_of_fine_arts\\institute_of_fine_arts\\views\\home\\manager.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -81,10 +85,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|e:\\code criteria\\projects\\institute_of_fine_arts\\institute_of_fine_arts\\views\\home\\admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|solutionrelative:institute_of_fine_arts\\views\\home\\admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|e:\\code criteria\\projects\\institute_of_fine_arts\\institute_of_fine_arts\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|solutionrelative:institute_of_fine_arts\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|e:\\code criteria\\projects\\institute_of_fine_arts\\institute_of_fine_arts\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -126,33 +126,46 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ViewPaintings.cshtml",
-              "DocumentMoniker": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Home\\ViewPaintings.cshtml",
-              "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\Views\\Home\\ViewPaintings.cshtml",
-              "ToolTip": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Home\\ViewPaintings.cshtml",
-              "RelativeToolTip": "Institute_Of_Fine_Arts\\Views\\Home\\ViewPaintings.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-07T10:04:01.895Z",
+              "DocumentIndex": 2,
+              "Title": "RegisterViewModel.cs",
+              "DocumentMoniker": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Models\\RegisterViewModel.cs",
+              "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\Models\\RegisterViewModel.cs",
+              "ToolTip": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Models\\RegisterViewModel.cs",
+              "RelativeToolTip": "Institute_Of_Fine_Arts\\Models\\RegisterViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T10:17:53.495Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "SubmitPaintings.cshtml",
-              "DocumentMoniker": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Home\\SubmitPaintings.cshtml",
-              "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\Views\\Home\\SubmitPaintings.cshtml",
-              "ToolTip": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Home\\SubmitPaintings.cshtml",
-              "RelativeToolTip": "Institute_Of_Fine_Arts\\Views\\Home\\SubmitPaintings.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAbAAAAAAAAAA==",
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Auth\\Register.cshtml",
+              "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\Views\\Auth\\Register.cshtml",
+              "ToolTip": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Auth\\Register.cshtml",
+              "RelativeToolTip": "Institute_Of_Fine_Arts\\Views\\Auth\\Register.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-07T10:03:01.32Z",
+              "WhenOpened": "2025-05-09T05:27:22.544Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\Controllers\\AuthController.cs",
+              "ToolTip": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Institute_Of_Fine_Arts\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAAD4v2sAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-09T05:25:22.771Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "CreateAwards.cshtml",
               "DocumentMoniker": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Home\\CreateAwards.cshtml",
               "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\Views\\Home\\CreateAwards.cshtml",
@@ -160,38 +173,36 @@
               "RelativeToolTip": "Institute_Of_Fine_Arts\\Views\\Home\\CreateAwards.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-07T10:02:17.063Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CreateExhibitions.cshtml",
-              "DocumentMoniker": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Home\\CreateExhibitions.cshtml",
-              "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\Views\\Home\\CreateExhibitions.cshtml",
-              "ToolTip": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Home\\CreateExhibitions.cshtml",
-              "RelativeToolTip": "Institute_Of_Fine_Arts\\Views\\Home\\CreateExhibitions.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-07T10:01:20.737Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CreateCompetitions.cshtml",
-              "DocumentMoniker": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Home\\CreateCompetitions.cshtml",
-              "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\Views\\Home\\CreateCompetitions.cshtml",
-              "ToolTip": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Home\\CreateCompetitions.cshtml",
-              "RelativeToolTip": "Institute_Of_Fine_Arts\\Views\\Home\\CreateCompetitions.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-07T10:00:24.748Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-07T10:02:17.063Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "styles.css",
+              "DocumentMoniker": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\wwwroot\\css\\styles.css",
+              "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\wwwroot\\css\\styles.css",
+              "ToolTip": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\wwwroot\\css\\styles.css",
+              "RelativeToolTip": "Institute_Of_Fine_Arts\\wwwroot\\css\\styles.css",
+              "ViewState": "AgIAAKAAAAAAAAAAAAAAALwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-02T06:30:20.745Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\Controllers\\HomeController.cs",
+              "ToolTip": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Institute_Of_Fine_Arts\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAAADQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T06:40:13.549Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "Staff.cshtml",
               "DocumentMoniker": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Home\\Staff.cshtml",
               "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\Views\\Home\\Staff.cshtml",
@@ -199,12 +210,36 @@
               "RelativeToolTip": "Institute_Of_Fine_Arts\\Views\\Home\\Staff.cshtml",
               "ViewState": "AgIAAGsAAAAAAAAAAAAAAHQAAABhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-04T07:09:12.399Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-04T07:09:12.399Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Institute_Of_Fine_Arts\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB4AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-02T06:23:52.89Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Auth\\Login.cshtml",
+              "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\Views\\Auth\\Login.cshtml",
+              "ToolTip": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Auth\\Login.cshtml",
+              "RelativeToolTip": "Institute_Of_Fine_Arts\\Views\\Auth\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-09T05:28:20.202Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Student.cshtml",
               "DocumentMoniker": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Home\\Student.cshtml",
               "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\Views\\Home\\Student.cshtml",
@@ -212,38 +247,72 @@
               "RelativeToolTip": "Institute_Of_Fine_Arts\\Views\\Home\\Student.cshtml",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAABgAAABfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-04T07:07:58.095Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-04T07:07:58.095Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CreateCompetitions.cshtml",
+              "DocumentMoniker": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Home\\CreateCompetitions.cshtml",
+              "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\Views\\Home\\CreateCompetitions.cshtml",
+              "ToolTip": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Home\\CreateCompetitions.cshtml",
+              "RelativeToolTip": "Institute_Of_Fine_Arts\\Views\\Home\\CreateCompetitions.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-07T10:00:24.748Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "styles.css",
-              "DocumentMoniker": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\wwwroot\\css\\styles.css",
-              "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\wwwroot\\css\\styles.css",
-              "ToolTip": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\wwwroot\\css\\styles.css",
-              "RelativeToolTip": "Institute_Of_Fine_Arts\\wwwroot\\css\\styles.css",
-              "ViewState": "AgIAAB8CAAAAAAAAAAAmwEsCAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-05-02T06:30:20.745Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Program.cs",
               "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\Program.cs",
               "ToolTip": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Program.cs",
               "RelativeToolTip": "Institute_Of_Fine_Arts\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-05T10:42:00.063Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CreateExhibitions.cshtml",
+              "DocumentMoniker": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Home\\CreateExhibitions.cshtml",
+              "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\Views\\Home\\CreateExhibitions.cshtml",
+              "ToolTip": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Home\\CreateExhibitions.cshtml",
+              "RelativeToolTip": "Institute_Of_Fine_Arts\\Views\\Home\\CreateExhibitions.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-07T10:01:20.737Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SubmitPaintings.cshtml",
+              "DocumentMoniker": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Home\\SubmitPaintings.cshtml",
+              "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\Views\\Home\\SubmitPaintings.cshtml",
+              "ToolTip": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Home\\SubmitPaintings.cshtml",
+              "RelativeToolTip": "Institute_Of_Fine_Arts\\Views\\Home\\SubmitPaintings.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-07T10:03:01.32Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 14,
+              "Title": "ViewPaintings.cshtml",
+              "DocumentMoniker": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Home\\ViewPaintings.cshtml",
+              "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\Views\\Home\\ViewPaintings.cshtml",
+              "ToolTip": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Home\\ViewPaintings.cshtml",
+              "RelativeToolTip": "Institute_Of_Fine_Arts\\Views\\Home\\ViewPaintings.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-07T10:04:01.895Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "Institute_Of_Fine_Arts.csproj",
               "DocumentMoniker": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj",
               "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj",
@@ -255,44 +324,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\Controllers\\HomeController.cs",
-              "ToolTip": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Institute_Of_Fine_Arts\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAAAFAAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T06:40:13.549Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Home\\Register.cshtml",
-              "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\Views\\Home\\Register.cshtml",
-              "ToolTip": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Home\\Register.cshtml",
-              "RelativeToolTip": "Institute_Of_Fine_Arts\\Views\\Home\\Register.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-02T06:46:46.17Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "RegisterViewModel.cs",
-              "DocumentMoniker": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Models\\RegisterViewModel.cs",
-              "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\Models\\RegisterViewModel.cs",
-              "ToolTip": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Models\\RegisterViewModel.cs",
-              "RelativeToolTip": "Institute_Of_Fine_Arts\\Models\\RegisterViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T10:25:04.005Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "Admin.cshtml",
               "DocumentMoniker": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Home\\Admin.cshtml",
               "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\Views\\Home\\Admin.cshtml",
@@ -304,7 +336,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "Manager.cshtml",
               "DocumentMoniker": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Home\\Manager.cshtml",
               "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\Views\\Home\\Manager.cshtml",
@@ -316,7 +348,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Models\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\Models\\ApplicationDbContext.cs",
@@ -328,7 +360,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "appsettings.json",
               "DocumentMoniker": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\appsettings.json",
               "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\appsettings.json",
@@ -340,7 +372,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "bootstrap.esm.js",
               "DocumentMoniker": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
               "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
@@ -349,18 +381,6 @@
               "ViewState": "AgIAALgDAAAAAAAAAAAewM4DAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-05-04T07:20:18.796Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "bootstrap.bundle.js",
-              "DocumentMoniker": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
-              "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
-              "ToolTip": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
-              "RelativeToolTip": "Institute_Of_Fine_Arts\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
-              "ViewState": "AgIAACgCAAAAAAAAAAAewD4CAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-05-04T07:20:36.589Z"
             },
             {
               "$type": "Document",
@@ -385,18 +405,6 @@
               "ViewState": "AgIAABQAAAAAAAAAAAAuwD8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-05-02T06:44:45.498Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Institute_Of_Fine_Arts\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB0AAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-02T06:23:52.89Z"
             },
             {
               "$type": "Document",
@@ -433,18 +441,6 @@
               "ViewState": "AgIAAAgAAAAAAAAAAAAuwDMAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-05-02T06:46:13.668Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Home\\Login.cshtml",
-              "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\Views\\Home\\Login.cshtml",
-              "ToolTip": "E:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Home\\Login.cshtml",
-              "RelativeToolTip": "Institute_Of_Fine_Arts\\Views\\Home\\Login.cshtml",
-              "ViewState": "AgIAAAQAAAAAAAAAAIBJwCUAAABtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-02T06:46:32.936Z"
             },
             {
               "$type": "Document",
