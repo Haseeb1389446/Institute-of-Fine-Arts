@@ -76,11 +76,11 @@ namespace Institute_Of_Fine_Arts.Controllers
 
                 IdentityUser user = new()
                 {
-                    UserName = model.UserName,
+                    UserName = model.FullName,
                     Email = model.Email
                 };
 
-                var result = await _userManager.CreateAsync(user, model.Password);
+                var result = await _userManager.CreateAsync(user, model.Password!);
 
                 if (model.Email == "admin@gmail.com")
                 {
@@ -90,14 +90,21 @@ namespace Institute_Of_Fine_Arts.Controllers
                 {
                     if (result.Succeeded)
                     {
-                        var role = await _roleManager.FindByIdAsync(model.Role);
+                        var role = await _roleManager.FindByIdAsync(model.Role!);
 
                         if (role != null)
                         {
-                            await _userManager.AddToRoleAsync(user, role.Name);
+                            await _userManager.AddToRoleAsync(user, role.Name!);
                         }
 
                         return RedirectToAction("Login", "Home");
+                    }
+                    else
+                    {
+                        foreach (var error in result.Errors)
+                        {
+                            Console.WriteLine($"Code: {error.Code}, Description: {error.Description}");
+                        }
                     }
                 }
             }

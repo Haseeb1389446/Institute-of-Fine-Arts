@@ -1,0 +1,107 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Institute_Of_Fine_Arts
+build_property.RootNamespace = Institute_Of_Fine_Arts
+build_property.ProjectDir = E:\CODE CRITERIA\PROJECTS\Institute_Of_Fine_Arts\Institute_Of_Fine_Arts\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = E:\CODE CRITERIA\PROJECTS\Institute_Of_Fine_Arts\Institute_Of_Fine_Arts
+build_property._RazorSourceGeneratorDebug = 
+
+[E:/CODE CRITERIA/PROJECTS/Institute_Of_Fine_Arts/Institute_Of_Fine_Arts/Views/Auth/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/CODE CRITERIA/PROJECTS/Institute_Of_Fine_Arts/Institute_Of_Fine_Arts/Views/Auth/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/CODE CRITERIA/PROJECTS/Institute_Of_Fine_Arts/Institute_Of_Fine_Arts/Views/Home/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/CODE CRITERIA/PROJECTS/Institute_Of_Fine_Arts/Institute_Of_Fine_Arts/Views/Home/Admin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/CODE CRITERIA/PROJECTS/Institute_Of_Fine_Arts/Institute_Of_Fine_Arts/Views/Home/Awards.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBd2FyZHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/CODE CRITERIA/PROJECTS/Institute_Of_Fine_Arts/Institute_Of_Fine_Arts/Views/Home/Competitions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb21wZXRpdGlvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/CODE CRITERIA/PROJECTS/Institute_Of_Fine_Arts/Institute_Of_Fine_Arts/Views/Home/Contact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/CODE CRITERIA/PROJECTS/Institute_Of_Fine_Arts/Institute_Of_Fine_Arts/Views/Home/CreateAwards.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGVBd2FyZHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/CODE CRITERIA/PROJECTS/Institute_Of_Fine_Arts/Institute_Of_Fine_Arts/Views/Home/CreateCompetitions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGVDb21wZXRpdGlvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/CODE CRITERIA/PROJECTS/Institute_Of_Fine_Arts/Institute_Of_Fine_Arts/Views/Home/CreateExhibitions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGVFeGhpYml0aW9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/CODE CRITERIA/PROJECTS/Institute_Of_Fine_Arts/Institute_Of_Fine_Arts/Views/Home/Exhibitions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFeGhpYml0aW9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/CODE CRITERIA/PROJECTS/Institute_Of_Fine_Arts/Institute_Of_Fine_Arts/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/CODE CRITERIA/PROJECTS/Institute_Of_Fine_Arts/Institute_Of_Fine_Arts/Views/Home/Manager.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNYW5hZ2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/CODE CRITERIA/PROJECTS/Institute_Of_Fine_Arts/Institute_Of_Fine_Arts/Views/Home/Staff.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdGFmZi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/CODE CRITERIA/PROJECTS/Institute_Of_Fine_Arts/Institute_Of_Fine_Arts/Views/Home/Student.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdHVkZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/CODE CRITERIA/PROJECTS/Institute_Of_Fine_Arts/Institute_Of_Fine_Arts/Views/Home/SubmitPaintings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdWJtaXRQYWludGluZ3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/CODE CRITERIA/PROJECTS/Institute_Of_Fine_Arts/Institute_Of_Fine_Arts/Views/Home/ViewPaintings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWaWV3UGFpbnRpbmdzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/CODE CRITERIA/PROJECTS/Institute_Of_Fine_Arts/Institute_Of_Fine_Arts/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/CODE CRITERIA/PROJECTS/Institute_Of_Fine_Arts/Institute_Of_Fine_Arts/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/CODE CRITERIA/PROJECTS/Institute_Of_Fine_Arts/Institute_Of_Fine_Arts/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/CODE CRITERIA/PROJECTS/Institute_Of_Fine_Arts/Institute_Of_Fine_Arts/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/CODE CRITERIA/PROJECTS/Institute_Of_Fine_Arts/Institute_Of_Fine_Arts/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-yas2ed4g01

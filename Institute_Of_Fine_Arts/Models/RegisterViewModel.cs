@@ -3,10 +3,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Institute_Of_Fine_Arts.Models
 {
-    public class RegisterViewModel
+    public class RegisterViewModel : IdentityUser
     {
         [Required]
-        public string? UserName { get; set; }
+        public string? FullName { get; set; }
 
         [Required]
         [EmailAddress]
