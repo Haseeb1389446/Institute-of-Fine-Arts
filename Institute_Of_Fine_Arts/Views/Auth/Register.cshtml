@@ -20,7 +20,7 @@
         <input type="password" asp-for="Password" id="password" required />
 
         <label for="role">Role</label>
-        <select id="role"   asp-for="Role" required>
+        <select id="role" asp-for="Role" required>
             @foreach (var item in TempData["roles"] as List<IdentityRole>)
             {
                 <option value="@item.Id">@item.Name</option>

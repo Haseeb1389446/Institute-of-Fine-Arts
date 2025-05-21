@@ -3,39 +3,35 @@
 *@
 @{
 }
+
+@model LoginViewModel;
+
 <!-- Main Content Start -->
 <main class="main-content">
     <section class="section">
         <div class="container">
             <h2>Login</h2>
 
-            <form class="login-form">
-
-                <div class="form-group">
-                    <label for="role">Select Role:</label>
-                    <select id="role" name="role" required>
-                        <option value="">-- Select Role --</option>
-                        <option value="student">Student</option>
-                        <option value="staff">Staff (Teacher)</option>
-                        <option value="manager">Manager</option>
-                    </select>
-                </div>
+            <form class="login-form" asp-controller="Auth" asp-action="Login" method="POST">
 
                 <div class="form-group">
                     <label for="email">Email Address:</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    <input type="email" id="email" asp-for="Email" placeholder="Enter your email" required>
                 </div>
 
                 <div class="form-group">
                     <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    <input type="password" id="password" asp-for="Password" placeholder="Enter your password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Remember Me : </label>
+                    <input type="checkbox" id="rememberme" asp-for="RememberMe" required>
                 </div>
 
                 <div class="form-group">
                     <button type="submit" class="btn-submit">Login</button>
                 </div>
-
-                <p class="register-link">Don't have an account? <a asp-controller="Auth" asp-action="Register">Register Here</a></p>
 
             </form>
 

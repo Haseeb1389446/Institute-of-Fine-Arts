@@ -13,7 +13,6 @@ namespace Institute_Of_Fine_Arts.Models
         public string? Email { get; set; }
 
         [Required]
-        [DataType(DataType.Password)]
         public string? Password { get; set; }
 
         [Required]

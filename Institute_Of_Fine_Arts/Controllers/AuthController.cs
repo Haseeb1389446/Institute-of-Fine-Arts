@@ -22,6 +22,39 @@ namespace Institute_Of_Fine_Arts.Controllers
             return View();
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginViewModel model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+
+            var user = await _userManager.FindByEmailAsync(model.Email!);
+
+            if (user != null)
+            {
+                var result = await _signInManager.PasswordSignInAsync(user, model.Password!, model.RememberMe, false);
+
+                if (result.Succeeded)
+                {
+                    var roles = await _userManager.GetRolesAsync(user);
+
+                    if (roles.Contains("Admin"))
+                        return RedirectToAction("Dashboard", "Admin");
+
+                    if (roles.Contains("Teacher"))
+                        return RedirectToAction("Profile", "Teacher");
+
+                    if (roles.Contains("Student"))
+                        return RedirectToAction("Portal", "Student");
+
+                    return RedirectToAction("Index", "Home"); // fallback
+                }
+            }
+
+            ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+            return View(model);
+        }
+
         public IActionResult Register()
         {
             TempData["roles"] = _roleManager.Roles.Where(res => res.Name != "Admin").ToList();
@@ -97,14 +130,7 @@ namespace Institute_Of_Fine_Arts.Controllers
                             await _userManager.AddToRoleAsync(user, role.Name!);
                         }
 
-                        return RedirectToAction("Login", "Home");
-                    }
-                    else
-                    {
-                        foreach (var error in result.Errors)
-                        {
-                            Console.WriteLine($"Code: {error.Code}, Description: {error.Description}");
-                        }
+                        return RedirectToAction("Login", "Auth");
                     }
                 }
             }
