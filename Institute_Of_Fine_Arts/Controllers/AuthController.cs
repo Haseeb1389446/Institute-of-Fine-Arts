@@ -39,13 +39,16 @@ namespace Institute_Of_Fine_Arts.Controllers
                     var roles = await _userManager.GetRolesAsync(user);
 
                     if (roles.Contains("Admin"))
-                        return RedirectToAction("Dashboard", "Admin");
+                        return RedirectToAction("Admin", "Home");
 
-                    if (roles.Contains("Teacher"))
-                        return RedirectToAction("Profile", "Teacher");
+                    if (roles.Contains("Admin"))
+                        return RedirectToAction("Manager", "Home");
+
+                    if (roles.Contains("Staff"))
+                        return RedirectToAction("Staff", "Home");
 
                     if (roles.Contains("Student"))
-                        return RedirectToAction("Portal", "Student");
+                        return RedirectToAction("Student", "Home");
 
                     return RedirectToAction("Index", "Home"); // fallback
                 }
@@ -115,7 +118,7 @@ namespace Institute_Of_Fine_Arts.Controllers
 
                 var result = await _userManager.CreateAsync(user, model.Password!);
 
-                if (model.Email == "admin@gmail.com")
+                if (model.Email == "admin@finearts.com")
                 {
                     await _userManager.AddToRoleAsync(user, "Admin");
                 }
@@ -138,6 +141,12 @@ namespace Institute_Of_Fine_Arts.Controllers
             TempData["roles"] = _roleManager.Roles.Where(res => res.Name != "Admin").ToList();
 
             return View(model);
+        }
+
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
         }
     }
 }

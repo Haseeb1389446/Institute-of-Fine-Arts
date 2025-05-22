@@ -22,6 +22,169 @@ namespace Institute_Of_Fine_Arts.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Institute_Of_Fine_Arts.Models.Award", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AwardTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("AwardedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("CompetitionId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Remarks")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StudentId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CompetitionId");
+
+                    b.ToTable("Awards");
+                });
+
+            modelBuilder.Entity("Institute_Of_Fine_Arts.Models.Competition", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AwardDetails")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Conditions")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Competitions");
+                });
+
+            modelBuilder.Entity("Institute_Of_Fine_Arts.Models.ExhibitedPainting", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("BuyerDetails")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ExhibitionId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsPaidToStudent")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsSold")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("PostingId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("PriceQuoted")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal?>("SoldPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("paintingId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ExhibitionId");
+
+                    b.HasIndex("paintingId");
+
+                    b.ToTable("ExhibitedPaintings");
+                });
+
+            modelBuilder.Entity("Institute_Of_Fine_Arts.Models.Exhibition", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("ExhibitionDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Exhibitions");
+                });
+
+            modelBuilder.Entity("Institute_Of_Fine_Arts.Models.Painting", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CompetitionId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DatePosted")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DesignFilePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Mark")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PoemOrQuote")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Remarks")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StudentId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CompetitionId");
+
+                    b.ToTable("Paintings");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -220,6 +383,47 @@ namespace Institute_Of_Fine_Arts.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("Institute_Of_Fine_Arts.Models.Award", b =>
+                {
+                    b.HasOne("Institute_Of_Fine_Arts.Models.Competition", "Competition")
+                        .WithMany()
+                        .HasForeignKey("CompetitionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Competition");
+                });
+
+            modelBuilder.Entity("Institute_Of_Fine_Arts.Models.ExhibitedPainting", b =>
+                {
+                    b.HasOne("Institute_Of_Fine_Arts.Models.Exhibition", "Exhibition")
+                        .WithMany("ExhibitedPaintings")
+                        .HasForeignKey("ExhibitionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Institute_Of_Fine_Arts.Models.Painting", "painting")
+                        .WithMany()
+                        .HasForeignKey("paintingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Exhibition");
+
+                    b.Navigation("painting");
+                });
+
+            modelBuilder.Entity("Institute_Of_Fine_Arts.Models.Painting", b =>
+                {
+                    b.HasOne("Institute_Of_Fine_Arts.Models.Competition", "Competition")
+                        .WithMany("paintings")
+                        .HasForeignKey("CompetitionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Competition");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -269,6 +473,16 @@ namespace Institute_Of_Fine_Arts.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Institute_Of_Fine_Arts.Models.Competition", b =>
+                {
+                    b.Navigation("paintings");
+                });
+
+            modelBuilder.Entity("Institute_Of_Fine_Arts.Models.Exhibition", b =>
+                {
+                    b.Navigation("ExhibitedPaintings");
                 });
 #pragma warning restore 612, 618
         }

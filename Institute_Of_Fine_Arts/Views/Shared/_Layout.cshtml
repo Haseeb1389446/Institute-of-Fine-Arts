@@ -24,11 +24,37 @@
                     <li><a asp-controller="Home" asp-action="Awards">Awards</a></li>
                     <li><a asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
-                    <li><a asp-controller="Home" asp-action="Student">Student</a></li>
-                    <li><a asp-controller="Home" asp-action="Staff">Staff</a></li>
-                    <li><a asp-controller="Home" asp-action="Manager">Manager</a></li>
-                    <li><a asp-controller="Home" asp-action="Admin">Admin</a></li>
-                    <li><a asp-controller="Auth" asp-action="Login" class="btn-login">Login</a></li>
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+
+                        if (User.IsInRole("Student"))
+                        {
+                            <li><a asp-controller="Home" asp-action="Student">Student</a></li>
+                        }
+                        if (User.IsInRole("Staff"))
+                        {
+                            <li><a asp-controller="Home" asp-action="Staff">Staff</a></li>
+                        }
+                        if (User.IsInRole("Manager"))
+                        {
+                            <li><a asp-controller="Home" asp-action="Manager">Manager</a></li>
+                        }
+                        if (User.IsInRole("Admin"))
+                        {
+                            <li><a asp-controller="Home" asp-action="Admin">Admin</a></li>
+                        }
+
+                        <li>
+                            <form asp-controller="Auth" asp-action="Logout" method="post" style="display:inline;">
+                                <button type="submit" class="btn btn-login">Logout</button>
+                            </form>
+                        </li>
+                    }
+                    else
+                    {
+                        <li><a asp-controller="Auth" asp-action="Login" class="btn-login">Login</a></li>
+                    }
                 </ul>
             </nav>
         </div>

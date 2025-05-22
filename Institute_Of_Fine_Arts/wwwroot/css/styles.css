@@ -353,9 +353,7 @@ h2 {
         .competition-card .btn-view:hover {
             background-color: #e85c50;
         }
-
-        /* Create Competition */
-
+/* Create Competition */
 .createcompetitions h2 {
     text-align: center;
     color: #444;
@@ -371,7 +369,6 @@ h2 {
 
 .createcompetitions input[type="text"],
 .createcompetitions input[type="date"],
-.createcompetitions input[type="file"],
 .createcompetitions textarea {
     width: 100%;
     padding: 10px;
@@ -396,9 +393,10 @@ h2 {
     cursor: pointer;
 }
 
-    .createcompetitions button:hover {
-        background-color: #c17345;
-    }
+.createcompetitions button:hover {
+    background-color: #c17345;
+}
+
 
 /* Exhibitions */
 .main-content {
