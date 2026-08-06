@@ -4,27 +4,23 @@ namespace Institute_Of_Fine_Arts.Models
 {
     public class Painting
     {
-            public int Id { get; set; }
+        [Key]
+        public int Id { get; set; }
 
-            [Required]
-            public int CompetitionId { get; set; }
+        [Required]
+        public string? StudentId { get; set; }
 
-            [Required]
-            public string? StudentId { get; set; } 
+        [Required]
+        public string? PaintingName { get; set; }
 
-            [Required]
-            public string? DesignFilePath { get; set; }
+        public string? Description { get; set; }
 
-            public string? Description { get; set; }
+        public string? PoemOrQuote { get; set; }
 
-            public string? PoemOrQuote { get; set; }
+        public string? CompetitionId { get; set; }
 
-            public DateTime DatePosted { get; set; }
+        public string? PaintingImage { get; set; }
 
-            public string? Mark { get; set; } // best, better, good, etc.
-
-            public string? Remarks { get; set; }
-
-            public Competition Competition { get; set; }
+        public DateTime DatePosted { get; set; } = DateTime.Now;
     }
 }

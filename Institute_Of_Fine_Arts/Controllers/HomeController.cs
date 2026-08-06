@@ -40,7 +40,7 @@ namespace Institute_Of_Fine_Arts.Controllers
 
             return View(competitions);
         }
-
+            
         public IActionResult CreateCompetitions()
         {
             ViewBag.awards = _Context.Awards.ToList(); 
@@ -278,7 +278,7 @@ namespace Institute_Of_Fine_Arts.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateAwards(Award award)
         {
-            var students = await _userManager.GetUsersInRoleAsync("student");
+            var students = await _userManager.GetUsersInRoleAsync("Student");
             ViewBag.students = students;
 
             if (ModelState.IsValid)
@@ -339,19 +339,57 @@ namespace Institute_Of_Fine_Arts.Controllers
             return View();
         }
 
-        public IActionResult Student()
+        public IActionResult SubmitPaintings()
         {
+            ViewData["UserId"] = _userManager.GetUserId(User);
+            TempData["competitions"] = _Context.Competitions.Where(w => w.Status == "OnGoing").ToList();
             return View();
         }
 
-        public IActionResult SubmitPaintings()
+        [HttpPost]
+        public IActionResult SubmitPaintings(Painting painting, IFormFile paintingimage)
         {
+            ViewData["UserId"] = _userManager.GetUserId(User);
+            TempData["competitions"] = _Context.Competitions.Where(w => w.Status == "OnGoing").ToList();
+
+            if (ModelState.IsValid && paintingimage != null && paintingimage.Length > 0)
+            {
+                var rootPath = _root.WebRootPath;
+                var location = Path.Combine(rootPath, "Uploads", "paintings");
+                if (!Directory.Exists(location))
+                {
+                    Directory.CreateDirectory(location);
+                }
+                var fileLocation = Path.Combine(location, paintingimage.FileName);
+                using (var stream = new FileStream(fileLocation, FileMode.Create))
+                {
+                    paintingimage.CopyToAsync(stream);
+                }
+                painting.PaintingImage = paintingimage.FileName;
+                _Context.Paintings.Add(painting);
+                _Context.SaveChanges();
+                return RedirectToAction("ViewPaintings");
+            }
+
             return View();
         }
 
         public IActionResult ViewPaintings()
         {
             return View();
+        }
+
+        public async Task<IActionResult> Student()
+        {
+            var model = new ModelsCollectionVeiewModel
+            {
+                Awards = await _Context.Awards.Include(user => user.Student).ToListAsync(),
+                Competitions = await _Context.Competitions.Include(res => res.award).ToListAsync(),
+                Exhibitions = await _Context.Exhibitions.ToListAsync()
+                //Competitions = await _Context.Competitions.ToListAsync()
+            };
+
+            return View(model);
         }
 
         public async Task<IActionResult> Staff()

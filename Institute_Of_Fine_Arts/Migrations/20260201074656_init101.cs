@@ -51,21 +51,6 @@ namespace Institute_Of_Fine_Arts.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Awards",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    AwardTitle = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    AwardedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    StudentId = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Awards", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Exhibitions",
                 columns: table => new
                 {
@@ -73,11 +58,31 @@ namespace Institute_Of_Fine_Arts.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ExhibitionDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Location = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Location = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Banner = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Exhibitions", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Paintings",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    StudentId = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PaintingName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PoemOrQuote = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PaintingImage = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DatePosted = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Paintings", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -187,53 +192,23 @@ namespace Institute_Of_Fine_Arts.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Competitions",
+                name: "Awards",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    AwardId = table.Column<int>(type: "int", nullable: true),
-                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Banner = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    AwardTitle = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AwardedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    StudentId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Competitions", x => x.Id);
+                    table.PrimaryKey("PK_Awards", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Competitions_Awards_AwardId",
-                        column: x => x.AwardId,
-                        principalTable: "Awards",
+                        name: "FK_Awards_AspNetUsers_StudentId",
+                        column: x => x.StudentId,
+                        principalTable: "AspNetUsers",
                         principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Paintings",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    CompetitionId = table.Column<int>(type: "int", nullable: false),
-                    StudentId = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DesignFilePath = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PoemOrQuote = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DatePosted = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Mark = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Remarks = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Paintings", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Paintings_Competitions_CompetitionId",
-                        column: x => x.CompetitionId,
-                        principalTable: "Competitions",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -266,6 +241,30 @@ namespace Institute_Of_Fine_Arts.Migrations
                         principalTable: "Paintings",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Competitions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    AwardId = table.Column<int>(type: "int", nullable: true),
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Banner = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Competitions", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Competitions_Awards_AwardId",
+                        column: x => x.AwardId,
+                        principalTable: "Awards",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
@@ -308,6 +307,11 @@ namespace Institute_Of_Fine_Arts.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Awards_StudentId",
+                table: "Awards",
+                column: "StudentId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Competitions_AwardId",
                 table: "Competitions",
                 column: "AwardId");
@@ -321,11 +325,6 @@ namespace Institute_Of_Fine_Arts.Migrations
                 name: "IX_ExhibitedPaintings_paintingId",
                 table: "ExhibitedPaintings",
                 column: "paintingId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Paintings_CompetitionId",
-                table: "Paintings",
-                column: "CompetitionId");
         }
 
         /// <inheritdoc />
@@ -347,13 +346,16 @@ namespace Institute_Of_Fine_Arts.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Competitions");
+
+            migrationBuilder.DropTable(
                 name: "ExhibitedPaintings");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "AspNetUsers");
+                name: "Awards");
 
             migrationBuilder.DropTable(
                 name: "Exhibitions");
@@ -362,10 +364,7 @@ namespace Institute_Of_Fine_Arts.Migrations
                 name: "Paintings");
 
             migrationBuilder.DropTable(
-                name: "Competitions");
-
-            migrationBuilder.DropTable(
-                name: "Awards");
+                name: "AspNetUsers");
         }
     }
 }

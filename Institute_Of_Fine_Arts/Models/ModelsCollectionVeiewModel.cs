@@ -7,5 +7,8 @@
         public List<Competition> Competitions { get; set; }
 
         public List<Exhibition> Exhibitions { get; set; }
+
+        public List<Painting> Painting { get; set; }
+
     }
 }

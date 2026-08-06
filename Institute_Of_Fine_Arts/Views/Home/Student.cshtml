@@ -19,6 +19,48 @@
                 </ul>
             </div>
 
+            <!-- Post A Painting -->
+            <div class="dashboard-section">
+                <h3>Post A Painting</h3>
+                <button class="btn-submit"><a asp-controller="Home" asp-action="SubmitPaintings">Upload New Painting</a></button>
+
+                <table class="dashboard-table">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Submission Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sunset Dreams</td>
+                            <td>Oil painting with sunset scenery</td>
+                            <td>April 5, 2025</td>
+                            <td>Reviewed</td>
+                            <td>
+                                <button class="btn-small">View</button>
+                                <button class="btn-small">Edit</button>
+                                <button class="btn-small btn-danger">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>City Lights</td>
+                            <td>Modern cityscape in watercolor</td>
+                            <td>April 20, 2025</td>
+                            <td>Pending</td>
+                            <td>
+                                <button class="btn-small">View</button>
+                                <button class="btn-small">Edit</button>
+                                <button class="btn-small btn-danger">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
             <!-- My Paintings in Competition -->
             <div class="dashboard-section">
                 <h3>My Paintings in Competitions</h3>

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Institute_Of_Fine_Arts.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20251107032723_init103")]
-    partial class init103
+    [Migration("20260201074656_init101")]
+    partial class init101
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -140,10 +140,17 @@ namespace Institute_Of_Fine_Arts.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Banner")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("ExhibitionDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Location")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -164,26 +171,20 @@ namespace Institute_Of_Fine_Arts.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CompetitionId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("DatePosted")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("DesignFilePath")
+                    b.Property<string>("PaintingImage")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PaintingName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Mark")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("PoemOrQuote")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Remarks")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("StudentId")
@@ -191,8 +192,6 @@ namespace Institute_Of_Fine_Arts.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CompetitionId");
 
                     b.ToTable("Paintings");
                 });
@@ -430,17 +429,6 @@ namespace Institute_Of_Fine_Arts.Migrations
                     b.Navigation("Exhibition");
 
                     b.Navigation("painting");
-                });
-
-            modelBuilder.Entity("Institute_Of_Fine_Arts.Models.Painting", b =>
-                {
-                    b.HasOne("Institute_Of_Fine_Arts.Models.Competition", "Competition")
-                        .WithMany()
-                        .HasForeignKey("CompetitionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Competition");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

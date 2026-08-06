@@ -1,0 +1,19 @@
+Awards:
+2	Anual Art Gala 2025 Trophy	2025-03-20 00:00:00.0000000	NULL
+3	Anual Art Gala 2024 Trophy	2024-02-14 00:00:00.0000000	4cf5d3ab-75d1-48d2-b79b-5ae61e8500f1
+4	Modern Expressionism Contest 2024 Trophy	2024-08-18 00:00:00.0000000	4cf5d3ab-75d1-48d2-b79b-5ae61e8500f1
+5	Modern Expressionism Contest 2025 Trophy	2025-10-25 00:00:00.0000000	NULL
+6	Art of Nature 2025 Trophy	2025-05-15 00:00:00.0000000	NULL
+
+Competitions:
+2	Annual Art Gala 2025	Annual Art Gala 2025 is a global competition.	2025-03-10 00:00:00.0000000	2025-03-20 00:00:00.0000000	2	UpComming	Annual Art Gala 2025.png
+3	Annual Art Gala 2024	Annual Art Gala 2024 is a global competition.	2024-02-04 00:00:00.0000000	2024-02-14 00:00:00.0000000	3	Completed	Annual Art Gala 2024.png
+4	Modern Expressionism Contest 2024	Modern Expressionism Contest 2024 it is a global competition.	2024-08-08 00:00:00.0000000	2024-08-18 00:00:00.0000000	4	Completed	Modern Expressionism Contest 2024.png
+5	Modern Expressionism Contest 2025	Modern Expressionism Contest 2025 is a global competition/	2025-10-15 00:00:00.0000000	2025-10-25 00:00:00.0000000	5	UpComming	Modern Expressionism Contest 2025.png
+6	Art of Nature 2025	Art of Nature 2025 Trophy is a competition between our branches.	2025-05-01 00:00:00.0000000	2025-05-15 00:00:00.0000000	6	OnGoing	Art of Nature 2025.png
+
+Exhibition:
+1	Fine Arts Annual Exhibition - May 2025	2025-05-16 00:00:00.0000000	Shamma Center Karachi	Fine Arts Annual Exhibition - May 2025.png	UpComming
+2	Modern Art Showcase - June 2025	2025-06-17 00:00:00.0000000	Expo Center Karachi	Modern Art Showcase - June 2025.png	UpComming
+3	Winter Art Extravaganza - December 2024	2024-12-10 00:00:00.0000000	The Grand Hall Karachi	Winter Art Extravaganza - December 2024.png	Completed
+4	Spring Art Gallery - April 2024	2024-04-01 00:00:00.0000000	The Art Hub Karachi	Spring Art Gallery - April 2024.png	Completed

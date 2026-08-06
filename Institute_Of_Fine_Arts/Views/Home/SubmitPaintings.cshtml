@@ -1,33 +1,49 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@{
-}
+@model Painting;
+
 <div class="submitpantings container">
     <h2>Submit Your Artwork</h2>
-    <form class="register-form" method="POST" enctype="multipart/form-data">
-        <label for="title">Description:</label>
-        <input type="text " name="title" id="title" required />
+    <form class="register-form" method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="SubmitPaintings">
+        <label for="title">Painting Name:</label>
+        <input type="text" asp-for="PaintingName" id="title" />
+        <span asp-validation-for="PaintingName" style="color:red;"></span>
 
-        <label for="description">Description:</label>
-        <textarea name="description" id="description" rows="4" required></textarea>
+        <input hidden type="text" value="@(ViewData["UserId"])" asp-for="StudentId" />
+         
+        <label for="description">Painting Description:</label>
+        <textarea asp-for="Description" id="description" rows="4"></textarea>
+        <span asp-validation-for="Description" style="color:red;"></span>
 
-        <label for="submission_date">Submission Date:</label>
-        <input type="date" name="submission_date" id="submission_date" required />
+      @*   <label for="submission_date">Submission Date:</label>
+        <input type="date" asp-for="DatePosted" id="submission_date" />
+        <span asp-validation-for="DatePosted" style="color:red;"></span> *@
 
-        <label for="remarks">Remarks (optional):</label>
-        <textarea name="remarks" id="remarks" rows="3"></textarea>
+        <label for="remarks">Poem Or Quote:</label>
+        <textarea asp-for="PoemOrQuote" id="PoemOrQuote" rows="3"></textarea>
+        <span asp-validation-for="PoemOrQuote" style="color:red;"></span>
 
-        <label for="competition">Select Competition:</label>
-        <select name="competition_id" id="competition" required>
-            <option value="">--Select Competition--</option>
-            <option value="1">Annual Art Gala</option>
-            <option value="2">Spring Art Contest</option>
-            <!-- Dynamically populate this list in actual implementation -->
+        <label for="remarks">Poem Or Quote:</label>
+        <select asp-for="CompetitionId">
+            @{
+                var competitions = TempData["Competitions"] as List<Competition>;
+                if(competitions != null)
+                {
+                    foreach (var competition in competitions)
+                    {
+                        <option value="@competition.Id">@competition.Title</option>
+                    }
+                    
+                }
+            }
         </select>
+        <span asp-validation-for="PoemOrQuote" style="color:red;"></span>
 
         <label for="image">Upload Artwork:</label>
-        <input type="file" name="image" id="image" accept="image/*" required />
+        <label for="painting" class="w-100" style="display: inline-block; padding: 6px 12px; background-color: #d1865c; color: white; cursor: pointer; border-radius: 4px; text-align: center;">Upload Painting</label>
+        <input hidden type="file" name="paintingimage" id="painting" />
+        <span asp-validation-for="PaintingImage" style="color:red;"></span>
 
         <button class="register-link" type="submit">Submit Painting</button>
     </form>

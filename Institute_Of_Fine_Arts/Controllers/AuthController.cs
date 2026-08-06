@@ -33,6 +33,7 @@ namespace Institute_Of_Fine_Arts.Controllers
             if (user != null)
             {
                 var result = await _signInManager.PasswordSignInAsync(user, model.Password!, model.RememberMe, false);
+                 
 
                 if (result.Succeeded)
                 {

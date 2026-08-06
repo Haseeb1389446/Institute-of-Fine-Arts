@@ -19,7 +19,7 @@
 
         <label for="role">Select Winner:</label>
         <select id="role" asp-for="StudentId" asp-items="@(new SelectList(ViewBag.students, "Id", "UserName"))">
-            <option>Student</option>
+            <option value="">-- Select Student --</option>
         </select>
 
         <button type="submit">Submit</button>
