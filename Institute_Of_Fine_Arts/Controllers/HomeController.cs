@@ -25,6 +25,8 @@ namespace Institute_Of_Fine_Arts.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.upcomingCompetition = _Context.Competitions.Where(c => c.Status == "UpComming").ToList();
+            ViewBag.ongoingCompetition = _Context.Competitions.Where(c => c.Status == "OnGoing").ToList();
             return View();
         }
 

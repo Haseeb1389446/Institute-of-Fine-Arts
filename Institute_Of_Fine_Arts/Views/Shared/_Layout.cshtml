@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -43,25 +47,25 @@
                     </li>
                     
 
-                    @if (User.Identity.IsAuthenticated)
+                    @if (User.Identity!.IsAuthenticated)
                     {
 
                         if (User.IsInRole("Student"))
                         {
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Home" asp-action="Student">Student</a>
+                                <a class="nav-link" asp-controller="Home" asp-action="Student">Student | @(User.Identity.Name)</a>
                             </li>
                         }
                         if (User.IsInRole("Staff"))
                         {
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Home" asp-action="Staff">Staff</a>
+                                <a class="nav-link" asp-controller="Home" asp-action="Staff">Staff | @(User.Identity.Name)</a>
                             </li>
                         }
                         if (User.IsInRole("Manager"))
                         {
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Home" asp-action="Manager">Manager</a>
+                                <a class="nav-link" asp-controller="Home" asp-action="Manager">Manager | @(User.Identity.Name)</a>
                             </li>
                         }
                         if (User.IsInRole("Admin"))

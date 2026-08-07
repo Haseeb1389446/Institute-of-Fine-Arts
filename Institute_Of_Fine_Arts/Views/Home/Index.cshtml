@@ -16,6 +16,7 @@
             <div class="section-title">
                 <h2>Upcoming Competitions</h2>
             </div>
+           @* @foreach(var upcomingCompetition in ViewBag.upcomingCompetition){
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <div class="card">
@@ -27,8 +28,9 @@
                             <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 mb-4">
+                </div>    
+            } *@
+                @* <div class="col-md-4 mb-4">
                     <div class="card">
                         <img src="https://placehold.co/600x400/8a5a44/white?text=Sculpture+Challenge" class="card-img-top" alt="Modern Sculpture Challenge">
                         <div class="card-body">
@@ -48,7 +50,7 @@
                             <p class="card-text">Live painting competition where artists create masterpieces against the clock.</p>
                             <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
                         </div>
-                    </div>
+                    </div> *@
                 </div>
             </div>
             <div class="text-center mt-4">
@@ -62,7 +64,7 @@
         <div class="container">
             <div class="ongoing-content">
                 <h2 class="mb-4">Ongoing Competitions</h2>
-                <div class="ongoing-count">3 Competitions Running</div>
+                <div class="ongoing-count">@(ViewBag.ongoingCompetition?.Count ?? 0) Competitions Running</div>
                 <p class="mb-4">Participate in our currently running competitions and showcase your talent to the world.</p>
                 <a href="#" class="btn btn-primary">Participate Now <i class="fas fa-paint-brush ms-2"></i></a>
             </div>
