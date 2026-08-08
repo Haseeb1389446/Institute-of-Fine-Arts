@@ -16,41 +16,20 @@
             <div class="section-title">
                 <h2>Upcoming Competitions</h2>
             </div>
-           @* @foreach(var upcomingCompetition in ViewBag.upcomingCompetition){
             <div class="row">
+           @foreach(var upcomingCompetition in ViewBag.upcomingCompetition){
                 <div class="col-md-4 mb-4">
                     <div class="card">
                         <img src="https://placehold.co/600x400/d08c60/white?text=Spring+Art+Contest" class="card-img-top" alt="Spring Art Contest">
                         <div class="card-body">
-                            <span class="badge-date">May 20, 2025</span>
+                            <span class="badge-date">@upcomingCompetition.</span>
                             <h5 class="card-title mt-3">Spring Art Contest</h5>
                             <p class="card-text">Showcase your interpretation of spring's beauty through various artistic mediums.</p>
                             <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
                         </div>
                     </div>
                 </div>    
-            } *@
-                @* <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="https://placehold.co/600x400/8a5a44/white?text=Sculpture+Challenge" class="card-img-top" alt="Modern Sculpture Challenge">
-                        <div class="card-body">
-                            <span class="badge-date">June 15, 2025</span>
-                            <h5 class="card-title mt-3">Modern Sculpture Challenge</h5>
-                            <p class="card-text">Push the boundaries of three-dimensional art in our annual sculpture competition.</p>
-                            <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="https://placehold.co/600x400/333/white?text=Canvas+Battle" class="card-img-top" alt="Creative Canvas Battle">
-                        <div class="card-body">
-                            <span class="badge-date">July 10, 2025</span>
-                            <h5 class="card-title mt-3">Creative Canvas Battle</h5>
-                            <p class="card-text">Live painting competition where artists create masterpieces against the clock.</p>
-                            <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
-                        </div>
-                    </div> *@
+            }
                 </div>
             </div>
             <div class="text-center mt-4">

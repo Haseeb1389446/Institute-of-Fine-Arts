@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "F:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|f:\\code criteria\\projects\\institute_of_fine_arts\\institute_of_fine_arts\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|solutionrelative:institute_of_fine_arts\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|f:\\code criteria\\projects\\institute_of_fine_arts\\institute_of_fine_arts\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|solutionrelative:institute_of_fine_arts\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|f:\\code criteria\\projects\\institute_of_fine_arts\\institute_of_fine_arts\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|solutionrelative:institute_of_fine_arts\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{72F1CA75-BDDE-4647-AD82-62A8C76BE3B8}|Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts.csproj|f:\\code criteria\\projects\\institute_of_fine_arts\\institute_of_fine_arts\\views\\home\\staff.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -22,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,31 +38,30 @@
               "RelativeToolTip": "Institute_Of_Fine_Arts\\Views\\Home\\Staff.cshtml",
               "ViewState": "AgIAAB4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-08-07T02:33:17.759Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-07T02:33:17.759Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
               "DocumentMoniker": "F:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\Views\\Home\\Index.cshtml",
               "ToolTip": "F:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Institute_Of_Fine_Arts\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAABkAAAAAAAAAAADwvzsAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAAB8AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-08-07T02:14:32.039Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "HomeController.cs",
               "DocumentMoniker": "F:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Institute_Of_Fine_Arts\\Controllers\\HomeController.cs",
               "ToolTip": "F:\\CODE CRITERIA\\PROJECTS\\Institute_Of_Fine_Arts\\Institute_Of_Fine_Arts\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Institute_Of_Fine_Arts\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBwAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBwAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-07T01:57:28.531Z",
               "EditorCaption": ""
