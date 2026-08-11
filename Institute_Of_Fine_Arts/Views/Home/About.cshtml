@@ -1,6 +1,6 @@
-﻿@*
+﻿@* 
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+
 @{
 }
 <!-- Main Content Start -->
@@ -47,5 +47,197 @@
 
         </div>
     </section>
+</main>
+<!-- Main Content End --> *@
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!-- Embedded Styles matching exact theme color palette & typography -->
+<style>
+    :root {
+        --theme-brown: #965B42;
+        --theme-light-brown: #C88265;
+        --theme-heading: #2D2522;
+        --theme-text: #524B48;
+        --theme-bg-light: #FAF7F5;
+        --theme-bg-alt: #F4EBE6;
+        --theme-border: #E8DCD5;
+    }
+
+    body {
+        color: var(--theme-text);
+    }
+
+    .about-page-wrapper {
+        background-color: #ffffff;
+    }
+
+    /* Minimal Header Accent */
+    .section-title {
+        color: var(--theme-heading);
+        font-weight: 700;
+        position: relative;
+        display: inline-block;
+    }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 3px;
+            background-color: var(--theme-brown);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+    .section-title-left::after {
+        margin: 0.5rem 0 0 0;
+    }
+
+    /* Editorial Text Layout (No Cards) */
+    .about-hero-text {
+        background-color: var(--theme-bg-light);
+        padding: 4rem 1.5rem;
+        border-bottom: 1px solid var(--theme-border);
+    }
+
+        .about-hero-text h1 {
+            color: var(--theme-brown);
+            font-weight: 700;
+        }
+
+    .text-divider {
+        border-top: 1px solid var(--theme-border);
+        margin: 3.5rem 0;
+    }
+
+    /* Clean Faculty List Item Design */
+    .faculty-item {
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+        border-bottom: 1px dashed var(--theme-border);
+    }
+
+        .faculty-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+    .faculty-name {
+        color: var(--theme-heading);
+        font-weight: 700;
+        font-size: 1.35rem;
+    }
+
+    .faculty-meta {
+        color: var(--theme-brown);
+        font-weight: 600;
+        font-size: 0.95rem;
+        margin-bottom: 0.75rem;
+    }
+
+        .faculty-meta span {
+            color: #888;
+            font-weight: 400;
+            margin: 0 0.4rem;
+        }
+
+    .bg-alt-section {
+        background-color: var(--theme-bg-light);
+        border-radius: 8px;
+        padding: 3rem;
+    }
+</style>
+
+<!-- Main Content Start -->
+<main class="main-content about-page-wrapper">
+
+    <!-- Header Section -->
+    <section class="about-hero-text text-center">
+        <div class="container" style="max-width: 800px;">
+            <h1 class="display-5 mb-3">About Us</h1>
+            <p class="lead text-muted">
+                Where creativity meets excellence—fostering artistic talent and empowering visionary artists across the globe.
+            </p>
+        </div>
+    </section>
+
+    <div class="container my-5 py-3" style="max-width: 900px;">
+
+        <!-- Mission & Vision Section (Clean Typography Layout) -->
+        <div class="row g-5">
+            <div class="col-md-6">
+                <h3 class="section-title section-title-left h4 mb-3">Our Mission</h3>
+                <p class="lh-lg">
+                    At the Institute of Fine Arts, we aim to inspire and cultivate artistic expression by providing a nurturing environment where students can discover their creative potential. We are committed to fostering artistic excellence, supporting innovative learning, and promoting the growth of future artists through competitions, exhibitions, and educational programs.
+                </p>
+            </div>
+
+            <div class="col-md-6">
+                <h3 class="section-title section-title-left h4 mb-3">Our Vision</h3>
+                <p class="lh-lg">
+                    We envision a global community of fine artists who contribute to cultural richness and societal development. Our vision is to become a leading institution known for producing skilled and visionary artists, empowering individuals to succeed in both professional art careers and personal creative pursuits.
+                </p>
+            </div>
+        </div>
+
+        <div class="text-divider"></div>
+
+        <!-- Faculty Section (Clean List Structure) -->
+        <div class="bg-alt-section">
+            <div class="text-center mb-5">
+                <h2 class="section-title h3">Our Faculty</h2>
+                <p class="mt-3 text-muted" style="max-width: 650px; margin: 0 auto;">
+                    Our faculty consists of accomplished professionals from various art disciplines, dedicated to helping students develop their unique artistic style.
+                </p>
+            </div>
+
+            <div class="faculty-list mt-4">
+                <!-- Instructor 1 -->
+                <div class="faculty-item">
+                    <div class="faculty-name">John Williams</div>
+                    <div class="faculty-meta">
+                        Senior Art Instructor <span>|</span> Specialty: Abstract Painting & Sculpture
+                    </div>
+                    <p class="mb-0 lh-base">
+                        <strong>Experience:</strong> 15+ years of experience in the art industry, with numerous national and international exhibitions.
+                    </p>
+                </div>
+
+                <!-- Instructor 2 -->
+                <div class="faculty-item">
+                    <div class="faculty-name">Emma Davis</div>
+                    <div class="faculty-meta">
+                        Digital Art Instructor <span>|</span> Specialty: Graphic Design & Digital Illustration
+                    </div>
+                    <p class="mb-0 lh-base">
+                        <strong>Experience:</strong> A renowned digital artist with a background in art direction and design for global brands.
+                    </p>
+                </div>
+
+                <!-- Instructor 3 -->
+                <div class="faculty-item">
+                    <div class="faculty-name">Michael Brown</div>
+                    <div class="faculty-meta">
+                        Photography & Film Instructor <span>|</span> Specialty: Photography, Cinematography, & Digital Media
+                    </div>
+                    <p class="mb-0 lh-base">
+                        <strong>Experience:</strong> Over 10 years of teaching photography and film, with a passion for storytelling through visuals.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </main>
 <!-- Main Content End -->

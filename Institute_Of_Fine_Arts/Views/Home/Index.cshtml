@@ -1,6 +1,5 @@
 ﻿    <div class="home-page">
 
-
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
@@ -20,18 +19,17 @@
            @foreach(var upcomingCompetition in ViewBag.upcomingCompetition){
                 <div class="col-md-4 mb-4">
                     <div class="card">
-                        <img src="https://placehold.co/600x400/d08c60/white?text=Spring+Art+Contest" class="card-img-top" alt="Spring Art Contest">
+                            <img src="~/Uploads/images/@upcomingCompetition.Banner" class="card-img-top" alt="Spring Art Contest">
                         <div class="card-body">
-                            <span class="badge-date">@upcomingCompetition.</span>
-                            <h5 class="card-title mt-3">Spring Art Contest</h5>
-                            <p class="card-text">Showcase your interpretation of spring's beauty through various artistic mediums.</p>
+                                <span class="badge-date">@upcomingCompetition.StartDate</span>
+                                <h5 class="card-title mt-3">@upcomingCompetition.Title</h5>
+                                <p class="card-text">@upcomingCompetition.Description</p>
                             <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
                         </div>
                     </div>
                 </div>    
             }
                 </div>
-            </div>
             <div class="text-center mt-4">
                 <a href="#" class="btn btn-outline-dark">View All Competitions <i class="fas fa-arrow-right ms-2"></i></a>
             </div>
@@ -57,30 +55,17 @@
                 <h2>Recent Winners</h2>
             </div>
             <div class="row">
+                @foreach (var award in ViewBag.awards)
+                {
                 <div class="col-md-4 mb-4">
                     <div class="winner-card">
                         <img src="https://placehold.co/200x200/d08c60/white?text=SJ" class="winner-img" alt="Sarah Johnson">
                         <h4 class="winner-name">Sarah Johnson</h4>
-                        <p class="winner-prize">1st Prize in Watercolor Art</p>
+                        <p class="winner-prize">1st Prize in @award.</p>
                         <p class="mt-3">"The Institute provided the perfect platform to showcase my work and connect with other artists."</p>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="winner-card">
-                        <img src="https://placehold.co/200x200/8a5a44/white?text=DL" class="winner-img" alt="David Lee">
-                        <h4 class="winner-name">David Lee</h4>
-                        <p class="winner-prize">1st Prize in Modern Art</p>
-                        <p class="mt-3">"Winning this competition has opened doors to new opportunities and galleries for my work."</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="winner-card">
-                        <img src="https://placehold.co/200x200/333/white?text=MG" class="winner-img" alt="Maria Gomez">
-                        <h4 class="winner-name">Maria Gomez</h4>
-                        <p class="winner-prize">1st Prize in Sculpture</p>
-                        <p class="mt-3">"The feedback from the judges was invaluable and helped me grow as a professional sculptor."</p>
-                    </div>
-                </div>
+                }
             </div>
         </div>
     </section>
@@ -94,7 +79,7 @@
             <div class="row">
                 <div class="col-md-6 mb-4">
                     <div class="announcement-card">
-                        <img src="https://placehold.co/600x400/d08c60/white?text=Exhibition" class="announcement-img" alt="Exhibition">
+                        <img src="https://images.pexels.com/photos/6933319/pexels-photo-6933319.jpeg?cs=srgb&dl=pexels-mikhail-nilov-6933319.jpg&fm=jpg" class="announcement-img" alt="Exhibition">
                         <div class="announcement-overlay">
                             <h3>Colors of Dreams Exhibition</h3>
                             <p>August 15-30, 2025</p>
@@ -104,7 +89,7 @@
                 </div>
                 <div class="col-md-6 mb-4">
                     <div class="announcement-card">
-                        <img src="https://placehold.co/600x400/8a5a44/white?text=Workshops" class="announcement-img" alt="Workshops">
+                        <img src="https://www.befunky.com/images/wp/wp-2021-11-Photo-to-Poly-Art-2.jpeg?auto=avif,webp&format=jpg&width=944" class="announcement-img" alt="Workshops">
                         <div class="announcement-overlay">
                             <h3>New Workshops Announced</h3>
                             <p>Starting September 2025</p>
