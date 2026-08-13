@@ -27,7 +27,7 @@ namespace Institute_Of_Fine_Arts.Controllers
         {
             ViewBag.upcomingCompetition = _Context.Competitions.Where(c => c.Status == "UpComming").ToList();
             ViewBag.ongoingCompetition = _Context.Competitions.Where(c => c.Status == "OnGoing").ToList();
-            ViewBag.awards = _Context.Awards.Where(w => w.StudentId != null).ToList();
+            ViewBag.awards = _Context.Awards.Include(a => a.Student).Where(w => w.StudentId != null).ToList();
             return View();
         }
 

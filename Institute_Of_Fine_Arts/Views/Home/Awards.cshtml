@@ -1,53 +1,224 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model List<Award>
 
-@model List<Award>;
+<section class="awards-page">
 
-<!-- Main Awards Section -->
-<section class="awards-container">
-    <h2>Awards</h2>
+    <section class="awards-hero">
+        <div class="awards-hero-content">
+            <span class="awards-label">INSTITUTE OF FINE ARTS</span>
+            <h1>Celebrating Artistic Excellence</h1>
+            <p>
+                Recognizing creativity, passion and outstanding talent
+                from our artistic community.
+            </p>
+        </div>
+    </section>
 
-    <!-- Award Categories -->
-    <div class="award-categories">
-        <h3>Award Categories</h3>
-        <ul>
+    <section class="award-categories-section">
+
+        <div class="section-heading">
+            <span>RECOGNITION</span>
+            <h2>Award Categories</h2>
+            <div class="heading-line"></div>
+        </div>
+
+        <div class="award-category-grid">
+
             @foreach (var award in Model)
             {
-                <li>@award.AwardTitle</li>
+                <div class="award-category-card">
+
+                    <div class="award-icon">
+                        <span>★</span>
+                    </div>
+
+                    <div class="award-category-content">
+                        <h3>@award.AwardTitle</h3>
+                        <p>
+                            Honoring exceptional creativity and
+                            artistic achievement.
+                        </p>
+                    </div>
+
+                    <div class="award-arrow">
+                        →
+                    </div>
+
+                </div>
             }
-        </ul>
-    </div>
 
-    <!-- Past Winners -->
-    <div class="past-winners">
-        <h3>Past Award Winners</h3>
-
-        <div class="winner-card">
-            <h4>Annual Art Gala 2024</h4>
-            <p><strong>Winner:</strong> Olivia Smith</p>
-            <p><strong>Award:</strong> Best Abstract Art</p>
-            <p><strong>Competition Date:</strong> March 15, 2024</p>
-            <a href="#" class="view-btn">View Submission</a>
         </div>
 
-        <div class="winner-card">
-            <h4>Modern Expressionism Contest 2024</h4>
-            <p><strong>Winner:</strong> John Doe</p>
-            <p><strong>Award:</strong> Most Creative Painting</p>
-            <p><strong>Competition Date:</strong> April 10, 2024</p>
-            <a href="#" class="view-btn">View Submission</a>
+    </section>
+
+    <section class="past-winners-section">
+
+        <div class="section-heading">
+            <span>OUR LEGACY</span>
+            <h2>Past Award Winners</h2>
+            <div class="heading-line"></div>
+            <p>
+                Celebrating the talented artists who have left their mark
+                on our institute.
+            </p>
         </div>
 
-        <div class="winner-card">
-            <h4>Spring Art Exhibition 2024</h4>
-            <p><strong>Winner:</strong> Emily Johnson</p>
-            <p><strong>Award:</strong> Best Digital Art</p>
-            <p><strong>Competition Date:</strong> May 25, 2024</p>
-            <a href="#" class="view-btn">View Submission</a>
+
+        <div class="winner-grid">
+
+            <div class="winner-card">
+
+                <div class="winner-image">
+                    <div class="winner-badge">WINNER</div>
+
+                    <div class="trophy-icon">
+                        🏆
+                    </div>
+                </div>
+
+                <div class="winner-content">
+
+                    <span class="winner-year">2024</span>
+
+                    <h3>Annual Art Gala</h3>
+
+                    <div class="winner-info">
+                        <p>
+                            <strong>Winner</strong>
+                            Olivia Smith
+                        </p>
+
+                        <p>
+                            <strong>Award</strong>
+                            Best Abstract Art
+                        </p>
+
+                        <p>
+                            <strong>Date</strong>
+                            March 15, 2024
+                        </p>
+                    </div>
+
+                    <a href="#" class="view-btn">
+                        View Submission
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="winner-card">
+
+                <div class="winner-image">
+                    <div class="winner-badge">WINNER</div>
+
+                    <div class="trophy-icon">
+                        🏆
+                    </div>
+                </div>
+
+                <div class="winner-content">
+
+                    <span class="winner-year">2024</span>
+
+                    <h3>Modern Expressionism Contest</h3>
+
+                    <div class="winner-info">
+
+                        <p>
+                            <strong>Winner</strong>
+                            John Doe
+                        </p>
+
+                        <p>
+                            <strong>Award</strong>
+                            Most Creative Painting
+                        </p>
+
+                        <p>
+                            <strong>Date</strong>
+                            April 10, 2024
+                        </p>
+
+                    </div>
+
+                    <a href="#" class="view-btn">
+                        View Submission
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="winner-card">
+
+                <div class="winner-image">
+                    <div class="winner-badge">WINNER</div>
+
+                    <div class="trophy-icon">
+                        🏆
+                    </div>
+                </div>
+
+                <div class="winner-content">
+
+                    <span class="winner-year">2024</span>
+
+                    <h3>Spring Art Exhibition</h3>
+
+                    <div class="winner-info">
+
+                        <p>
+                            <strong>Winner</strong>
+                            Emily Johnson
+                        </p>
+
+                        <p>
+                            <strong>Award</strong>
+                            Best Digital Art
+                        </p>
+
+                        <p>
+                            <strong>Date</strong>
+                            May 25, 2024
+                        </p>
+
+                    </div>
+
+                    <a href="#" class="view-btn">
+                        View Submission
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
         </div>
 
-    </div>
+    </section>
+
+    <section class="awards-cta">
+
+        <div>
+            <span>YOUR TALENT MATTERS</span>
+
+            <h2>
+                Could you be our<br />
+                next award winner?
+            </h2>
+
+            <p>
+                Participate in our upcoming competitions and
+                showcase your creativity.
+            </p>
+
+            <a href="#" class="cta-btn">
+                Explore Competitions →
+            </a>
+        </div>
+
+    </section>
+
 </section>
