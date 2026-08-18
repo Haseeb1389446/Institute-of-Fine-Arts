@@ -1,6 +1,6 @@
-﻿@*
+﻿@* 
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+
 @{
 }
 
@@ -22,7 +22,6 @@
                     {
                     <div class="competition-card">
                     <div class="exhibition-image">
-                        @* <img src="https://placehold.co/800x300/d08c60/white?text=Annual+Art+Gala+2025" alt="Modern Art Showcase"> *@
                         <img src="~/Uploads/images/@competition.Banner" alt="Modern Art Showcase">
                     </div>
                     <div class="competition-details">
@@ -52,7 +51,6 @@
                     {
                         <div class="competition-card">
                             <div class="exhibition-image">
-                                @* <img src="https://placehold.co/800x300/d08c60/white?text=Annual+Art+Gala+2025" alt="Modern Art Showcase"> *@
                                 <img src="~/Uploads/images/@competition.Banner" alt="Modern Art Showcase">
                             </div>
                             <div class="competition-details">
@@ -83,7 +81,6 @@
                     {
                         <div class="competition-card">
                             <div class="exhibition-image">
-                                @* <img src="https://placehold.co/800x300/d08c60/white?text=Annual+Art+Gala+2025" alt="Modern Art Showcase"> *@
                                 <img src="~/Uploads/images/@competition.Banner" alt="Modern Art Showcase">
                             </div>
                             <div class="competition-details">
@@ -104,4 +101,353 @@
         </div>
     </section>
 </main>
-<!-- Main Content End -->
+<!-- Main Content End --> *@
+
+@model List<Competition>
+
+<main class="competitions-page">
+
+    <!-- Page Hero -->
+    <section class="competitions-hero">
+        <div class="competitions-hero-content">
+
+            <span class="hero-label">INSTITUTE OF FINE ARTS</span>
+
+            <h1>Competitions</h1>
+
+            <p>
+                Discover exciting artistic challenges, showcase your creativity,
+                and become part of our vibrant artistic community.
+            </p>
+
+        </div>
+    </section>
+
+    <section class="competition-section">
+
+        <div class="competition-heading">
+
+            <span>WHAT'S COMING NEXT</span>
+
+            <h2>Upcoming Competitions</h2>
+
+            <div class="heading-line"></div>
+
+            <p>
+                Get ready to showcase your talent in our upcoming artistic events.
+            </p>
+
+        </div>
+
+
+        @if (ViewBag.upcoming != null && ViewBag.upcoming.Count > 0)
+        {
+            <div class="competition-grid">
+
+                @foreach (var competition in ViewBag.upcoming)
+                {
+                    <div class="competition-card">
+
+                        <div class="competition-image">
+
+                            <img src="~/Uploads/images/@competition.Banner"
+                                 alt="@competition.Title">
+
+                            <span class="status-badge upcoming">
+                                Upcoming
+                            </span>
+
+                        </div>
+
+
+                        <div class="competition-content">
+
+                            <h3>@competition.Title</h3>
+
+                            <div class="competition-date">
+
+                                <div class="date-icon">
+                                    📅
+                                </div>
+
+                                <div>
+                                    <small>Starts</small>
+                                    <strong>
+                                        @competition.StartDate
+                                    </strong>
+                                </div>
+
+                            </div>
+
+
+                            <div class="competition-date">
+
+                                <div class="date-icon">
+                                    ⏳
+                                </div>
+
+                                <div>
+                                    <small>Ends</small>
+                                    <strong>
+                                        @competition.EndDate
+                                    </strong>
+                                </div>
+
+                            </div>
+
+
+                            <div class="competition-footer">
+
+                                <span class="submission-count">
+                                    🎨 120 Submissions
+                                </span>
+
+                                <button class="competition-btn">
+                                    Register →
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                }
+
+            </div>
+        }
+        else
+        {
+            <div class="empty-competition">
+                <span>🎨</span>
+                <h3>No Upcoming Competitions</h3>
+                <p>Stay tuned for our next artistic event.</p>
+            </div>
+        }
+
+    </section>
+
+    <section class="competition-section ongoing-section">
+
+        <div class="competition-heading">
+
+            <span>JOIN THE ARTISTIC JOURNEY</span>
+
+            <h2>Ongoing Competitions</h2>
+
+            <div class="heading-line"></div>
+
+            <p>
+                These competitions are currently accepting artistic submissions.
+            </p>
+
+        </div>
+
+
+        @if (ViewBag.ongoing != null && ViewBag.ongoing.Count > 0)
+        {
+            <div class="competition-grid">
+
+                @foreach (var competition in ViewBag.ongoing)
+                {
+                    <div class="competition-card">
+
+                        <div class="competition-image">
+
+                            <img src="~/Uploads/images/@competition.Banner"
+                                 alt="@competition.Title">
+
+                            <span class="status-badge ongoing">
+                                ● Ongoing
+                            </span>
+
+                        </div>
+
+
+                        <div class="competition-content">
+
+                            <h3>@competition.Title</h3>
+
+
+                            <div class="competition-date">
+
+                                <div class="date-icon">
+                                    📅
+                                </div>
+
+                                <div>
+                                    <small>Started</small>
+
+                                    <strong>
+                                        @competition.StartDate
+                                    </strong>
+                                </div>
+
+                            </div>
+
+
+                            <div class="competition-date">
+
+                                <div class="date-icon">
+                                    ⏰
+                                </div>
+
+                                <div>
+                                    <small>Deadline</small>
+
+                                    <strong>
+                                        @competition.EndDate
+                                    </strong>
+                                </div>
+
+                            </div>
+
+
+                            <div class="competition-footer">
+
+                                <span class="submission-count">
+                                    🎨 120 Submissions
+                                </span>
+
+                                <button class="competition-btn">
+                                    Participate →
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                }
+
+            </div>
+        }
+        else
+        {
+            <div class="empty-competition">
+                <span>🎨</span>
+                <h3>No Ongoing Competitions</h3>
+                <p>There are currently no active competitions.</p>
+            </div>
+        }
+
+    </section>
+
+    <section class="competition-section past-section">
+
+        <div class="competition-heading">
+
+            <span>OUR ARTISTIC LEGACY</span>
+
+            <h2>Past Competitions</h2>
+
+            <div class="heading-line"></div>
+
+            <p>
+                Explore previous competitions and celebrate the artists
+                who made their mark.
+            </p>
+
+        </div>
+
+
+        @if (ViewBag.past != null && ViewBag.past.Count > 0)
+        {
+            <div class="competition-grid">
+
+                @foreach (var competition in ViewBag.past)
+                {
+                    <div class="competition-card past-card">
+
+                        <div class="competition-image">
+
+                            <img src="~/Uploads/images/@competition.Banner"
+                                 alt="@competition.Title">
+
+                            <span class="status-badge completed">
+                                Completed
+                            </span>
+
+                        </div>
+
+
+                        <div class="competition-content">
+
+                            <h3>@competition.Title</h3>
+
+
+                            <div class="winner-box">
+
+                                <div class="winner-icon">
+                                    🏆
+                                </div>
+
+                                <div>
+
+                                    <small>Winner</small>
+
+                                    <strong>
+                                        @(competition.award?.Student?.UserName ?? "No Winner")
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="award-name">
+
+                                <span>Award</span>
+
+                                <strong>
+                                    @(competition.award?.AwardTitle ?? "N/A")
+                                </strong>
+
+                            </div>
+
+
+                            <button class="competition-btn full-btn">
+                                View Submissions →
+                            </button>
+
+                        </div>
+
+                    </div>
+                }
+
+            </div>
+        }
+        else
+        {
+            <div class="empty-competition">
+                <span>🏆</span>
+                <h3>No Past Competitions</h3>
+                <p>Previous competitions will appear here.</p>
+            </div>
+        }
+
+    </section>
+
+    <section class="competition-cta">
+
+        <div class="cta-content">
+
+            <span>SHOWCASE YOUR TALENT</span>
+
+            <h2>
+                Ready to create<br />
+                something extraordinary?
+            </h2>
+
+            <p>
+                Join our competitions and let your creativity speak for itself.
+            </p>
+
+            <a href="#" class="cta-button">
+                Explore Opportunities →
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
