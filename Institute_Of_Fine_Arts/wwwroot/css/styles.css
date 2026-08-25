@@ -458,7 +458,7 @@ body {
     }
 
     .modern-nav-list {
-        gap: 3px;
+        gap: 10px;
     }
 
     .modern-nav-link {
@@ -610,7 +610,7 @@ body {
 
     .brand-text {
         font-size: 14px;
-    }  
+    }   
 
     .brand-icon {
         width: 35px;
