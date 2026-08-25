@@ -1,4 +1,4 @@
-﻿    <div class="home-page">
+﻿    @*@<div class="home-page">
 
     <!-- Hero Section -->
     <section class="hero">
@@ -60,7 +60,7 @@
                 <div class="col-md-4 mb-4">
                     <div class="winner-card">
                             <img src="https://placehold.co/200x200/d08c60/white?text=@(award.Student?.UserName)" class="winner-img" alt="Sarah Johnson">
-                            @* <h4 class="winner-name">@(award.Student?.UserName ?? "null")</h4> *@
+                            @* <h4 class="winner-name">@(award.Student?.UserName ?? "null")</h4> ==============
                             <h4 class="winner-name">@(award.Student?.UserName ?? "null")</h4>
                             <p class="winner-prize">Winner of @award.AwardTitle</p>
                         <p class="mt-3">"The Institute provided the perfect platform to showcase my work and connect with other artists."</p>
@@ -117,4 +117,401 @@
             </div>
         </div>
     </section>
-    </div>
+    </div>*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="home-page">
+
+    <!-- =========================================
+         HERO
+    ========================================= -->
+    <section class="home-hero">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <span class="hero-eyebrow">
+                INSTITUTE OF FINE ARTS
+            </span>
+
+            <h1>
+                Where Creativity<br />
+                Meets Excellence
+            </h1>
+
+            <p>
+                Discover, create, and showcase your artistic talents
+                in a vibrant community of artists and art enthusiasts.
+            </p>
+
+            <div class="hero-actions">
+
+                <a href="#" class="hero-btn">
+                    Explore Opportunities
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+
+                <a href="#competitions" class="hero-link">
+                    Discover More
+                    <i class="fas fa-arrow-down"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-scroll">
+            <span></span>
+            Scroll to explore
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         UPCOMING COMPETITIONS
+    ========================================= -->
+    <section class="competitions-section" id="competitions">
+
+        <div class="home-container">
+
+            <div class="section-heading">
+
+                <span class="section-eyebrow">
+                    WHAT'S COMING
+                </span>
+
+                <h2>
+                    Upcoming Competitions
+                </h2>
+
+                <p>
+                    Take your creativity to the next level.
+                    Explore our upcoming artistic challenges.
+                </p>
+
+            </div>
+
+
+            <div class="competition-grid">
+
+                @foreach (var upcomingCompetition in ViewBag.upcomingCompetition)
+                {
+                    <article class="competition-card">
+
+                        <div class="competition-image">
+
+                            <img src="~/Uploads/images/@upcomingCompetition.Banner"
+                                 alt="@upcomingCompetition.Title" />
+
+                            <div class="competition-image-overlay"></div>
+
+                            <span class="competition-date">
+                                @upcomingCompetition.StartDate
+                            </span>
+
+                        </div>
+
+
+                        <div class="competition-content">
+
+                            <span class="competition-label">
+                                ART COMPETITION
+                            </span>
+
+                            <h3>
+                                @upcomingCompetition.Title
+                            </h3>
+
+                            <p>
+                                @upcomingCompetition.Description
+                            </p>
+
+                            <a href="#" class="card-link">
+                                View Competition
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </article>
+                }
+
+            </div>
+
+
+            <div class="section-button">
+
+                <a href="#" class="outline-btn">
+                    View All Competitions
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         ONGOING COMPETITIONS
+    ========================================= -->
+    <section class="ongoing-section">
+
+        <div class="home-container">
+
+            <div class="ongoing-card">
+
+                <div class="ongoing-decoration"></div>
+
+                <div class="ongoing-content">
+
+                    <span class="section-eyebrow light">
+                        LIVE RIGHT NOW
+                    </span>
+
+                    <h2>
+                        Ongoing Competitions
+                    </h2>
+
+                    <div class="ongoing-count">
+                        @(ViewBag.ongoingCompetition?.Count ?? 0)
+                        <span>Competitions Running</span>
+                    </div>
+
+                    <p>
+                        Participate in our currently running competitions
+                        and showcase your talent to the world.
+                    </p>
+
+                    <a href="#" class="primary-btn">
+                        Participate Now
+                        <i class="fas fa-paint-brush"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         RECENT WINNERS
+    ========================================= -->
+    <section class="winners-section">
+
+        <div class="home-container">
+
+            <div class="section-heading">
+
+                <span class="section-eyebrow">
+                    CELEBRATING TALENT
+                </span>
+
+                <h2>
+                    Recent Winners
+                </h2>
+
+                <p>
+                    Celebrating the artists who turned imagination into achievement.
+                </p>
+
+            </div>
+
+
+            <div class="winner-grid">
+
+                @foreach (var award in ViewBag.awards)
+                {
+                    <article class="winner-card">
+
+                        <div class="winner-top">
+
+                            <div class="winner-avatar">
+                                @(award.Student?.UserName?.Substring(0, 1).ToUpper() ?? "?")
+                            </div>
+
+                            <div class="winner-badge">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+
+                        </div>
+
+                        <h3 class="winner-name">
+                            @(award.Student?.UserName ?? "Unknown Artist")
+                        </h3>
+
+                        <span class="winner-prize">
+                            @award.AwardTitle
+                        </span>
+
+                        <div class="winner-line"></div>
+
+                        <p>
+                            "The Institute provided the perfect platform
+                            to showcase my work and connect with other artists."
+                        </p>
+
+                    </article>
+                }
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         ANNOUNCEMENTS
+    ========================================= -->
+    <section class="announcements-section">
+
+        <div class="home-container">
+
+            <div class="section-heading">
+
+                <span class="section-eyebrow">
+                    STAY INFORMED
+                </span>
+
+                <h2>
+                    Latest Announcements
+                </h2>
+
+                <p>
+                    Discover exhibitions, workshops and everything happening at the institute.
+                </p>
+
+            </div>
+
+
+            <div class="announcement-grid">
+
+                <article class="announcement-card">
+
+                    <img src="https://images.pexels.com/photos/6933319/pexels-photo-6933319.jpeg?cs=srgb&dl=pexels-mikhail-nilov-6933319.jpg&fm=jpg"
+                         alt="Colors of Dreams Exhibition" />
+
+                    <div class="announcement-overlay">
+
+                        <span>
+                            EXHIBITION
+                        </span>
+
+                        <h3>
+                            Colors of Dreams
+                        </h3>
+
+                        <p>
+                            August 15 - 30, 2025
+                        </p>
+
+                        <a href="#">
+                            Explore Exhibition
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article class="announcement-card">
+
+                    <img src="https://www.befunky.com/images/wp/wp-2021-11-Photo-to-Poly-Art-2.jpeg?auto=avif,webp&format=jpg&width=944"
+                         alt="New Workshops" />
+
+                    <div class="announcement-overlay">
+
+                        <span>
+                            WORKSHOPS
+                        </span>
+
+                        <h3>
+                            New Workshops Announced
+                        </h3>
+
+                        <p>
+                            Starting September 2025
+                        </p>
+
+                        <a href="#">
+                            Explore Workshops
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         NEWSLETTER
+    ========================================= -->
+    <section class="newsletter-section">
+
+        <div class="home-container">
+
+            <div class="newsletter-card">
+
+                <div class="newsletter-content">
+
+                    <span class="section-eyebrow light">
+                        DON'T MISS OUT
+                    </span>
+
+                    <h2>
+                        Stay Inspired.
+                    </h2>
+
+                    <p>
+                        Subscribe to receive updates about competitions,
+                        exhibitions, workshops and more.
+                    </p>
+
+                </div>
+
+
+                <form class="newsletter-form">
+
+                    <input type="email"
+                           placeholder="Enter your email address"
+                           required />
+
+                    <button type="submit">
+                        Subscribe
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
