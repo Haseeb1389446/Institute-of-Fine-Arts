@@ -1,65 +1,228 @@
-﻿@model List<Exhibition>;
+﻿@model List<Exhibition>
 
-<!-- Main Content Start -->
-<main class="main-content">
-    <section class="section">
-<div class="container">
+<main class="exhibitions-page">
 
-    <h2>Exhibitions</h2>
-<div class="dashboard-section">
-    <h3>UpComing Exhibitions</h3>
-    <br />
-    @if(ViewBag.upcoming != null && ViewBag.upcoming.Count > 0)
-     {
+    <!-- Page Hero -->
+    <section class="exhibitions-hero">
+        <div class="container">
+
+            <span class="page-eyebrow">
+                <i class="fas fa-palette"></i>
+                ART & CREATIVITY
+            </span>
+
+            <h1>Our <span>Exhibitions</span></h1>
+
+            <p>
+                Explore remarkable artwork from talented artists
+                and discover exhibitions that celebrate creativity.
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- Exhibitions Content -->
+    <section class="exhibitions-section">
+
+        <div class="container">
+
+            <!-- Upcoming -->
+            <div class="exhibition-section-header">
+
+                <div>
+                    <span class="section-label">WHAT'S COMING</span>
+                    <h2>Upcoming Exhibitions</h2>
+                </div>
+
+                <div class="section-line"></div>
+
+            </div>
+
+
+            @if (ViewBag.upcoming != null && ViewBag.upcoming.Count > 0)
+            {
+                <div class="exhibitions-grid">
+
                     @foreach (var exhibition in ViewBag.upcoming)
-                    {     
-                    <div class="exhibition-card">
-       <div class="exhibition-image">
-           <img src="~/Uploads/images/@exhibition.Banner" alt="Fine Arts Annual Exhibition">
-       </div>
-       <div class="exhibition-details">
-          <h4>@exhibition.Title</h4>
-          <p><strong>Exhibition Dates:</strong> @exhibition.ExhibitionDate</p>
-          <p><strong>Location:</strong> @exhibition.Location</p>
-          <p><strong>Paintings for Sale:</strong> 10</p>
-          <button class="btn-view">View Paintings</button>
-       </div>
-    </div>
+                    {
+                        <article class="exhibition-card-modern">
+
+                            <div class="exhibition-image-modern">
+
+                                <img src="~/Uploads/images/@exhibition.Banner"
+                                     alt="@exhibition.Title">
+
+                                <span class="exhibition-status upcoming-status">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    Upcoming
+                                </span>
+
+                            </div>
+
+
+                            <div class="exhibition-content">
+
+                                <h3>@exhibition.Title</h3>
+
+                                <div class="exhibition-meta">
+
+                                    <div>
+                                        <i class="far fa-calendar"></i>
+
+                                        <span>
+                                            @exhibition.ExhibitionDate
+                                        </span>
+                                    </div>
+
+                                    <div>
+                                        <i class="fas fa-map-marker-alt"></i>
+
+                                        <span>
+                                            @exhibition.Location
+                                        </span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="exhibition-footer">
+
+                                    <span class="painting-count">
+                                        <i class="fas fa-paint-brush"></i>
+                                        10 Paintings
+                                    </span>
+
+                                    <button class="exhibition-btn">
+                                        View Paintings
+                                        <i class="fas fa-arrow-right"></i>
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
                     }
-                } else {
-                    <p>No upcoming exhibition available.</p>
-                }
-</div>
 
-<hr />
+                </div>
+            }
+            else
+            {
+                <div class="empty-exhibitions">
+                    <i class="fas fa-images"></i>
+                    <h3>No Upcoming Exhibitions</h3>
+                    <p>There are currently no upcoming exhibitions.</p>
+                </div>
+            }
 
-<div class="dashboard-section">
-    <h3>Past Exhibitions</h3>
-    <br />
-    @if(ViewBag.past != null && ViewBag.past.Count > 0)
-     {
+
+            <!-- Past -->
+            <div class="exhibition-section-header past-header">
+
+                <div>
+                    <span class="section-label">EXPLORE THE PAST</span>
+                    <h2>Past Exhibitions</h2>
+                </div>
+
+                <div class="section-line"></div>
+
+            </div>
+
+
+            @if (ViewBag.past != null && ViewBag.past.Count > 0)
+            {
+                <div class="exhibitions-grid">
+
                     @foreach (var exhibition in ViewBag.past)
                     {
-                        <div class="exhibition-card">
-                            <div class="exhibition-image">
-                                <img src="~/Uploads/images/@exhibition.Banner" alt="Winter Art Extravaganza">
+                        <article class="exhibition-card-modern">
+
+                            <div class="exhibition-image-modern">
+
+                                <img src="~/Uploads/images/@exhibition.Banner"
+                                     alt="@exhibition.Title">
+
+                                <span class="exhibition-status past-status">
+                                    <i class="fas fa-check"></i>
+                                    Completed
+                                </span>
+
                             </div>
-                            <div class="exhibition-details">
-                                <h4>@exhibition.Title</h4>
-                                <p><strong>Exhibition Dates:</strong> @exhibition.ExhibitionDate</p>
-                                <p><strong>Location:</strong> @exhibition.Location</p>
-                                <p><strong>Sold Paintings:</strong> 5</p>
-                                <p><strong>Unsold Paintings:</strong> 3</p>
-                                <button class="btn-view">View Paintings</button>
+
+
+                            <div class="exhibition-content">
+
+                                <h3>@exhibition.Title</h3>
+
+                                <div class="exhibition-meta">
+
+                                    <div>
+                                        <i class="far fa-calendar"></i>
+
+                                        <span>
+                                            @exhibition.ExhibitionDate
+                                        </span>
+                                    </div>
+
+                                    <div>
+                                        <i class="fas fa-map-marker-alt"></i>
+
+                                        <span>
+                                            @exhibition.Location
+                                        </span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="sales-info">
+
+                                    <div>
+                                        <strong>5</strong>
+                                        <span>Sold</span>
+                                    </div>
+
+                                    <div>
+                                        <strong>3</strong>
+                                        <span>Unsold</span>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="exhibition-footer">
+
+                                    <span class="painting-count">
+                                        <i class="fas fa-palette"></i>
+                                        Exhibition Gallery
+                                    </span>
+
+                                    <button class="exhibition-btn">
+                                        View Paintings
+                                        <i class="fas fa-arrow-right"></i>
+                                    </button>
+
+                                </div>
+
                             </div>
-                        </div>
+
+                        </article>
                     }
-                }
-                else
-                {
-                    <p>No past exhibition available.</p>
-                }
-            </div>
-</div>
-</section>
+
+                </div>
+            }
+            else
+            {
+                <div class="empty-exhibitions">
+                    <i class="fas fa-images"></i>
+                    <h3>No Past Exhibitions</h3>
+                    <p>No previous exhibitions are available.</p>
+                </div>
+            }
+
+        </div>
+
+    </section>
+
 </main>

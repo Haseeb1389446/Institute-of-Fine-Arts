@@ -291,51 +291,482 @@ body {
 
 
 /* =========================================
-   LOGIN
+   PREMIUM LOGIN PAGE
+   Institute of Fine Arts
 ========================================= */
 
-.login-item {
-    margin-left: 10px;
-    flex-shrink: 0;
-}
-
-.modern-login {
+.login-page {
+    min-height: calc(100vh - 72px);
+    background: #f8f4f1;
+    padding: 55px 25px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    padding: 10px 17px;
-    background: #c47b57;
-    color: white;
-    text-decoration: none;
-    border-radius: 7px;
-    font-size: 12px;
-    font-weight: 600;
-    white-space: nowrap;
-    transition: all 0.3s ease;
 }
 
-    .modern-login:hover {
-        background: #a96546;
-        color: white;
-        transform: translateY(-1px);
-        box-shadow: 0 5px 15px rgba(196, 123, 87, 0.25);
+
+/* =========================================
+   LOGIN CARD
+========================================= */
+
+.login-wrapper {
+    width: 100%;
+    max-width: 1050px;
+    min-height: 600px;
+    display: grid;
+    grid-template-columns: 45% 55%;
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 70px rgba(70, 45, 35, 0.12);
+}
+
+
+/* =========================================
+   LEFT SIDE
+========================================= */
+
+.login-intro {
+    position: relative;
+    overflow: hidden;
+    padding: 45px;
+    background: linear-gradient( 145deg, #b96f4c 0%, #c9825d 50%, #a96143 100% );
+    color: white;
+}
+
+
+    /* Decorative circles */
+
+    .login-intro::before {
+        content: "";
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        border: 1px solid rgba(255,255,255,0.18);
+        border-radius: 50%;
+        right: -130px;
+        top: -100px;
     }
 
-    .modern-login i {
-        font-size: 10px;
-        transition: transform 0.3s ease;
-    }
 
-    .modern-login:hover i {
-        transform: translateX(3px);
+    .login-intro::after {
+        content: "";
+        position: absolute;
+        width: 220px;
+        height: 220px;
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 50%;
+        left: -120px;
+        bottom: -80px;
     }
 
 
 /* =========================================
-   LOGOUT
+   BRAND
 ========================================= */
 
+.login-brand {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+.login-brand-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 11px;
+    font-size: 17px;
+    transform: rotate(-4deg);
+}
+
+
+/* =========================================
+   INTRO CONTENT
+========================================= */
+
+.login-intro-content {
+    position: relative;
+    z-index: 2;
+    margin-top: 100px;
+}
+
+
+.login-label {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    opacity: 0.75;
+    margin-bottom: 18px;
+}
+
+
+.login-intro h1 {
+    font-size: 42px;
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 22px;
+}
+
+
+    .login-intro h1 span {
+        display: block;
+        color: #ffe7d8;
+    }
+
+
+.login-intro-content > p {
+    max-width: 390px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.82);
+}
+
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.login-features {
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+
+.login-feature {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+
+.login-feature-icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.15);
+    border-radius: 9px;
+    font-size: 13px;
+}
+
+
+.login-feature strong {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+
+.login-feature small {
+    display: block;
+    color: rgba(255,255,255,0.65);
+    font-size: 10px;
+}
+
+
+/* =========================================
+   DECORATION
+========================================= */
+
+.login-decoration {
+    position: absolute;
+    right: 35px;
+    bottom: 25px;
+    font-size: 90px;
+    color: rgba(255,255,255,0.08);
+    transform: rotate(-25deg);
+}
+
+
+/* =========================================
+   RIGHT FORM
+========================================= */
+
+.login-form-area {
+    padding: 55px 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+}
+
+
+/* =========================================
+   FORM HEADER
+========================================= */
+
+.login-form-header {
+    margin-bottom: 32px;
+}
+
+
+.login-eyebrow {
+    color: #c47b57;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+
+.login-form-header h2 {
+    color: #292524;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 7px 0 5px;
+}
+
+
+.login-form-header p {
+    color: #999;
+    font-size: 13px;
+    margin: 0;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.login-input-group {
+    margin-bottom: 20px;
+}
+
+
+    .login-input-group label {
+        display: block;
+        color: #4a4542;
+        font-size: 12px;
+        font-weight: 600;
+        margin-bottom: 7px;
+    }
+
+
+.login-input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+
+    .login-input-wrapper > i {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #b8aaa2;
+        font-size: 13px;
+        pointer-events: none;
+    }
+
+
+    .login-input-wrapper input {
+        width: 100%;
+        height: 49px;
+        border: 1px solid #e9e2de;
+        border-radius: 10px;
+        background: #fcfaf9;
+        color: #444;
+        padding: 0 15px 0 43px;
+        font-size: 12px;
+        outline: none;
+        transition: all 0.25s ease;
+    }
+
+
+        .login-input-wrapper input::placeholder {
+            color: #b8b1ad;
+        }
+
+
+        .login-input-wrapper input:focus {
+            background: white;
+            border-color: #c47b57;
+            box-shadow: 0 0 0 3px rgba(196,123,87,0.10);
+        }
+
+
+/* =========================================
+   REMEMBER ME
+========================================= */
+
+.remember-row {
+    margin: -3px 0 20px;
+}
+
+
+.remember-label {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #888;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+
+    .remember-label input {
+        width: 15px;
+        height: 15px;
+        accent-color: #c47b57;
+        cursor: pointer;
+    }
+
+
+/* =========================================
+   LOGIN BUTTON
+========================================= */
+
+.login-submit {
+    width: 100%;
+    height: 49px;
+    border: none;
+    border-radius: 10px;
+    background: #c47b57;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+    .login-submit i {
+        font-size: 10px;
+        transition: transform 0.3s ease;
+    }
+
+
+    .login-submit:hover {
+        background: #a96546;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(196,123,87,0.25);
+    }
+
+
+        .login-submit:hover i {
+            transform: translateX(4px);
+        }
+
+
+/* =========================================
+   REGISTER LINK
+========================================= */
+
+.create-account {
+    text-align: center;
+    margin-top: 22px;
+    color: #999;
+    font-size: 11px;
+}
+
+
+    .create-account a {
+        color: #c47b57;
+        font-weight: 600;
+        text-decoration: none;
+        margin-left: 3px;
+        transition: color 0.2s ease;
+    }
+
+
+        .create-account a:hover {
+            color: #a96546;
+            text-decoration: underline;
+        }
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .login-wrapper {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+
+    .login-intro {
+        padding: 35px;
+        min-height: 420px;
+    }
+
+    .login-intro-content {
+        margin-top: 60px;
+    }
+
+    .login-intro h1 {
+        font-size: 34px;
+    }
+
+    .login-form-area {
+        padding: 45px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .login-page {
+        padding: 20px 15px;
+    }
+
+    .login-wrapper {
+        border-radius: 18px;
+    }
+
+    .login-intro {
+        padding: 30px 25px;
+        min-height: auto;
+    }
+
+    .login-intro-content {
+        margin-top: 50px;
+    }
+
+    .login-intro h1 {
+        font-size: 30px;
+    }
+
+    .login-intro-content > p {
+        font-size: 13px;
+    }
+
+    .login-features {
+        margin-top: 25px;
+    }
+
+    .login-form-area {
+        padding: 35px 25px;
+    }
+
+    .login-form-header h2 {
+        font-size: 26px;
+    }
+}
+
+/* =========================================
+   LOGOUT
+========================================= */
 .logout-item {
     margin-left: 8px;
     flex-shrink: 0;
@@ -348,7 +779,7 @@ body {
 
 /* Logout Button */
 
-.modern-logout {
+.modern-logout, .modern-login {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -363,9 +794,10 @@ body {
     white-space: nowrap;
     cursor: pointer;
     transition: all 0.25s ease;
+    text-decoration: none;
 }
 
-    .modern-logout:hover {
+    .modern-logout:hover, .modern-login:hover {
         background: #faf1ec;
         border-color: #d7b5a4;
         color: #a14f2e;
@@ -2294,93 +2726,441 @@ footer .col-lg-4 p {
     border-radius: 6px;
 }
 
-/* Competitions & Exhibition */
-.main-content {
-    padding: 40px 0;
+/* =========================================
+   PREMIUM EXHIBITIONS PAGE
+========================================= */
+
+.exhibitions-page {
+    background: #faf7f4;
+    color: #332c28;
 }
 
-.section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
 
-h2 {
+/* =========================================
+   HERO
+========================================= */
+
+.exhibitions-hero {
+    position: relative;
+    padding: 85px 0 90px;
     text-align: center;
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 40px;
-}
-
-/* Competitions List */
-.competitions-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 20px;
-}
-
-/* Competition Card */
-.competition-card, .exhibition-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 20px;
-}
-
-    .competition-card:hover, .exhibition-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-    }
-
-.exhibition-image {
-    width: 100%;
-    height: 200px;
+    background: radial-gradient( circle at 85% 20%, rgba(208, 140, 96, 0.15), transparent 30% ), radial-gradient( circle at 10% 80%, rgba(138, 90, 68, 0.08), transparent 30% ), #fff;
     overflow: hidden;
 }
 
-    .exhibition-image img {
+.page-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary-color);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 17px;
+}
+
+    .page-eyebrow i {
+        font-size: 12px;
+    }
+
+.exhibitions-hero h1 {
+    margin: 0;
+    color: #2c2724;
+    font-size: clamp(2.8rem, 5vw, 4.4rem);
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+    .exhibitions-hero h1 span {
+        color: var(--primary-color);
+    }
+
+.exhibitions-hero p {
+    max-width: 650px;
+    margin: 22px auto 0;
+    color: #81766f;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   MAIN SECTION
+========================================= */
+
+.exhibitions-section {
+    padding: 75px 0 100px;
+}
+
+
+/* =========================================
+   SECTION HEADER
+========================================= */
+
+.exhibition-section-header {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    margin-bottom: 30px;
+}
+
+.section-label {
+    display: block;
+    color: var(--primary-color);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    margin-bottom: 6px;
+}
+
+.exhibition-section-header h2 {
+    margin: 0;
+    color: #342d29;
+    font-size: 28px;
+    font-weight: 750;
+}
+
+.section-line {
+    height: 1px;
+    flex: 1;
+    background: #e7ddd6;
+}
+
+.past-header {
+    margin-top: 85px;
+}
+
+
+/* =========================================
+   EXHIBITION GRID
+========================================= */
+
+.exhibitions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+
+/* =========================================
+   EXHIBITION CARD
+========================================= */
+
+.exhibition-card-modern {
+    background: #fff;
+    border: 1px solid #eee4dd;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(74, 51, 40, 0.06);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+    .exhibition-card-modern:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 55px rgba(74, 51, 40, 0.12);
+    }
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.exhibition-image-modern {
+    position: relative;
+    height: 285px;
+    overflow: hidden;
+    background: #eee;
+}
+
+    .exhibition-image-modern img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
         display: block;
+        object-fit: cover;
+        transition: transform 0.6s ease;
     }
 
-.exhibition-details, .competition-details {
-    padding: 20px;
+.exhibition-card-modern:hover
+.exhibition-image-modern img {
+    transform: scale(1.06);
 }
 
-.competition-card h3 {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 15px;
+
+/* =========================================
+   STATUS BADGE
+========================================= */
+
+.exhibition-status {
+    position: absolute;
+    top: 17px;
+    left: 17px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 12px;
+    border-radius: 30px;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    backdrop-filter: blur(8px);
 }
 
-    .competition-card p {
-        font-size: 1rem;
-        color: #666;
-        margin-bottom: 20px;
+.upcoming-status {
+    background: rgba(208, 140, 96, 0.92);
+}
+
+.past-status {
+    background: rgba(65, 62, 59, 0.88);
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.exhibition-content {
+    padding: 25px;
+}
+
+    .exhibition-content h3 {
+        margin: 0 0 18px;
+        color: #352e2a;
+        font-size: 21px;
+        font-weight: 750;
+        line-height: 1.3;
     }
 
-    .competition-card .btn-view {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #ff6f61;
-        color: white;
-        border-radius: 5px;
-        text-decoration: none;
-        font-weight: bold;
+
+/* =========================================
+   META
+========================================= */
+
+.exhibition-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee7e2;
+}
+
+    .exhibition-meta div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #81766f;
+        font-size: 12px;
+    }
+
+    .exhibition-meta i {
+        width: 18px;
+        color: var(--primary-color);
+        font-size: 12px;
+    }
+
+
+/* =========================================
+   SALES INFO
+========================================= */
+
+.sales-info {
+    display: flex;
+    gap: 10px;
+    margin-top: 17px;
+    margin-bottom: 18px;
+}
+
+    .sales-info div {
+        flex: 1;
+        padding: 11px;
+        background: #faf6f3;
+        border: 1px solid #eee4dd;
+        border-radius: 10px;
         text-align: center;
-        transition: background-color 0.3s ease;
     }
 
-        .competition-card .btn-view:hover {
-            background-color: #e85c50;
+    .sales-info strong {
+        display: block;
+        color: var(--primary-color);
+        font-size: 20px;
+        line-height: 1;
+    }
+
+    .sales-info span {
+        display: block;
+        margin-top: 5px;
+        color: #968b84;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.7px;
+    }
+
+
+/* =========================================
+   CARD FOOTER
+========================================= */
+
+.exhibition-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.painting-count {
+    color: #938880;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+    .painting-count i {
+        color: var(--primary-color);
+        margin-right: 5px;
+    }
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.exhibition-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    padding: 10px 15px;
+    background: #faf1eb;
+    color: var(--primary-color);
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    .exhibition-btn i {
+        font-size: 9px;
+        transition: transform 0.3s ease;
+    }
+
+    .exhibition-btn:hover {
+        background: var(--primary-color);
+        color: white;
+        box-shadow: 0 7px 18px rgba(208, 140, 96, 0.2);
+    }
+
+        .exhibition-btn:hover i {
+            transform: translateX(4px);
         }
+
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.empty-exhibitions {
+    padding: 60px 20px;
+    text-align: center;
+    background: #fff;
+    border: 1px dashed #dfd3cb;
+    border-radius: 16px;
+}
+
+    .empty-exhibitions > i {
+        color: #d8c5b9;
+        font-size: 35px;
+        margin-bottom: 15px;
+    }
+
+    .empty-exhibitions h3 {
+        margin: 0 0 5px;
+        color: #514842;
+        font-size: 18px;
+    }
+
+    .empty-exhibitions p {
+        margin: 0;
+        color: #968b84;
+        font-size: 13px;
+    }
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .exhibitions-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .exhibitions-hero {
+        padding: 60px 0 65px;
+    }
+
+        .exhibitions-hero h1 {
+            font-size: 2.7rem;
+            letter-spacing: -1.3px;
+        }
+
+        .exhibitions-hero p {
+            padding: 0 15px;
+            font-size: 14px;
+        }
+
+    .exhibitions-section {
+        padding: 50px 0 70px;
+    }
+
+    .exhibition-section-header {
+        gap: 15px;
+    }
+
+        .exhibition-section-header h2 {
+            font-size: 23px;
+        }
+
+    .section-line {
+        display: none;
+    }
+
+    .past-header {
+        margin-top: 60px;
+    }
+
+    .exhibition-image-modern {
+        height: 230px;
+    }
+
+    .exhibition-content {
+        padding: 20px;
+    }
+
+        .exhibition-content h3 {
+            font-size: 19px;
+        }
+
+    .exhibition-footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .exhibition-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
 /* Create Competition */
 .createcompetitions h2 {
     text-align: center;
@@ -3412,141 +4192,952 @@ h2 {
         color: #666;
     }
 
-/* Main Contact Section */
-.contact-container {
-    max-width: 900px;
-    margin: 50px auto;
-    padding: 30px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+/* =========================================
+   PREMIUM CONTACT PAGE
+========================================= */
+
+.contact-page {
+    background: #faf7f4;
+    color: #333;
 }
 
-    .contact-container h2 {
-        text-align: center;
-        margin-bottom: 30px;
-        color: #333;
+
+/* =========================================
+   CONTACT HERO
+========================================= */
+
+.contact-hero {
+    position: relative;
+    padding: 85px 0 95px;
+    background: radial-gradient(circle at 85% 20%, rgba(208, 140, 96, 0.14), transparent 30%), radial-gradient(circle at 10% 80%, rgba(138, 90, 68, 0.08), transparent 30%), #fff;
+    text-align: center;
+    overflow: hidden;
+}
+
+.contact-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary-color);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+    .contact-eyebrow i {
+        font-size: 11px;
     }
 
-/* Form */
-.contact-form {
+.contact-hero h1 {
+    margin: 0;
+    font-size: clamp(2.6rem, 5vw, 4.5rem);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -2px;
+    color: #292321;
+}
+
+    .contact-hero h1 span {
+        color: var(--primary-color);
+    }
+
+.contact-hero p {
+    max-width: 650px;
+    margin: 25px auto 0;
+    color: #81766f;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   CONTACT SECTION
+========================================= */
+
+.contact-section {
+    padding: 75px 0 100px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 0.8fr;
+    gap: 28px;
+    align-items: start;
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.contact-card,
+.contact-info-card,
+.map-card {
+    background: #fff;
+    border: 1px solid #eee4dd;
+    border-radius: 18px;
+    box-shadow: 0 15px 45px rgba(74, 51, 40, 0.06);
+}
+
+
+/* =========================================
+   FORM CARD
+========================================= */
+
+.contact-form-card {
+    padding: 38px;
+}
+
+.card-heading {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     gap: 15px;
 }
 
-    .contact-form label {
-        font-weight: bold;
-        text-align: left;
+    .card-heading > div > span {
+        display: block;
+        color: var(--primary-color);
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 1.8px;
+        margin-bottom: 4px;
     }
 
-    .contact-form input,
-    .contact-form textarea {
+    .card-heading h2 {
+        margin: 0;
+        color: #302a27;
+        font-size: 24px;
+        font-weight: 750;
+    }
+
+.heading-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #faf1eb;
+    color: var(--primary-color);
+    border-radius: 13px;
+    font-size: 17px;
+}
+
+.form-description {
+    color: #8b817b;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 22px 0 30px;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: #514943;
+        font-size: 12px;
+        font-weight: 650;
+    }
+
+.input-wrapper {
+    position: relative;
+}
+
+    .input-wrapper > i {
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #b7aaa2;
+        font-size: 13px;
+        pointer-events: none;
+    }
+
+    .input-wrapper input,
+    .input-wrapper textarea {
         width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 16px;
+        background: #fcfaf8;
+        border: 1px solid #e9dfd8;
+        border-radius: 10px;
+        color: #39322e;
+        font-size: 13px;
+        outline: none;
+        transition: all 0.25s ease;
     }
 
-    .contact-form textarea {
+    .input-wrapper input {
+        height: 48px;
+        padding: 0 15px 0 43px;
+    }
+
+    .input-wrapper textarea {
+        min-height: 135px;
         resize: vertical;
-        height: 120px;
+        padding: 15px 15px 15px 43px;
     }
 
-    .contact-form button {
-        background-color: #cd8654;
-        color: white;
-        border: none;
-        padding: 12px;
-        font-size: 16px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-
-        .contact-form button:hover {
-            background-color: #b66f45;
+        .input-wrapper textarea + i {
+            top: 18px;
+            transform: none;
         }
 
-/* Location Section */
-.location-info {
-    margin-top: 40px;
-    text-align: left;
-    width: 50%;
+        .input-wrapper input::placeholder,
+        .input-wrapper textarea::placeholder {
+            color: #b8aea8;
+        }
+
+        .input-wrapper input:focus,
+        .input-wrapper textarea:focus {
+            background: #fff;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(208, 140, 96, 0.10);
+        }
+
+    .input-wrapper:focus-within > i {
+        color: var(--primary-color);
+    }
+
+
+/* =========================================
+   SUBMIT BUTTON
+========================================= */
+
+.contact-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border: none;
+    border-radius: 10px;
+    padding: 13px 22px;
+    background: var(--primary-color);
+    color: white;
+    font-size: 13px;
+    font-weight: 650;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-    .location-info p {
-        margin: 8px 0;
-        display:inline;
+    .contact-submit i {
+        font-size: 11px;
+        transition: transform 0.3s ease;
     }
 
-    .location-info strong {
-        color: #333;
+    .contact-submit:hover {
+        background: var(--primary-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(208, 140, 96, 0.25);
     }
 
-/* Map */
-.map-container {
-    margin-top: 20px;
-    width: 50%;
-}
+        .contact-submit:hover i {
+            transform: translateX(4px);
+        }
 
-    .map-container iframe {
-        display: inline;
-        height: 300px;
-        border: none;
-    }
 
-/* register */
+/* =========================================
+   RIGHT SIDE
+========================================= */
 
-.form-container {
-    max-width: 500px;
-    margin: 40px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-}
-
-    .form-container h2 {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-.register-form {
+.contact-side {
     display: flex;
     flex-direction: column;
+    gap: 25px;
 }
 
-    .register-form label {
-        margin-top: 15px;
-        font-weight: bold;
+.contact-info-card {
+    padding: 30px;
+}
+
+
+/* =========================================
+   INFO ITEMS
+========================================= */
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-top: 27px;
+}
+
+.info-icon {
+    width: 39px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: #faf1eb;
+    color: var(--primary-color);
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+.info-item small {
+    display: block;
+    color: #a39891;
+    font-size: 9px;
+    font-weight: 750;
+    letter-spacing: 1.2px;
+    margin-bottom: 5px;
+}
+
+.info-item p {
+    margin: 0;
+    color: #534a45;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   MAP CARD
+========================================= */
+
+.map-card {
+    overflow: hidden;
+}
+
+.map-header {
+    height: 65px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee5df;
+}
+
+    .map-header h3 {
+        margin: 0;
+        color: #403833;
+        font-size: 15px;
+        font-weight: 700;
+    }
+
+        .map-header h3 i {
+            color: var(--primary-color);
+            margin-right: 7px;
+        }
+
+    .map-header span {
+        color: #b2a69f;
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+    }
+
+.map {
+    width: 100%;
+    height: 260px;
+}
+
+    .map iframe {
+        width: 100%;
+        height: 100%;
+        display: block;
+        border: 0;
+        filter: grayscale(25%) sepia(8%);
+    }
+
+
+/* =========================================
+   HOVER EFFECT
+========================================= */
+
+.contact-info-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .contact-info-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 50px rgba(74, 51, 40, 0.09);
+    }
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+    .contact-hero {
+        padding: 65px 0 70px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-side {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .contact-section {
+        padding: 45px 0 70px;
+    }
+
+    .contact-form-card {
+        padding: 25px 20px;
+    }
+
+    .contact-info-card {
+        padding: 25px 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .contact-side {
+        display: flex;
+    }
+
+    .contact-hero h1 {
+        font-size: 2.6rem;
+        letter-spacing: -1.3px;
+    }
+
+    .contact-hero p {
+        padding: 0 15px;
         font-size: 14px;
     }
 
-    .register-form input {
-        padding: 10px;
-        margin-top: 5px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        font-size: 14px;
+    .contact-submit {
+        width: 100%;
     }
 
-.form-btn {
-    margin-top: 25px;
-    background-color: #cd8654;
+    .map {
+        height: 230px;
+    }
+}
+
+/* =========================================
+   PREMIUM REGISTER PAGE
+   Institute of Fine Arts
+========================================= */
+
+.register-page {
+    min-height: calc(100vh - 72px);
+    background: #f8f4f1;
+    padding: 55px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================
+   MAIN REGISTER CARD
+========================================= */
+
+.register-wrapper {
+    width: 100%;
+    max-width: 1050px;
+    min-height: 650px;
+    display: grid;
+    grid-template-columns: 45% 55%;
+    background: #fff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 70px rgba(70, 45, 35, 0.12);
+}
+
+
+/* =========================================
+   LEFT INTRODUCTION
+========================================= */
+
+.register-intro {
+    position: relative;
+    overflow: hidden;
+    padding: 45px;
+    background: linear-gradient( 145deg, #b96f4c 0%, #c9825d 50%, #a96143 100% );
     color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
-    font-size: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
-    .form-btn:hover {
-        background-color: #b56d3e;
+
+    /* Decorative circles */
+
+    .register-intro::before {
+        content: "";
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        border: 1px solid rgba(255,255,255,0.18);
+        border-radius: 50%;
+        right: -130px;
+        top: -100px;
     }
+
+    .register-intro::after {
+        content: "";
+        position: absolute;
+        width: 220px;
+        height: 220px;
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 50%;
+        left: -120px;
+        bottom: -80px;
+    }
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.register-brand {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+.register-brand-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    transform: rotate(-4deg);
+}
+
+
+/* =========================================
+   INTRO CONTENT
+========================================= */
+
+.register-intro-content {
+    position: relative;
+    z-index: 2;
+    margin-top: 95px;
+}
+
+
+.register-label {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    opacity: 0.75;
+    margin-bottom: 18px;
+}
+
+
+.register-intro h1 {
+    font-size: 42px;
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 22px;
+}
+
+
+    .register-intro h1 span {
+        display: block;
+        color: #ffe7d8;
+    }
+
+
+.register-intro-content > p {
+    max-width: 390px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.82);
+}
+
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.register-features {
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+
+.register-feature {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+
+.feature-icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.15);
+    border-radius: 9px;
+    font-size: 13px;
+}
+
+
+.register-feature strong {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+
+.register-feature small {
+    display: block;
+    color: rgba(255,255,255,0.65);
+    font-size: 10px;
+}
+
+
+/* =========================================
+   DECORATION
+========================================= */
+
+.register-decoration {
+    position: absolute;
+    z-index: 1;
+    right: 35px;
+    bottom: 25px;
+    font-size: 90px;
+    color: rgba(255,255,255,0.08);
+    transform: rotate(-25deg);
+}
+
+
+/* =========================================
+   RIGHT FORM AREA
+========================================= */
+
+.register-form-area {
+    padding: 55px 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+}
+
+
+/* =========================================
+   FORM HEADER
+========================================= */
+
+.register-form-header {
+    margin-bottom: 30px;
+}
+
+
+.form-eyebrow {
+    color: #c47b57;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+
+.register-form-header h2 {
+    color: #292524;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 7px 0 5px;
+}
+
+
+.register-form-header p {
+    color: #999;
+    font-size: 13px;
+    margin: 0;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.modern-register-form {
+    width: 100%;
+}
+
+
+.input-group-modern {
+    margin-bottom: 18px;
+}
+
+
+    .input-group-modern label {
+        display: block;
+        color: #4a4542;
+        font-size: 12px;
+        font-weight: 600;
+        margin-bottom: 7px;
+    }
+
+
+/* =========================================
+   INPUT WRAPPER
+========================================= */
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+
+    .input-wrapper > i:first-child {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #b8aaa2;
+        font-size: 13px;
+        pointer-events: none;
+    }
+
+
+    .input-wrapper input,
+    .input-wrapper select {
+        width: 100%;
+        height: 47px;
+        border: 1px solid #e9e2de;
+        border-radius: 10px;
+        background: #fcfaf9;
+        color: #444;
+        padding: 0 15px 0 43px;
+        font-size: 12px;
+        outline: none;
+        transition: all 0.25s ease;
+    }
+
+
+        .input-wrapper input::placeholder {
+            color: #b8b1ad;
+        }
+
+
+        /* Focus */
+
+        .input-wrapper input:focus,
+        .input-wrapper select:focus {
+            background: white;
+            border-color: #c47b57;
+            box-shadow: 0 0 0 3px rgba(196,123,87,0.10);
+        }
+
+
+/* =========================================
+   SELECT
+========================================= */
+
+.select-wrapper select {
+    appearance: none;
+    cursor: pointer;
+}
+
+
+.select-arrow {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    font-size: 10px;
+    pointer-events: none;
+}
+
+
+/* =========================================
+   REGISTER BUTTON
+========================================= */
+
+.register-submit {
+    width: 100%;
+    height: 49px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 10px;
+    background: #c47b57;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+    .register-submit i {
+        font-size: 10px;
+        transition: transform 0.3s ease;
+    }
+
+
+    .register-submit:hover {
+        background: #a96546;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(196,123,87,0.25);
+    }
+
+
+        .register-submit:hover i {
+            transform: translateX(4px);
+        }
+
+
+/* =========================================
+   LOGIN LINK
+========================================= */
+
+.login-existing {
+    text-align: center;
+    margin-top: 22px;
+    color: #999;
+    font-size: 11px;
+}
+
+
+    .login-existing a {
+        color: #c47b57;
+        font-weight: 600;
+        text-decoration: none;
+        margin-left: 3px;
+        transition: color 0.2s ease;
+    }
+
+
+        .login-existing a:hover {
+            color: #a96546;
+            text-decoration: underline;
+        }
+
+
+/* =========================================
+   VALIDATION
+========================================= */
+
+.input-validation-error {
+    border-color: #d47761 !important;
+}
+
+
+.field-validation-error {
+    display: block;
+    color: #c45e48;
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+
+/* =========================================
+   RESPONSIVE TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .register-wrapper {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+
+    .register-intro {
+        padding: 35px;
+        min-height: 400px;
+    }
+
+    .register-intro-content {
+        margin-top: 60px;
+    }
+
+    .register-intro h1 {
+        font-size: 34px;
+    }
+
+    .register-form-area {
+        padding: 45px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .register-page {
+        padding: 20px 15px;
+    }
+
+    .register-wrapper {
+        border-radius: 18px;
+    }
+
+    .register-intro {
+        padding: 30px 25px;
+        min-height: auto;
+    }
+
+    .register-intro-content {
+        margin-top: 50px;
+    }
+
+    .register-intro h1 {
+        font-size: 30px;
+    }
+
+    .register-intro-content > p {
+        font-size: 13px;
+    }
+
+    .register-features {
+        margin-top: 25px;
+    }
+
+    .register-form-area {
+        padding: 35px 25px;
+    }
+
+    .register-form-header h2 {
+        font-size: 26px;
+    }
+}
 
 /* view paintings */
 

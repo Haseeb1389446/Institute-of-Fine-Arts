@@ -1,43 +1,212 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
 
 @model RegisterViewModel
 
-<section class="form-container">
-    <h2>User Registration</h2>
-    <form class="register-form form-group" asp-controller="Auth" asp-action="Register" method="POST">
-        <label for="name">Full Name</label>
-        <input type="text" asp-for="FullName" id="name" required />
+<div class="register-page">
 
-        <label for="email">Email Address</label>
-        <input type="email" asp-for="Email" id="email" required />
+    <div class="register-wrapper">
 
-        <label for="password">Password</label>
-        <input type="password" asp-for="Password" id="password" required />
+        <!-- Left Side -->
+        <div class="register-intro">
 
-        <label for="role">Role</label>
-        <select id="role" asp-for="Role">
-            @foreach (var item in TempData["roles"] as List<IdentityRole>)
-            {
-                <option value="@item.Id">@item.Name</option>
-            }
-        </select>
+            <div class="register-brand">
+                <div class="register-brand-icon">
+                    <i class="fas fa-palette"></i>
+                </div>
 
-         <!-- <label for="admission_date">Admission Date</label>
-         <input type="date" asp-for="AdmissionDate" id="admission_date" name="admission_date" />
+                <span>Institute of Fine Arts</span>
+            </div>
 
-         <label for="joining_date">Joining Date</label>
-         <input type="date" asp-for="JoiningDate" id="joining_date" name="joining_date" />
+            <div class="register-intro-content">
+                <span class="register-label">JOIN OUR COMMUNITY</span>
 
-         <label for="subject_handled">Subject Handled (for teachers)</label>
-        <input type="text" asp-for="SubjectHandled" id="subject_handled" name="subject_handled" /> -->
+                <h1>
+                    Create Your
+                    <span>Creative Journey.</span>
+                </h1>
 
-        <button type="submit" class="form-btn">Register</button>
+                <p>
+                    Join our artistic community and discover opportunities
+                    to showcase your creativity, participate in competitions,
+                    and connect with fellow artists.
+                </p>
 
-        <p class="register-link">Already have an account? <a asp-controller="Auth" asp-action="Login">Login here</a></p>
-    </form>
-</section>
+                <div class="register-features">
+
+                    <div class="register-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <div>
+                            <strong>Showcase Your Talent</strong>
+                            <small>Share your artwork with the community.</small>
+                        </div>
+                    </div>
+
+                    <div class="register-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div>
+                            <strong>Join Competitions</strong>
+                            <small>Participate and win exciting awards.</small>
+                        </div>
+                    </div>
+
+                    <div class="register-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div>
+                            <strong>Be Part of the Community</strong>
+                            <small>Connect with artists and art lovers.</small>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="register-decoration">
+                <i class="fas fa-brush"></i>
+            </div>
+
+        </div>
+
+
+        <!-- Right Side -->
+        <div class="register-form-area">
+
+            <div class="register-form-header">
+
+                <span class="form-eyebrow">GET STARTED</span>
+
+                <h2>Create Account</h2>
+
+                <p>
+                    Fill in your details to create your account.
+                </p>
+
+            </div>
+
+
+            <form class="modern-register-form"
+                  asp-controller="Auth"
+                  asp-action="Register"
+                  method="POST">
+
+                <!-- Full Name -->
+                <div class="input-group-modern">
+
+                    <label for="name">Full Name</label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fas fa-user"></i>
+
+                        <input type="text"
+                               asp-for="FullName"
+                               id="name"
+                               placeholder="Enter your full name"
+                               required />
+
+                    </div>
+
+                </div>
+
+
+                <!-- Email -->
+                <div class="input-group-modern">
+
+                    <label for="email">Email Address</label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fas fa-envelope"></i>
+
+                        <input type="email"
+                               asp-for="Email"
+                               id="email"
+                               placeholder="Enter your email"
+                               required />
+
+                    </div>
+
+                </div>
+
+
+                <!-- Password -->
+                <div class="input-group-modern">
+
+                    <label for="password">Password</label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fas fa-lock"></i>
+
+                        <input type="password"
+                               asp-for="Password"
+                               id="password"
+                               placeholder="Create a password"
+                               required />
+
+                    </div>
+
+                </div>
+
+
+                <!-- Role -->
+                <div class="input-group-modern">
+
+                    <label for="role">Account Role</label>
+
+                    <div class="input-wrapper select-wrapper">
+
+                        <i class="fas fa-user-tag"></i>
+
+                        <select id="role" asp-for="Role">
+
+                            @foreach (var item in (TempData["roles"] as List<IdentityRole>)!)
+                            {
+                                <option value="@item.Id">
+                                    @item.Name
+                                </option>
+                            }
+
+                        </select>
+
+                        <i class="fas fa-chevron-down select-arrow"></i>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Button -->
+                <button type="submit" class="register-submit">
+
+                    <span>Create Account</span>
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </button>
+
+
+                <!-- Login -->
+                <div class="login-existing">
+
+                    Already have an account?
+
+                    <a asp-controller="Auth"
+                       asp-action="Login">
+                        Login here
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

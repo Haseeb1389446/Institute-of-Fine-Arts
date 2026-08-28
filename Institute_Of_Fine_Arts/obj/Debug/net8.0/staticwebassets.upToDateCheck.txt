@@ -1,4 +1,3 @@
-wwwroot\css\styles.css
 wwwroot\favicon.ico
 wwwroot\images\favicon.png
 wwwroot\images\hero-image.png
@@ -81,3 +80,4 @@ wwwroot\Uploads\images\springartcontest.png
 wwwroot\Uploads\images\Winter Art Extravaganza - December 2024.png
 wwwroot\Uploads\paintings\6a68db930e8906f82a42b3faaf1bf088.jpg
 wwwroot\Uploads\paintings\avatar-generations_rpge.jpg
+wwwroot\css\styles.css

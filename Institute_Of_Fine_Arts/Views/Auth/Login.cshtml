@@ -1,43 +1,192 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model LoginViewModel
 
-@model LoginViewModel;
+<div class="login-page">
 
-<!-- Main Content Start -->
-<main class="main-content">
-    <section class="section">
-        <div class="container">
-            <h2>Login</h2>
+    <div class="login-wrapper">
 
-            <form class="login-form" asp-controller="Auth" asp-action="Login" method="POST">
+        <!-- Left Side -->
+        <div class="login-intro">
 
-                <div class="form-group">
-                    <label for="email">Email Address:</label>
-                    <input type="email" id="email" asp-for="Email" placeholder="Enter your email" required>
+            <div class="login-brand">
+                <div class="login-brand-icon">
+                    <i class="fas fa-palette"></i>
                 </div>
 
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" asp-for="Password" placeholder="Enter your password" required>
+                <span>Institute of Fine Arts</span>
+            </div>
+
+            <div class="login-intro-content">
+
+                <span class="login-label">WELCOME BACK</span>
+
+                <h1>
+                    Your Creative
+                    <span>Space Awaits.</span>
+                </h1>
+
+                <p>
+                    Sign in to access your dashboard, participate in
+                    competitions, explore exhibitions, and manage your
+                    artistic journey.
+                </p>
+
+                <div class="login-features">
+
+                    <div class="login-feature">
+                        <div class="login-feature-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+
+                        <div>
+                            <strong>Competitions</strong>
+                            <small>Discover new opportunities.</small>
+                        </div>
+                    </div>
+
+                    <div class="login-feature">
+                        <div class="login-feature-icon">
+                            <i class="fas fa-images"></i>
+                        </div>
+
+                        <div>
+                            <strong>Exhibitions</strong>
+                            <small>Explore inspiring artwork.</small>
+                        </div>
+                    </div>
+
+                    <div class="login-feature">
+                        <div class="login-feature-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+
+                        <div>
+                            <strong>Your Dashboard</strong>
+                            <small>Manage your creative profile.</small>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="form-group">
-                    <label for="password" style="display:inline; margin-bottom: 0;">Remember Me : </label>
-                    <input type="checkbox" style="width: 10%;" id="rememberme" asp-for="RememberMe" required>
+            </div>
+
+            <div class="login-decoration">
+                <i class="fas fa-paint-brush"></i>
+            </div>
+
+        </div>
+
+
+        <!-- Right Side -->
+        <div class="login-form-area">
+
+            <div class="login-form-header">
+
+                <span class="login-eyebrow">WELCOME BACK</span>
+
+                <h2>Sign In</h2>
+
+                <p>
+                    Enter your credentials to continue.
+                </p>
+
+            </div>
+
+
+            <form class="modern-login-form"
+                  asp-controller="Auth"
+                  asp-action="Login"
+                  method="POST">
+
+
+                <!-- Email -->
+                <div class="login-input-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <div class="login-input-wrapper">
+
+                        <i class="fas fa-envelope"></i>
+
+                        <input type="email"
+                               id="email"
+                               asp-for="Email"
+                               placeholder="Enter your email"
+                               required />
+
+                    </div>
+
                 </div>
 
-                <div class="form-group">
-                    <button type="submit" class="btn-submit">Login</button>
+
+                <!-- Password -->
+                <div class="login-input-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="login-input-wrapper">
+
+                        <i class="fas fa-lock"></i>
+
+                        <input type="password"
+                               id="password"
+                               asp-for="Password"
+                               placeholder="Enter your password"
+                               required />
+
+                    </div>
+
                 </div>
 
-                <p class="register-link">Create new account? <a asp-controller="Auth" asp-action="Register">Register</a></p>
+
+                <!-- Remember Me -->
+                <div class="remember-row">
+
+                    <label class="remember-label">
+
+                        <input type="checkbox"
+                               id="rememberme"
+                               asp-for="RememberMe" />
+
+                        <span class="custom-checkbox"></span>
+
+                        <span>Remember me</span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- Login Button -->
+                <button type="submit"
+                        class="login-submit">
+
+                    <span>Sign In</span>
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </button>
+
+
+                <!-- Register -->
+                <div class="create-account">
+
+                    Don't have an account?
+
+                    <a asp-controller="Auth"
+                       asp-action="Register">
+                        Create one
+                    </a>
+
+                </div>
 
             </form>
 
         </div>
-    </section>
-</main>
-<!-- Main Content End -->
+
+    </div>
+
+</div>
