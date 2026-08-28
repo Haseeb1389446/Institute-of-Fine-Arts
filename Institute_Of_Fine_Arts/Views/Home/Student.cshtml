@@ -1,205 +1,447 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
 }
-<!-- Main Content Start -->
-<main class="main-content">
-    <section class="section">
-        <div class="container">
-            <h2>Welcome, @(User.Identity!.Name)(Student)</h2>
 
-            <!-- Upcoming Competitions -->
-            <div class="dashboard-section">
-                <h3>Upcoming Competitions</h3>
-                <ul class="list">
-                    <li>Annual Art Gala - 25th May 2025</li>
-                    <li>Modern Expressionism Contest - 10th June 2025</li>
-                    <li>Sketching Skills Challenge - 1st July 2025</li>
-                </ul>
+<main class="student-dashboard">
+
+    <!-- Dashboard Header -->
+    <section class="student-header">
+        <div>
+            <span class="dashboard-label">
+                <i class="fas fa-graduation-cap"></i> STUDENT PORTAL
+            </span>
+
+            <h1>Welcome, @(User.Identity!.Name)</h1>
+
+            <p>
+                Manage your paintings, competitions, exhibitions and achievements.
+            </p>
+        </div>
+
+        <div class="student-avatar">
+            <i class="fas fa-user"></i>
+        </div>
+    </section>
+
+
+    <!-- Quick Stats -->
+    <section class="student-stats">
+
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-palette"></i>
+            </div>
+            <div>
+                <span>Total Paintings</span>
+                <strong>12</strong>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-trophy"></i>
+            </div>
+            <div>
+                <span>Competitions</span>
+                <strong>5</strong>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-award"></i>
+            </div>
+            <div>
+                <span>Awards Won</span>
+                <strong>3</strong>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-image"></i>
+            </div>
+            <div>
+                <span>Exhibitions</span>
+                <strong>4</strong>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- Upcoming Competitions -->
+    <section class="student-panel">
+
+        <div class="panel-header">
+            <div>
+                <span class="panel-label">OPPORTUNITIES</span>
+                <h2>Upcoming Competitions</h2>
             </div>
 
-            <!-- Post A Painting -->
-            <div class="dashboard-section">
-                <h3>Post A Painting</h3>
-                <button class="btn-submit"><a asp-controller="Home" asp-action="SubmitPaintings">Upload New Painting</a></button>
+            <a asp-controller="Home"
+               asp-action="Competitions"
+               class="panel-link">
+                View All <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
 
-                <table class="dashboard-table">
-                    <thead>
-                        <tr>
-                            <th>Title</th>
-                            <th>Description</th>
-                            <th>Submission Date</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Sunset Dreams</td>
-                            <td>Oil painting with sunset scenery</td>
-                            <td>April 5, 2025</td>
-                            <td>Reviewed</td>
-                            <td>
-                                <button class="btn-small">View</button>
-                                <button class="btn-small">Edit</button>
-                                <button class="btn-small btn-danger">Delete</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>City Lights</td>
-                            <td>Modern cityscape in watercolor</td>
-                            <td>April 20, 2025</td>
-                            <td>Pending</td>
-                            <td>
-                                <button class="btn-small">View</button>
-                                <button class="btn-small">Edit</button>
-                                <button class="btn-small btn-danger">Delete</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        <div class="competition-list">
 
-            <!-- My Paintings in Competition -->
-            <div class="dashboard-section">
-                <h3>My Paintings in Competitions</h3>
-                <button class="btn-submit"><a asp-controller="Home" asp-action="SubmitPaintings">Upload New Painting</a></button>
-
-                <table class="dashboard-table">
-                    <thead>
-                        <tr>
-                            <th>Title</th>
-                            <th>Description</th>
-                            <th>Submission Date</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Sunset Dreams</td>
-                            <td>Oil painting with sunset scenery</td>
-                            <td>April 5, 2025</td>
-                            <td>Reviewed</td>
-                            <td>
-                                <button class="btn-small">View</button>
-                                <button class="btn-small">Edit</button>
-                                <button class="btn-small btn-danger">Delete</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>City Lights</td>
-                            <td>Modern cityscape in watercolor</td>
-                            <td>April 20, 2025</td>
-                            <td>Pending</td>
-                            <td>
-                                <button class="btn-small">View</button>
-                                <button class="btn-small">Edit</button>
-                                <button class="btn-small btn-danger">Delete</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- My Paintings in Exhibition -->
-
-            <div class="dashboard-section">
-                <h3>My Paintings In Exhibitions</h3>
-                <button class="btn-submit"><a asp-controller="Home" asp-action="SubmitPaintings">Upload New Painting</a></button>
-
-                <table class="dashboard-table">
-                    <thead>
-                        <tr>
-                            <th>Title</th>
-                            <th>Description</th>
-                            <th>Submission Date</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Sunset Dreams</td>
-                            <td>Oil painting with sunset scenery</td>
-                            <td>April 5, 2025</td>
-                            <td>Reviewed</td>
-                            <td>
-                                <button class="btn-small">View</button>
-                                <button class="btn-small">Edit</button>
-                                <button class="btn-small btn-danger">Delete</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>City Lights</td>
-                            <td>Modern cityscape in watercolor</td>
-                            <td>April 20, 2025</td>
-                            <td>Pending</td>
-                            <td>
-                                <button class="btn-small">View</button>
-                                <button class="btn-small">Edit</button>
-                                <button class="btn-small btn-danger">Delete</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Awards Won -->
-            <div class="dashboard-section">
-                <h3>My Awards</h3>
-                <ul class="list">
-                    <li>1st Prize - Portrait Masters 2024</li>
-                    <li>Best Creativity Award - Spring Exhibition 2023</li>
-                </ul>
-            </div>
-
-            <!-- Feedback -->
-            <div class="dashboard-section">
-                <h3>Feedback & Ratings</h3>
-                <div class="feedback-card">
-                    <p><strong>Painting:</strong> Sunset Dreams</p>
-                    <p><strong>Rating:</strong> ⭐⭐⭐⭐☆</p>
-                    <p><strong>Remarks:</strong> Beautiful color blending! Try enhancing the background detailing next time.</p>
+            <div class="competition-item">
+                <div class="competition-date">
+                    <strong>25</strong>
+                    <span>MAY</span>
                 </div>
-                <div class="feedback-card">
-                    <p><strong>Painting:</strong> City Lights</p>
-                    <p><strong>Rating:</strong> ⭐⭐⭐☆☆</p>
-                    <p><strong>Remarks:</strong> Nice concept! Improve contrast in the main structures.</p>
+
+                <div class="competition-info">
+                    <h4>Annual Art Gala</h4>
+                    <p>
+                        <i class="far fa-calendar"></i>
+                        25th May 2025
+                    </p>
                 </div>
+
+                <span class="status-badge upcoming">
+                    Upcoming
+                </span>
             </div>
 
-            <!-- Exhibition Status -->
-            <div class="dashboard-section">
-                <h3>Paintings in Exhibitions</h3>
-                <table class="dashboard-table">
-                    <thead>
-                        <tr>
-                            <th>Painting</th>
-                            <th>Exhibition</th>
-                            <th>Status</th>
-                            <th>Buyer</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Sunset Dreams</td>
-                            <td>Summer Arts 2025</td>
-                            <td>Sold</td>
-                            <td>Jane Doe</td>
-                        </tr>
-                        <tr>
-                            <td>City Lights</td>
-                            <td>Modern Art Fiesta</td>
-                            <td>Unsold</td>
-                            <td>-</td>
-                        </tr>
-                    </tbody>
-                </table>
+
+            <div class="competition-item">
+                <div class="competition-date">
+                    <strong>10</strong>
+                    <span>JUN</span>
+                </div>
+
+                <div class="competition-info">
+                    <h4>Modern Expressionism Contest</h4>
+                    <p>
+                        <i class="far fa-calendar"></i>
+                        10th June 2025
+                    </p>
+                </div>
+
+                <span class="status-badge upcoming">
+                    Upcoming
+                </span>
+            </div>
+
+
+            <div class="competition-item">
+                <div class="competition-date">
+                    <strong>01</strong>
+                    <span>JUL</span>
+                </div>
+
+                <div class="competition-info">
+                    <h4>Sketching Skills Challenge</h4>
+                    <p>
+                        <i class="far fa-calendar"></i>
+                        1st July 2025
+                    </p>
+                </div>
+
+                <span class="status-badge upcoming">
+                    Upcoming
+                </span>
             </div>
 
         </div>
+
     </section>
+
+
+    <!-- My Paintings -->
+    <section class="student-panel">
+
+        <div class="panel-header">
+            <div>
+                <span class="panel-label">PORTFOLIO</span>
+                <h2>My Paintings</h2>
+            </div>
+
+            <a asp-controller="Home"
+               asp-action="SubmitPaintings"
+               class="primary-action">
+                <i class="fas fa-plus"></i>
+                Upload Painting
+            </a>
+        </div>
+
+
+        <div class="painting-table-wrapper">
+
+            <table class="student-table">
+
+                <thead>
+                    <tr>
+                        <th>Painting</th>
+                        <th>Description</th>
+                        <th>Submitted</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>
+                            <div class="painting-name">
+                                <div class="painting-icon">
+                                    <i class="fas fa-image"></i>
+                                </div>
+
+                                <strong>Sunset Dreams</strong>
+                            </div>
+                        </td>
+
+                        <td>Oil painting with sunset scenery</td>
+
+                        <td>April 5, 2025</td>
+
+                        <td>
+                            <span class="table-status reviewed">
+                                Reviewed
+                            </span>
+                        </td>
+
+                        <td>
+                            <div class="table-actions">
+                                <button class="action-btn">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+
+                                <button class="action-btn">
+                                    <i class="fas fa-pen"></i>
+                                </button>
+
+                                <button class="action-btn delete">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            <div class="painting-name">
+                                <div class="painting-icon">
+                                    <i class="fas fa-image"></i>
+                                </div>
+
+                                <strong>City Lights</strong>
+                            </div>
+                        </td>
+
+                        <td>Modern cityscape in watercolor</td>
+
+                        <td>April 20, 2025</td>
+
+                        <td>
+                            <span class="table-status pending">
+                                Pending
+                            </span>
+                        </td>
+
+                        <td>
+                            <div class="table-actions">
+                                <button class="action-btn">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+
+                                <button class="action-btn">
+                                    <i class="fas fa-pen"></i>
+                                </button>
+
+                                <button class="action-btn delete">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- Two Column Area -->
+    <div class="student-grid">
+
+        <!-- Awards -->
+        <section class="student-panel">
+
+            <div class="panel-header">
+                <div>
+                    <span class="panel-label">ACHIEVEMENTS</span>
+                    <h2>My Awards</h2>
+                </div>
+
+                <i class="fas fa-award panel-heading-icon"></i>
+            </div>
+
+            <div class="award-list">
+
+                <div class="award-item">
+                    <div class="award-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+
+                    <div>
+                        <h4>1st Prize</h4>
+                        <p>Portrait Masters 2024</p>
+                    </div>
+                </div>
+
+
+                <div class="award-item">
+                    <div class="award-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+
+                    <div>
+                        <h4>Best Creativity Award</h4>
+                        <p>Spring Exhibition 2023</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Feedback -->
+        <section class="student-panel">
+
+            <div class="panel-header">
+                <div>
+                    <span class="panel-label">REVIEWS</span>
+                    <h2>Recent Feedback</h2>
+                </div>
+
+                <i class="fas fa-comment-dots panel-heading-icon"></i>
+            </div>
+
+
+            <div class="feedback-modern">
+
+                <div class="feedback-top">
+                    <strong>Sunset Dreams</strong>
+
+                    <span class="rating">
+                        ★★★★☆
+                    </span>
+                </div>
+
+                <p>
+                    Beautiful color blending! Try enhancing the
+                    background detailing next time.
+                </p>
+
+            </div>
+
+
+            <div class="feedback-modern">
+
+                <div class="feedback-top">
+                    <strong>City Lights</strong>
+
+                    <span class="rating">
+                        ★★★☆☆
+                    </span>
+                </div>
+
+                <p>
+                    Nice concept! Improve contrast in the
+                    main structures.
+                </p>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- Exhibition Status -->
+    <section class="student-panel">
+
+        <div class="panel-header">
+
+            <div>
+                <span class="panel-label">EXHIBITIONS</span>
+                <h2>Exhibition Status</h2>
+            </div>
+
+            <a asp-controller="Home"
+               asp-action="Exhibitions"
+               class="panel-link">
+                Explore Exhibitions
+                <i class="fas fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="painting-table-wrapper">
+
+            <table class="student-table">
+
+                <thead>
+                    <tr>
+                        <th>Painting</th>
+                        <th>Exhibition</th>
+                        <th>Status</th>
+                        <th>Buyer</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>
+                            <strong>Sunset Dreams</strong>
+                        </td>
+
+                        <td>Summer Arts 2025</td>
+
+                        <td>
+                            <span class="table-status sold">
+                                Sold
+                            </span>
+                        </td>
+
+                        <td>Jane Doe</td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <strong>City Lights</strong>
+                        </td>
+
+                        <td>Modern Art Fiesta</td>
+
+                        <td>
+                            <span class="table-status unsold">
+                                Unsold
+                            </span>
+                        </td>
+
+                        <td>—</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
 </main>
-<!-- Main Content End -->

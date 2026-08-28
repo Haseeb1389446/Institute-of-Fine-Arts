@@ -3,196 +3,732 @@
 *@
 @{
 }
-<!-- Main Content Start -->
-<main class="main-content">
-    <section class="section">
-        <div class="container">
-            <h2>Welcome, @(User.Identity!.Name)(Manager)</h2>
 
-            <!-- Students List -->
-            <div class="dashboard-section">
-                <h3>Students List</h3>
-                <table class="dashboard-table">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Enrolled Course</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @if (ViewBag.Students != null && ViewBag.Students.Count > 0)
-                        {
-                            @foreach (var user in ViewBag.Students)
-                            {
-                                <tr>
-                                    <td>@user.UserName</td>
-                                    <td>@user.Email</td>
-                                    <td>Bachelor of Arts</td>
-                                </tr>
-                            }
-                        }
-                    </tbody>
-                </table>
+<!-- Manager Dashboard -->
+<main class="manager-dashboard">
+
+    <!-- Dashboard Header -->
+    <section class="manager-header">
+        <div>
+            <span class="dashboard-label">
+                <i class="fas fa-chart-line"></i> MANAGEMENT PANEL
+            </span>
+
+            <h1>
+                Welcome back, <span>@(User.Identity!.Name)</span>
+            </h1>
+
+            <p>
+                Manage students, staff, competitions, awards and exhibitions
+                from one centralized dashboard.
+            </p>
+        </div>
+
+        <div class="manager-date">
+            <i class="far fa-calendar-alt"></i>
+            <div>
+                <small>Dashboard</small>
+                <strong>Management Overview</strong>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Statistics -->
+    <section class="manager-stats">
+
+        <div class="manager-stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-user-graduate"></i>
             </div>
 
-            <!-- Staff List -->
-            <div class="dashboard-section">
-                <h3>Staff List</h3>
-                <table class="dashboard-table">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Department</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @if (ViewBag.staff != null && ViewBag.staff.Count > 0)
-                        {
-                            @foreach (var user in ViewBag.staff)
-                            {
-                                <tr>
-                                    <td>@user.UserName</td>
-                                    <td>@user.Email</td>
-                                    <td>Sculpture</td>
-                                </tr>
-                            }
-                        }
-                    </tbody>
-                </table>
+            <div class="stat-info">
+                <span>Total Students</span>
+                <strong>
+                    @(ViewBag.Students != null ? ViewBag.Students.Count : 0)
+                </strong>
+                <small>
+                    <i class="fas fa-arrow-up"></i> Registered students
+                </small>
+            </div>
+        </div>
+
+
+        <div class="manager-stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-chalkboard-teacher"></i>
             </div>
 
-            <!-- Competition History -->
-            <div class="dashboard-section">
-                <h3>Competition History</h3>
-                <table class="dashboard-table">
-                    <thead>
-                        <tr>
-                            <th>Competition</th>
-                            <th>Date</th>
-                            <th>Submissions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @if (ViewBag.competitions != null && ViewBag.competitions.Count > 0)
-                        {
-                            @foreach (var competitions in ViewBag.competitions)
-                            {
-                                <tr>
-                                    <td>@competitions.Title</td>
-                                    <td>@competitions.StartDate</td>
-                                    <td>80</td>
-                                </tr>
-                            }
-                        }
-                        <tr>
-                            <td>Modern Expressionism Contest</td>
-                            <td>April 5, 2025</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="stat-info">
+                <span>Total Staff</span>
+                <strong>
+                    @(ViewBag.staff != null ? ViewBag.staff.Count : 0)
+                </strong>
+                <small>
+                    <i class="fas fa-users"></i> Active staff members
+                </small>
+            </div>
+        </div>
+
+
+        <div class="manager-stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-trophy"></i>
             </div>
 
-            <!-- Awards Issued -->
-            <div class="dashboard-section">
-                <h3>Awards Issued</h3>
-                <table class="dashboard-table">
-                    <thead>
-                        <tr>
-                            <th>Student Name</th>
-                            <th>Award</th>
-                            <th>Competition</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @if (ViewBag.awards != null && ViewBag.awards.Count > 0)
-                        {
-                            @foreach (var awards in ViewBag.awards)
-                            {
-                                <tr>
-                                    <td>@awards.AwardTitle</td>
-                                    <td>@awards.AwardedDate</td>
-                                    <td>80</td>
-                                </tr>
-                            }
-                        }
-                        <tr>
-                            <td>John Doe</td>
-                            <td>Most Innovative Art</td>
-                            <td>Modern Expressionism Contest</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="stat-info">
+                <span>Competitions</span>
+                <strong>
+                    @(ViewBag.competitions != null ? ViewBag.competitions.Count : 0)
+                </strong>
+                <small>
+                    <i class="fas fa-palette"></i> Art competitions
+                </small>
+            </div>
+        </div>
+
+
+        <div class="manager-stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-award"></i>
             </div>
 
-            <!-- Paintings Posted -->
-            <div class="dashboard-section">
-                <h3>Paintings Posted</h3>
-                <table class="dashboard-table">
-                    <thead>
-                        <tr>
-                            <th>Painting Name</th>
-                            <th>Student</th>
-                            <th>Staff Comments</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Sunset Dreams</td>
-                            <td>Emma Watson</td>
-                            <td>Excellent use of color gradients</td>
-                        </tr>
-                        <tr>
-                            <td>City Lights</td>
-                            <td>John Doe</td>
-                            <td>Needs better composition</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="stat-info">
+                <span>Awards Issued</span>
+                <strong>
+                    @(ViewBag.awards != null ? ViewBag.awards.Count : 0)
+                </strong>
+                <small>
+                    <i class="fas fa-medal"></i> Recognitions
+                </small>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- Students -->
+    <section class="manager-section">
+
+        <div class="manager-section-header">
+            <div>
+                <span class="section-kicker">STUDENT MANAGEMENT</span>
+                <h2>Students List</h2>
+                <p>View registered students and their course information.</p>
             </div>
 
-            <!-- Exhibited Paintings -->
-            <div class="dashboard-section">
-                <h3>Exhibited Paintings</h3>
-                <table class="dashboard-table">
-                    <thead>
-                        <tr>
-                            <th>Painting</th>
-                            <th>Status</th>
-                            <th>Buyer (if sold)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Ocean Breeze</td>
-                            <td>Sold</td>
-                            <td>Mr. Robert</td>
-                        </tr>
-                        <tr>
-                            <td>Golden Horizon</td>
-                            <td>Unsold</td>
-                            <td>-</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="section-icon">
+                <i class="fas fa-user-graduate"></i>
             </div>
+        </div>
 
-            <!-- Upcoming Exhibitions -->
-            <div class="dashboard-section">
-                <h3>Upcoming Exhibitions</h3>
-                @if (ViewBag.upcoming != null && ViewBag.upcoming.Count > 0)
-                {
-                    @foreach (var exhibition in ViewBag.upcoming)
+        <div class="manager-table-wrapper">
+
+            <table class="manager-table">
+
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Student</th>
+                        <th>Email</th>
+                        <th>Enrolled Course</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    @if (ViewBag.Students != null && ViewBag.Students.Count > 0)
                     {
-                        <ul class="upcoming-list">
-                            <li>@exhibition.Title - @exhibition.ExhibitionDate</li>
-                        </ul>
+                        int studentIndex = 1;
+
+                        @foreach (var user in ViewBag.Students)
+                        {
+                            <tr>
+
+                                <td class="table-number">
+                                    @studentIndex
+                                </td>
+
+                                <td>
+                                    <div class="person-cell">
+
+                                        <div class="person-avatar">
+                                            @(user.UserName?.Substring(0, 1).ToUpper())
+                                        </div>
+
+                                        <div>
+                                            <strong>@user.UserName</strong>
+                                            <small>Student</small>
+                                        </div>
+
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="email-text">
+                                        @user.Email
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <span class="course-badge">
+                                        Bachelor of Arts
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <span class="status-badge active-status">
+                                        <span></span> Active
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                            studentIndex++;
+                        }
                     }
-                }
+                    else
+                    {
+                        <tr>
+                            <td colspan="5">
+                                <div class="empty-state">
+                                    <i class="fas fa-user-slash"></i>
+                                    <strong>No students found</strong>
+                                    <span>There are currently no registered students.</span>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- Staff -->
+    <section class="manager-section">
+
+        <div class="manager-section-header">
+
+            <div>
+                <span class="section-kicker">STAFF MANAGEMENT</span>
+                <h2>Staff Directory</h2>
+                <p>Manage institute staff and departmental information.</p>
+            </div>
+
+            <div class="section-icon">
+                <i class="fas fa-chalkboard-teacher"></i>
             </div>
 
         </div>
+
+        <div class="manager-table-wrapper">
+
+            <table class="manager-table">
+
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Staff Member</th>
+                        <th>Email</th>
+                        <th>Department</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    @if (ViewBag.staff != null && ViewBag.staff.Count > 0)
+                    {
+                        int staffIndex = 1;
+
+                        @foreach (var user in ViewBag.staff)
+                        {
+                            <tr>
+
+                                <td class="table-number">
+                                    @staffIndex
+                                </td>
+
+                                <td>
+                                    <div class="person-cell">
+
+                                        <div class="person-avatar staff-avatar">
+                                            @(user.UserName?.Substring(0, 1).ToUpper())
+                                        </div>
+
+                                        <div>
+                                            <strong>@user.UserName</strong>
+                                            <small>Staff Member</small>
+                                        </div>
+
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="email-text">
+                                        @user.Email
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <span class="course-badge">
+                                        Sculpture
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <span class="status-badge active-status">
+                                        <span></span> Active
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                            staffIndex++;
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="5">
+
+                                <div class="empty-state">
+                                    <i class="fas fa-user-slash"></i>
+                                    <strong>No staff found</strong>
+                                    <span>No staff members are currently available.</span>
+                                </div>
+
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+
     </section>
+
+
+    <!-- Competition History -->
+    <section class="manager-section">
+
+        <div class="manager-section-header">
+
+            <div>
+                <span class="section-kicker">ACTIVITY</span>
+                <h2>Competition History</h2>
+                <p>Overview of competitions conducted by the institute.</p>
+            </div>
+
+            <div class="section-icon">
+                <i class="fas fa-trophy"></i>
+            </div>
+
+        </div>
+
+        <div class="manager-table-wrapper">
+
+            <table class="manager-table">
+
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Competition</th>
+                        <th>Date</th>
+                        <th>Submissions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    @if (ViewBag.competitions != null && ViewBag.competitions.Count > 0)
+                    {
+                        int competitionIndex = 1;
+
+                        @foreach (var competitions in ViewBag.competitions)
+                        {
+                            <tr>
+
+                                <td class="table-number">
+                                    @competitionIndex
+                                </td>
+
+                                <td>
+                                    <div class="title-cell">
+                                        <div class="mini-icon">
+                                            <i class="fas fa-palette"></i>
+                                        </div>
+
+                                        <strong>@competitions.Title</strong>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="date-badge">
+                                        <i class="far fa-calendar"></i>
+                                        @competitions.StartDate
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <span class="count-badge">
+                                        80
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                            competitionIndex++;
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="4">
+
+                                <div class="empty-state">
+                                    <i class="fas fa-trophy"></i>
+                                    <strong>No competitions available</strong>
+                                    <span>Competition history will appear here.</span>
+                                </div>
+
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- Awards -->
+    <section class="manager-section">
+
+        <div class="manager-section-header">
+
+            <div>
+                <span class="section-kicker">ACHIEVEMENTS</span>
+                <h2>Awards Issued</h2>
+                <p>Recognitions and awards given to talented students.</p>
+            </div>
+
+            <div class="section-icon">
+                <i class="fas fa-medal"></i>
+            </div>
+
+        </div>
+
+        <div class="manager-table-wrapper">
+
+            <table class="manager-table">
+
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Award</th>
+                        <th>Date</th>
+                        <th>Recognition</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    @if (ViewBag.awards != null && ViewBag.awards.Count > 0)
+                    {
+                        int awardIndex = 1;
+
+                        @foreach (var awards in ViewBag.awards)
+                        {
+                            <tr>
+
+                                <td class="table-number">
+                                    @awardIndex
+                                </td>
+
+                                <td>
+                                    <div class="title-cell">
+
+                                        <div class="mini-icon award-icon">
+                                            <i class="fas fa-award"></i>
+                                        </div>
+
+                                        <strong>@awards.AwardTitle</strong>
+
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="date-badge">
+                                        <i class="far fa-calendar"></i>
+                                        @awards.AwardedDate
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <span class="recognition-badge">
+                                        Excellence
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                            awardIndex++;
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="4">
+
+                                <div class="empty-state">
+                                    <i class="fas fa-award"></i>
+                                    <strong>No awards issued</strong>
+                                    <span>Award records will appear here.</span>
+                                </div>
+
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- Paintings -->
+    <section class="manager-section">
+
+        <div class="manager-section-header">
+
+            <div>
+                <span class="section-kicker">ARTWORK</span>
+                <h2>Paintings Posted</h2>
+                <p>Review artwork submitted by students.</p>
+            </div>
+
+            <div class="section-icon">
+                <i class="fas fa-paint-brush"></i>
+            </div>
+
+        </div>
+
+        <div class="painting-grid">
+
+            <div class="painting-card">
+
+                <div class="painting-preview">
+                    <i class="fas fa-image"></i>
+                </div>
+
+                <div class="painting-content">
+
+                    <span class="painting-tag">FEATURED</span>
+
+                    <h3>Sunset Dreams</h3>
+
+                    <p class="painting-student">
+                        <i class="fas fa-user"></i>
+                        Emma Watson
+                    </p>
+
+                    <div class="painting-comment">
+                        "Excellent use of color gradients"
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="painting-card">
+
+                <div class="painting-preview">
+                    <i class="fas fa-image"></i>
+                </div>
+
+                <div class="painting-content">
+
+                    <span class="painting-tag">RECENT</span>
+
+                    <h3>City Lights</h3>
+
+                    <p class="painting-student">
+                        <i class="fas fa-user"></i>
+                        John Doe
+                    </p>
+
+                    <div class="painting-comment">
+                        "Needs better composition"
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Exhibited Paintings -->
+    <section class="manager-section">
+
+        <div class="manager-section-header">
+
+            <div>
+                <span class="section-kicker">EXHIBITIONS</span>
+                <h2>Exhibited Paintings</h2>
+                <p>Track artwork displayed in institute exhibitions.</p>
+            </div>
+
+            <div class="section-icon">
+                <i class="fas fa-images"></i>
+            </div>
+
+        </div>
+
+        <div class="manager-table-wrapper">
+
+            <table class="manager-table">
+
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Painting</th>
+                        <th>Status</th>
+                        <th>Buyer</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td class="table-number">01</td>
+
+                        <td>
+                            <div class="title-cell">
+                                <div class="mini-icon">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                                <strong>Ocean Breeze</strong>
+                            </div>
+                        </td>
+
+                        <td>
+                            <span class="status-badge sold-status">
+                                <span></span> Sold
+                            </span>
+                        </td>
+
+                        <td>Mr. Robert</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td class="table-number">02</td>
+
+                        <td>
+                            <div class="title-cell">
+                                <div class="mini-icon">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                                <strong>Golden Horizon</strong>
+                            </div>
+                        </td>
+
+                        <td>
+                            <span class="status-badge pending-status">
+                                <span></span> Unsold
+                            </span>
+                        </td>
+
+                        <td>—</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- Upcoming Exhibitions -->
+    <section class="manager-section upcoming-manager">
+
+        <div class="manager-section-header">
+
+            <div>
+                <span class="section-kicker">EVENTS</span>
+                <h2>Upcoming Exhibitions</h2>
+                <p>Keep track of upcoming artistic events.</p>
+            </div>
+
+            <div class="section-icon">
+                <i class="fas fa-calendar-alt"></i>
+            </div>
+
+        </div>
+
+
+        <div class="upcoming-events">
+
+            @if (ViewBag.upcoming != null && ViewBag.upcoming.Count > 0)
+            {
+                @foreach (var exhibition in ViewBag.upcoming)
+                {
+                    <div class="event-card">
+
+                        <div class="event-date">
+                            <i class="far fa-calendar-alt"></i>
+                        </div>
+
+                        <div class="event-info">
+                            <h3>@exhibition.Title</h3>
+                            <p>
+                                <i class="fas fa-calendar-day"></i>
+                                @exhibition.ExhibitionDate
+                            </p>
+                        </div>
+
+                        <span class="event-status">
+                            Upcoming
+                        </span>
+
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="empty-state">
+                    <i class="fas fa-calendar-times"></i>
+                    <strong>No upcoming exhibitions</strong>
+                    <span>New exhibitions will appear here.</span>
+                </div>
+            }
+
+        </div>
+
+    </section>
+
 </main>
-<!-- Main Content End -->

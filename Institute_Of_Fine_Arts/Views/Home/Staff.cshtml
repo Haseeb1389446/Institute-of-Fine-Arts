@@ -1,214 +1,578 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@using Microsoft.AspNetCore.Identity
 
-@model ModelsCollectionVeiewModel;
+@model ModelsCollectionVeiewModel
 
-<!-- Main Content Start -->
-<main class="main-content">
-    <section class="section">
-        <div class="container">
-            <h2>Welcome, @(User.Identity.Name)(Staff)</h2>
+<main class="teacher-dashboard">
 
-            <!-- Manage Competitions -->
-            <div class="dashboard-section">
-                <h3>Manage Competitions</h3>
-                <button class="btn-submit"><a asp-controller="Home" asp-action="CreateCompetitions">Create New Competition</a></button>
+    <!-- Dashboard Header -->
+    <section class="teacher-header">
+        <div>
+            <span class="dashboard-eyebrow">STAFF PORTAL</span>
+            <h1>Welcome, @(User.Identity?.Name)</h1>
+            <p>Manage competitions, student submissions, awards and exhibitions.</p>
+        </div>
 
-                <table class="dashboard-table">
-                    <thead>
-                        <tr>
-                            <th>Competition Name</th>
-                            <th>StartDate</th>
-                            <th>EndDate</th>
-                            <th>Award</th>
-                            <th>Status</th>
-                            <th>Image</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @if(Model.Competitions.Count == 0) {
-                            <tr>
-                                <td class="text-center" colspan="7">No competitions available.</td>
-                            </tr>
-                        } else
-                        {
-                        @foreach(var competition in Model.Competitions) {
-                            <tr>
-                                <td>@competition.Title</td>
-                                <td>@competition.StartDate</td>
-                                <td>@competition.EndDate</td>
-                                    <td>@competition.award!.AwardTitle</td>
-                                <td>@competition.Status</td>
-                                <td><img src="~/Uploads/images/@competition.Banner" alt="Competition image" height="50px" width="150px" /></td>
-                                <td>
-                                    <button class="btn-small"><a asp-controller="Home" asp-action="UpdateCompetitions" asp-route-id="@competition.Id">Edit</a></button>
-                                    <button class="btn-small btn-danger"><a asp-controller="Home" asp-action="DeleteCompetitions" asp-route-id="@competition.Id">Delete</a></button>
-                                </td>
-                            </tr>     
-                        }   
-                        }
+        <div class="teacher-header-icon">
+            <i class="fas fa-palette"></i>
+        </div>
+    </section>
 
-                    </tbody>
-                </table>
+
+    <!-- Quick Stats -->
+    <section class="teacher-stats">
+
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-trophy"></i>
+            </div>
+            <div>
+                <span>Total Competitions</span>
+                <strong>@Model.Competitions.Count</strong>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-award"></i>
+            </div>
+            <div>
+                <span>Total Awards</span>
+                <strong>@Model.Awards.Count</strong>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-image"></i>
+            </div>
+            <div>
+                <span>Exhibitions</span>
+                <strong>@Model.Exhibitions.Count</strong>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-users"></i>
+            </div>
+            <div>
+                <span>Role</span>
+                <strong>Staff</strong>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- Manage Competitions -->
+    <section class="teacher-section">
+
+        <div class="section-header">
+            <div>
+                <span class="section-label">MANAGEMENT</span>
+                <h2>Competitions</h2>
+                <p>Create and manage institute competitions.</p>
             </div>
 
-            <!-- View and Mark Student Submissions -->
-            <div class="dashboard-section">
-                <h3>Student Submissions</h3>
+            <a asp-controller="Home"
+               asp-action="CreateCompetitions"
+               class="primary-action">
+                <i class="fas fa-plus"></i>
+                Create Competition
+            </a>
+        </div>
 
-                <table class="dashboard-table">
-                    <thead>
+
+        <div class="dashboard-table-wrapper">
+
+            <table class="teacher-table">
+
+                <thead>
+                    <tr>
+                        <th>Competition</th>
+                        <th>Dates</th>
+                        <th>Award</th>
+                        <th>Status</th>
+                        <th>Banner</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    @if (Model.Competitions.Count == 0)
+                    {
                         <tr>
-                            <th>Student Name</th>
-                            <th>Painting</th>
-                            <th>Creativity Level</th>
-                            <th>Remarks</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Emma Watson</td>
-                            <td>Sunset Dreams</td>
-                            <td>Better</td>
-                            <td>Great use of colors!</td>
-                            <td>
-                                <button class="btn-small">Mark/Remark</button>
+                            <td colspan="6" class="empty-state">
+                                <i class="fas fa-trophy"></i>
+                                <span>No competitions available.</span>
                             </td>
                         </tr>
-                        <tr>
-                            <td>John Doe</td>
-                            <td>City Lights</td>
-                            <td>Moderate</td>
-                            <td>Needs sharper contrasts.</td>
-                            <td>
-                                <button class="btn-small">Mark/Remark</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Manage Awards -->
-            <div class="dashboard-section">
-                <h3>Manage Awards</h3>
-                <button class="btn-submit"><a asp-controller="Home" asp-action="CreateAwards">Add New Award</a></button>
-
-                <table class="dashboard-table">
-                    <thead>
-                        <tr>
-                            <th>Award Title</th>
-                            <th>Date</th>
-                            <th>Winner</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @if(Model.Awards.Count == 0) {
-                            <tr>
-                                <td class="text-center" colspan="4">No awards available.</td>
-                            </tr>
-                        } else
+                    }
+                    else
+                    {
+                        @foreach (var competition in Model.Competitions)
                         {
-                        @foreach(var award in Model.Awards) {
                             <tr>
-                                <td>@award.AwardTitle</td>
-                                <td>@award.AwardedDate</td>
-                                @* <td>@(!string.IsNullOrEmpty(award.Student!.UserName) ? award.StudentId : "Not Defined")</td> *@
-                                <td>@(award.Student != null ? award.Student.UserName : "Not Defined")</td>
+
                                 <td>
-                                        <button class="btn-small"><a asp-controller="Home" asp-action="UpdateAwards" asp-route-id="@award.Id">Edit</a></button>
-                                    <button class="btn-small btn-danger"><a asp-controller="Home" asp-action="DeleteAwards" asp-route-id="@award.Id">Delete</a></button>
+                                    <div class="table-title">
+                                        <strong>@competition.Title</strong>
+                                        <small>Competition</small>
+                                    </div>
                                 </td>
+
+                                <td>
+                                    <div class="date-info">
+                                        <span>@competition.StartDate</span>
+                                        <small>to @competition.EndDate</small>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="award-badge">
+                                        <i class="fas fa-award"></i>
+                                        @competition.award?.AwardTitle
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <span class="status-badge">
+                                        @competition.Status
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <img src="~/Uploads/images/@competition.Banner"
+                                         class="table-image"
+                                         alt="Competition image" />
+                                </td>
+
+                                <td>
+                                    <div class="table-actions">
+
+                                        <a asp-controller="Home"
+                                           asp-action="UpdateCompetitions"
+                                           asp-route-id="@competition.Id"
+                                           class="action-btn edit-btn">
+                                            <i class="fas fa-pen"></i>
+                                        </a>
+
+                                        <a asp-controller="Home"
+                                           asp-action="DeleteCompetitions"
+                                           asp-route-id="@competition.Id"
+                                           class="action-btn delete-btn">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+
+                                    </div>
+                                </td>
+
                             </tr>
                         }
-                        }
-                    </tbody>
-                </table>
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- Student Submissions -->
+    <section class="teacher-section">
+
+        <div class="section-header">
+
+            <div>
+                <span class="section-label">REVIEW</span>
+                <h2>Student Submissions</h2>
+                <p>Review paintings submitted by students.</p>
             </div>
 
-            <!-- Manage Exhibitions -->
-            <div class="dashboard-section">
-                <h3>Manage Exhibitions</h3>
-                <button class="btn-submit"><a asp-controller="Home" asp-action="CreateExhibitions">Create New Exhibition</a></button>
-
-                <table class="dashboard-table">
-                    <thead>
-                        <tr>
-                            <th>Exhibition Name</th>
-                            <th>Date</th>
-                            <th>Location</th>
-                            <th>Status</th>
-                            <th>Image</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @if (Model.Exhibitions.Count == 0)
-                        {
-                            <tr>
-                                <td class="text-center" colspan="6">No exhibitions available.</td>
-                            </tr>
-                        }
-                        else
-                        {
-                            @foreach (var exhibition in Model.Exhibitions)
-                            {
-                                <tr>
-                                    <td>@exhibition.Title</td>
-                                    <td>@exhibition.ExhibitionDate</td>
-                                    <td>@exhibition.Location</td>
-                                    <td>@exhibition.Status</td>
-                                    <td><img src="~/Uploads/images/@exhibition.Banner" alt="Competition image" height="50px" width="150px" /></td>
-                                    <td>
-                                        <button class="btn-small"><a asp-controller="Home" asp-action="UpdateExhibitions" asp-route-id="@exhibition.Id">Edit</a></button>
-                                        <button class="btn-small btn-danger"><a asp-controller="Home" asp-action="DeleteExhibitions" asp-route-id="@exhibition.Id">Delete</a></button>
-                                    </td>
-                                </tr>
-                            }
-                        }
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Manage Paintings Sent to Exhibitions -->
-            <div class="dashboard-section">
-                <h3>Paintings Sent to Exhibitions</h3>
-
-                <table class="dashboard-table">
-                    <thead>
-                        <tr>
-                            <th>Painting</th>
-                            <th>Student</th>
-                            <th>Exhibition</th>
-                            <th>Status</th>
-                            <th>Buyer</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Sunset Dreams</td>
-                            <td>Emma Watson</td>
-                            <td>Summer Arts 2025</td>
-                            <td>Sold</td>
-                            <td>Jane Doe</td>
-                        </tr>
-                        <tr>
-                            <td>City Lights</td>
-                            <td>John Doe</td>
-                            <td>Modern Art Fiesta</td>
-                            <td>Unsold</td>
-                            <td>-</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="section-icon">
+                <i class="fas fa-file-image"></i>
             </div>
 
         </div>
+
+
+        <div class="dashboard-table-wrapper">
+
+            <table class="teacher-table">
+
+                <thead>
+                    <tr>
+                        <th>Student</th>
+                        <th>Painting</th>
+                        <th>Creativity</th>
+                        <th>Remarks</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>
+                            <div class="student-cell">
+                                <div class="student-avatar">EW</div>
+                                <strong>Emma Watson</strong>
+                            </div>
+                        </td>
+
+                        <td>Sunset Dreams</td>
+
+                        <td>
+                            <span class="rating-badge">Better</span>
+                        </td>
+
+                        <td>Great use of colors!</td>
+
+                        <td>
+                            <button class="review-btn">
+                                <i class="fas fa-comment-alt"></i>
+                                Review
+                            </button>
+                        </td>
+                    </tr>
+
+                    <tr>
+
+                        <td>
+                            <div class="student-cell">
+                                <div class="student-avatar">JD</div>
+                                <strong>John Doe</strong>
+                            </div>
+                        </td>
+
+                        <td>City Lights</td>
+
+                        <td>
+                            <span class="rating-badge moderate">Moderate</span>
+                        </td>
+
+                        <td>Needs sharper contrasts.</td>
+
+                        <td>
+                            <button class="review-btn">
+                                <i class="fas fa-comment-alt"></i>
+                                Review
+                            </button>
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
     </section>
+
+
+    <!-- Awards -->
+    <section class="teacher-section">
+
+        <div class="section-header">
+
+            <div>
+                <span class="section-label">ACHIEVEMENTS</span>
+                <h2>Manage Awards</h2>
+                <p>Manage student awards and achievements.</p>
+            </div>
+
+            <a asp-controller="Home"
+               asp-action="CreateAwards"
+               class="primary-action">
+                <i class="fas fa-plus"></i>
+                Add Award
+            </a>
+
+        </div>
+
+
+        <div class="dashboard-table-wrapper">
+
+            <table class="teacher-table">
+
+                <thead>
+                    <tr>
+                        <th>Award</th>
+                        <th>Date</th>
+                        <th>Winner</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    @if (Model.Awards.Count == 0)
+                    {
+                        <tr>
+                            <td colspan="4" class="empty-state">
+                                <i class="fas fa-award"></i>
+                                <span>No awards available.</span>
+                            </td>
+                        </tr>
+                    }
+                    else
+                    {
+                        @foreach (var award in Model.Awards)
+                        {
+                            <tr>
+
+                                <td>
+                                    <div class="table-title">
+                                        <strong>@award.AwardTitle</strong>
+                                        <small>Student Achievement</small>
+                                    </div>
+                                </td>
+
+                                <td>@award.AwardedDate</td>
+
+                                <td>
+                                    <div class="student-cell">
+                                        <div class="student-avatar">
+                                            @(award.Student?.UserName?.Substring(0, 1).ToUpper() ?? "?")
+                                        </div>
+
+                                        <strong>
+                                            @(award.Student?.UserName ?? "Not Defined")
+                                        </strong>
+                                    </div>
+                                </td>
+
+                                <td>
+
+                                    <div class="table-actions">
+
+                                        <a asp-controller="Home"
+                                           asp-action="UpdateAwards"
+                                           asp-route-id="@award.Id"
+                                           class="action-btn edit-btn">
+                                            <i class="fas fa-pen"></i>
+                                        </a>
+
+                                        <a asp-controller="Home"
+                                           asp-action="DeleteAwards"
+                                           asp-route-id="@award.Id"
+                                           class="action-btn delete-btn">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+                        }
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- Exhibitions -->
+    <section class="teacher-section">
+
+        <div class="section-header">
+
+            <div>
+                <span class="section-label">SHOWCASE</span>
+                <h2>Manage Exhibitions</h2>
+                <p>Organize and manage art exhibitions.</p>
+            </div>
+
+            <a asp-controller="Home"
+               asp-action="CreateExhibitions"
+               class="primary-action">
+                <i class="fas fa-plus"></i>
+                Create Exhibition
+            </a>
+
+        </div>
+
+
+        <div class="dashboard-table-wrapper">
+
+            <table class="teacher-table">
+
+                <thead>
+                    <tr>
+                        <th>Exhibition</th>
+                        <th>Date</th>
+                        <th>Location</th>
+                        <th>Status</th>
+                        <th>Banner</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    @if (Model.Exhibitions.Count == 0)
+                    {
+                        <tr>
+                            <td colspan="6" class="empty-state">
+                                <i class="fas fa-images"></i>
+                                <span>No exhibitions available.</span>
+                            </td>
+                        </tr>
+                    }
+                    else
+                    {
+                        @foreach (var exhibition in Model.Exhibitions)
+                        {
+                            <tr>
+
+                                <td>
+                                    <div class="table-title">
+                                        <strong>@exhibition.Title</strong>
+                                        <small>Art Exhibition</small>
+                                    </div>
+                                </td>
+
+                                <td>@exhibition.ExhibitionDate</td>
+
+                                <td>
+                                    <span class="location-text">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        @exhibition.Location
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <span class="status-badge">
+                                        @exhibition.Status
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <img src="~/Uploads/images/@exhibition.Banner"
+                                         class="table-image"
+                                         alt="Exhibition image" />
+                                </td>
+
+                                <td>
+
+                                    <div class="table-actions">
+
+                                        <a asp-controller="Home"
+                                           asp-action="UpdateExhibitions"
+                                           asp-route-id="@exhibition.Id"
+                                           class="action-btn edit-btn">
+                                            <i class="fas fa-pen"></i>
+                                        </a>
+
+                                        <a asp-controller="Home"
+                                           asp-action="DeleteExhibitions"
+                                           asp-route-id="@exhibition.Id"
+                                           class="action-btn delete-btn">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+                        }
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- Paintings Sent To Exhibitions -->
+    <section class="teacher-section">
+
+        <div class="section-header">
+
+            <div>
+                <span class="section-label">EXHIBITION SALES</span>
+                <h2>Paintings in Exhibitions</h2>
+                <p>Track student paintings displayed in exhibitions.</p>
+            </div>
+
+            <div class="section-icon">
+                <i class="fas fa-paint-brush"></i>
+            </div>
+
+        </div>
+
+
+        <div class="dashboard-table-wrapper">
+
+            <table class="teacher-table">
+
+                <thead>
+                    <tr>
+                        <th>Painting</th>
+                        <th>Student</th>
+                        <th>Exhibition</th>
+                        <th>Status</th>
+                        <th>Buyer</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>
+                            <strong>Sunset Dreams</strong>
+                        </td>
+
+                        <td>Emma Watson</td>
+
+                        <td>Summer Arts 2025</td>
+
+                        <td>
+                            <span class="sale-status sold">
+                                Sold
+                            </span>
+                        </td>
+
+                        <td>Jane Doe</td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <strong>City Lights</strong>
+                        </td>
+
+                        <td>John Doe</td>
+
+                        <td>Modern Art Fiesta</td>
+
+                        <td>
+                            <span class="sale-status unsold">
+                                Unsold
+                            </span>
+                        </td>
+
+                        <td>—</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
 </main>
-<!-- Main Content End -->
