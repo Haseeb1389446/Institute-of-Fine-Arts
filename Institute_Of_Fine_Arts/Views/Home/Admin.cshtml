@@ -1,136 +1,591 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@model List<Microsoft.AspNetCore.Identity.IdentityUser>;
 
-<!-- Main Content Start -->
-<main class="main-content">
-    <section class="section">
-        <div class="container">
-            <h2>Welcome, Administrator!</h2>
+@model List<Microsoft.AspNetCore.Identity.IdentityUser>
 
-            <!-- Manage Staff -->
-            <div class="dashboard-section">
-                <h3>Manage Staff</h3>
-                <a class="btn-submit btn" asp-controller="Auth" asp-action="Register">Add New Staff Member</a>
+<!-- Administrator Dashboard -->
+<main class="admin-dashboard">
 
-                <table class="dashboard-table">
+    <div class="admin-container">
+
+        <!-- Dashboard Header -->
+        <div class="dashboard-header">
+            <div>
+                <span class="dashboard-label">
+                    ADMINISTRATOR PANEL
+                </span>
+
+                <h1>
+                    Welcome, Administrator!
+                </h1>
+
+                <p>
+                    Manage staff, students, submissions and system activities
+                    from one central dashboard.
+                </p>
+            </div>
+
+            <div class="admin-header-icon">
+                <i class="fas fa-user-shield"></i>
+            </div>
+        </div>
+
+
+        <!-- Statistics -->
+        <div class="admin-stats">
+
+            <div class="admin-stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+
+                <div>
+                    <span>Staff Members</span>
+                    <strong>
+                        @(ViewBag.staff?.Count ?? 0)
+                    </strong>
+                </div>
+            </div>
+
+
+            <div class="admin-stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+
+                <div>
+                    <span>Students</span>
+                    <strong>
+                        @(ViewBag.Students?.Count ?? 0)
+                    </strong>
+                </div>
+            </div>
+
+
+            <div class="admin-stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-paintbrush"></i>
+                </div>
+
+                <div>
+                    <span>Submissions</span>
+                    <strong>24</strong>
+                </div>
+            </div>
+
+
+            <div class="admin-stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+
+                <div>
+                    <span>Pending Reviews</span>
+                    <strong>08</strong>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Manage Staff -->
+        <section class="admin-section">
+
+            <div class="admin-section-header">
+
+                <div>
+                    <span class="section-mini-label">
+                        USER MANAGEMENT
+                    </span>
+
+                    <h2>
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        Manage Staff
+                    </h2>
+
+                    <p>
+                        View and manage registered staff members.
+                    </p>
+                </div>
+
+                <a class="admin-primary-btn"
+                   asp-controller="Auth"
+                   asp-action="Register">
+
+                    <i class="fas fa-plus"></i>
+                    Add Staff
+                </a>
+
+            </div>
+
+
+            <div class="admin-table-wrapper">
+
+                <table class="admin-table">
+
                     <thead>
                         <tr>
-                            <th>Staff Name</th>
-                            <th>Email</th>
+                            <th>Staff Member</th>
+                            <th>Email Address</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
+
                     <tbody>
+
                         @if (ViewBag.staff != null && ViewBag.staff.Count > 0)
                         {
                             @foreach (var user in ViewBag.staff)
-                        {
-                        <tr>
-                            <td>@user.UserName</td>
-                            <td>@user.Email</td>
-                            <td>
-                                <button class="btn-small"><a asp-controller="Home" asp-action="EditUser" asp-route-id="@user.Id">Edit</a></button>
-                                <button class="btn-small btn-danger"><a asp-controller="Home" asp-action="DeleteUser" asp-route-id="@user.Id">Delete</a></button>
-                            </td>
-                        </tr>    
-                        }   
+                            {
+                                <tr>
+
+                                    <td>
+                                        <div class="user-cell">
+
+                                            <div class="table-avatar">
+                                                @(user.UserName?.Substring(0, 1).ToUpper())
+                                            </div>
+
+                                            <div>
+                                                <strong>
+                                                    @user.UserName
+                                                </strong>
+
+                                                <small>
+                                                    Staff Member
+                                                </small>
+                                            </div>
+
+                                        </div>
+                                    </td>
+
+
+                                    <td class="email-cell">
+                                        @user.Email
+                                    </td>
+
+
+                                    <td>
+
+                                        <div class="table-actions">
+
+                                            <a class="action-btn edit-btn"
+                                               asp-controller="Home"
+                                               asp-action="EditUser"
+                                               asp-route-id="@user.Id">
+
+                                                <i class="fas fa-pen"></i>
+                                                Edit
+                                            </a>
+
+
+                                            <a class="action-btn delete-btn"
+                                               asp-controller="Home"
+                                               asp-action="DeleteUser"
+                                               asp-route-id="@user.Id">
+
+                                                <i class="fas fa-trash"></i>
+                                                Delete
+                                            </a>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+                            }
                         }
+                        else
+                        {
+                            <tr>
+                                <td colspan="3">
+                                    <div class="empty-state">
+                                        <i class="fas fa-users"></i>
+                                        <h3>No Staff Members</h3>
+                                        <p>No staff members have been registered yet.</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+
                     </tbody>
+
                 </table>
+
             </div>
 
-            <!-- Manage Students -->
-            <div class="dashboard-section">
-                <h3>Manage Students</h3>
-                <a class="btn-submit btn" asp-controller="Auth" asp-action="Register">Add New Student</a>
+        </section>
 
-                <table class="dashboard-table">
+
+        <!-- Manage Students -->
+        <section class="admin-section">
+
+            <div class="admin-section-header">
+
+                <div>
+                    <span class="section-mini-label">
+                        STUDENT MANAGEMENT
+                    </span>
+
+                    <h2>
+                        <i class="fas fa-user-graduate"></i>
+                        Manage Students
+                    </h2>
+
+                    <p>
+                        Manage student accounts and registration details.
+                    </p>
+                </div>
+
+
+                <a class="admin-primary-btn"
+                   asp-controller="Auth"
+                   asp-action="Register">
+
+                    <i class="fas fa-user-plus"></i>
+                    Add Student
+                </a>
+
+            </div>
+
+
+            <div class="admin-table-wrapper">
+
+                <table class="admin-table">
+
                     <thead>
                         <tr>
-                            <th>Student Name</th>
-                            <th>Email</th>
+                            <th>Student</th>
+                            <th>Email Address</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
+
+
                     <tbody>
+
                         @if (ViewBag.Students != null && ViewBag.Students.Count > 0)
                         {
                             @foreach (var user in ViewBag.Students)
                             {
                                 <tr>
-                                    <td>@user.UserName</td>
-                                    <td>@user.Email</td>
+
                                     <td>
-                                        <button class="btn-small"><a asp-controller="Home" asp-action="EditUser" asp-route-id="@user.Id">Edit</a></button>
-                                        <button class="btn-small btn-danger"><a asp-controller="Home" asp-action="DeleteUser" asp-route-id="@user.Id">Delete</a></button>
+
+                                        <div class="user-cell">
+
+                                            <div class="table-avatar">
+                                                @(user.UserName?.Substring(0, 1).ToUpper())
+                                            </div>
+
+                                            <div>
+
+                                                <strong>
+                                                    @user.UserName
+                                                </strong>
+
+                                                <small>
+                                                    Student
+                                                </small>
+
+                                            </div>
+
+                                        </div>
+
                                     </td>
+
+
+                                    <td class="email-cell">
+                                        @user.Email
+                                    </td>
+
+
+                                    <td>
+
+                                        <div class="table-actions">
+
+                                            <a class="action-btn edit-btn"
+                                               asp-controller="Home"
+                                               asp-action="EditUser"
+                                               asp-route-id="@user.Id">
+
+                                                <i class="fas fa-pen"></i>
+                                                Edit
+                                            </a>
+
+
+                                            <a class="action-btn delete-btn"
+                                               asp-controller="Home"
+                                               asp-action="DeleteUser"
+                                               asp-route-id="@user.Id">
+
+                                                <i class="fas fa-trash"></i>
+                                                Delete
+                                            </a>
+
+                                        </div>
+
+                                    </td>
+
                                 </tr>
                             }
                         }
+                        else
+                        {
+                            <tr>
+                                <td colspan="3">
+
+                                    <div class="empty-state">
+
+                                        <i class="fas fa-user-graduate"></i>
+
+                                        <h3>No Students</h3>
+
+                                        <p>
+                                            No students have been registered yet.
+                                        </p>
+
+                                    </div>
+
+                                </td>
+                            </tr>
+                        }
+
                     </tbody>
+
                 </table>
+
             </div>
 
-            <!-- View Student Submissions -->
-            <div class="dashboard-section">
-                <h3>Student Submissions</h3>
+        </section>
 
-                <table class="dashboard-table">
+
+        <!-- Student Submissions -->
+        <section class="admin-section">
+
+            <div class="admin-section-header">
+
+                <div>
+                    <span class="section-mini-label">
+                        ARTWORK REVIEW
+                    </span>
+
+                    <h2>
+                        <i class="fas fa-images"></i>
+                        Student Submissions
+                    </h2>
+
+                    <p>
+                        Monitor submitted artwork and review status.
+                    </p>
+                </div>
+
+                <a href="#" class="view-all-btn">
+                    View All
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <div class="admin-table-wrapper">
+
+                <table class="admin-table">
+
                     <thead>
                         <tr>
-                            <th>Student Name</th>
+                            <th>Student</th>
                             <th>Painting</th>
                             <th>Competition</th>
                             <th>Status</th>
                         </tr>
                     </thead>
+
+
                     <tbody>
+
                         <tr>
-                            <td>Emma Watson</td>
-                            <td>Sunset Dreams</td>
-                            <td>Annual Art Gala 2025</td>
-                            <td>Approved</td>
+
+                            <td>
+                                <div class="user-cell">
+                                    <div class="table-avatar">
+                                        E
+                                    </div>
+
+                                    <strong>
+                                        Emma Watson
+                                    </strong>
+                                </div>
+                            </td>
+
+                            <td>
+                                Sunset Dreams
+                            </td>
+
+                            <td>
+                                Annual Art Gala 2025
+                            </td>
+
+                            <td>
+                                <span class="status-badge approved">
+                                    Approved
+                                </span>
+                            </td>
+
                         </tr>
+
+
                         <tr>
-                            <td>John Doe</td>
-                            <td>City Lights</td>
-                            <td>Modern Expressionism Contest</td>
-                            <td>Pending Review</td>
+
+                            <td>
+
+                                <div class="user-cell">
+
+                                    <div class="table-avatar">
+                                        J
+                                    </div>
+
+                                    <strong>
+                                        John Doe
+                                    </strong>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                City Lights
+                            </td>
+
+                            <td>
+                                Modern Expressionism Contest
+                            </td>
+
+                            <td>
+                                <span class="status-badge pending">
+                                    Pending Review
+                                </span>
+                            </td>
+
                         </tr>
+
                     </tbody>
+
                 </table>
+
             </div>
 
-            <!-- View Staff Activity -->
-            <div class="dashboard-section">
-                <h3>Staff Activity</h3>
+        </section>
 
-                <table class="dashboard-table">
-                    <thead>
-                        <tr>
-                            <th>Staff Member</th>
-                            <th>Activity</th>
-                            <th>Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Olivia Smith</td>
-                            <td>Reviewed Painting: "Sunset Dreams"</td>
-                            <td>April 24, 2025</td>
-                        </tr>
-                        <tr>
-                            <td>Michael Johnson</td>
-                            <td>Created Competition: "Modern Expressionism Contest"</td>
-                            <td>April 20, 2025</td>
-                        </tr>
-                    </tbody>
-                </table>
+
+        <!-- Staff Activity -->
+        <section class="admin-section">
+
+            <div class="admin-section-header">
+
+                <div>
+
+                    <span class="section-mini-label">
+                        SYSTEM ACTIVITY
+                    </span>
+
+                    <h2>
+                        <i class="fas fa-chart-line"></i>
+                        Staff Activity
+                    </h2>
+
+                    <p>
+                        Track recent activities performed by staff members.
+                    </p>
+
+                </div>
+
             </div>
 
-        </div>
-    </section>
+
+            <div class="activity-list">
+
+                <div class="activity-item">
+
+                    <div class="activity-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+
+                    <div class="activity-content">
+
+                        <strong>
+                            Olivia Smith
+                        </strong>
+
+                        <p>
+                            Reviewed painting
+                            <b>"Sunset Dreams"</b>
+                        </p>
+
+                        <small>
+                            April 24, 2025
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="activity-item">
+
+                    <div class="activity-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+
+                    <div class="activity-content">
+
+                        <strong>
+                            Michael Johnson
+                        </strong>
+
+                        <p>
+                            Created competition
+                            <b>"Modern Expressionism Contest"</b>
+                        </p>
+
+                        <small>
+                            April 20, 2025
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="activity-item">
+
+                    <div class="activity-icon">
+                        <i class="fas fa-image"></i>
+                    </div>
+
+                    <div class="activity-content">
+
+                        <strong>
+                            Staff Member
+                        </strong>
+
+                        <p>
+                            Added a new painting submission.
+                        </p>
+
+                        <small>
+                            Recently
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
 </main>
-<!-- Main Content End -->
