@@ -3,31 +3,205 @@
 *@
 @{
 }
-<div class="container">
-    <h2>All Art Submissions</h2>
 
-    <!-- Painting Card Example (Repeat dynamically using backend loop) -->
-    <div class="painting-card">
-        <img src="uploads/art1.jpg" alt="Artwork by Olivia">
-        <div class="details">
-            <h3>Annual Art Gala 2024</h3>
-            <p><strong>Artist:</strong> Olivia Smith</p>
-            <p><strong>Description:</strong> A visual journey through abstraction using vibrant color schemes.</p>
-            <p><strong>Submitted On:</strong> 2024-03-15</p>
-            <p><strong>Grade:</strong> A+</p>
-            <p><strong>Remarks:</strong> Excellent use of contrast and layering.</p>
-        </div>
-    </div>
+<main class="paintings-page">
 
-    <div class="painting-card">
-        <img src="uploads/art2.jpg" alt="Artwork by John">
-        <div class="details">
-            <h3>Modern Expressionism Contest</h3>
-            <p><strong>Artist:</strong> John Doe</p>
-            <p><strong>Description:</strong> Explores emotion through brushstroke rhythm.</p>
-            <p><strong>Submitted On:</strong> 2024-04-10</p>
-            <p><strong>Grade:</strong> B</p>
-            <p><strong>Remarks:</strong> Good effort but composition could improve.</p>
+    <!-- Page Header -->
+    <section class="paintings-hero">
+        <div class="container">
+            <span class="page-label">ART COLLECTION</span>
+            <h1>All Art Submissions</h1>
+            <p>
+                Explore creative artworks submitted by talented artists
+                from our competitions and exhibitions.
+            </p>
         </div>
-    </div>
-    <!-- End of card loop -->
+    </section>
+
+
+    <!-- Paintings Section -->
+    <section class="paintings-section">
+        <div class="container">
+
+            <div class="section-heading">
+                <div>
+                    <span>FEATURED COLLECTION</span>
+                    <h2>Submitted Artworks</h2>
+                </div>
+
+                <div class="art-count">
+                    <strong>02</strong>
+                    <small>Artworks</small>
+                </div>
+            </div>
+
+
+            <!-- Painting Card -->
+            <article class="artwork-card">
+
+                <div class="artwork-image">
+                    <img src="~/uploads/art1.jpg" alt="Artwork by Olivia">
+
+                    <div class="artwork-badge">
+                        <i class="fas fa-palette"></i>
+                        Art Submission
+                    </div>
+                </div>
+
+                <div class="artwork-content">
+
+                    <div class="artwork-meta">
+                        <span>
+                            <i class="fas fa-trophy"></i>
+                            Annual Art Gala 2024
+                        </span>
+
+                        <span>
+                            <i class="far fa-calendar"></i>
+                            Mar 15, 2024
+                        </span>
+                    </div>
+
+                    <h3>Annual Art Gala 2024</h3>
+
+                    <div class="artist-info">
+                        <div class="artist-avatar">
+                            O
+                        </div>
+
+                        <div>
+                            <small>ARTIST</small>
+                            <strong>Olivia Smith</strong>
+                        </div>
+                    </div>
+
+                    <p class="artwork-description">
+                        A visual journey through abstraction using vibrant
+                        color schemes and expressive artistic techniques.
+                    </p>
+
+                    <div class="artwork-details">
+
+                        <div>
+                            <span>Grade</span>
+                            <strong class="grade">A+</strong>
+                        </div>
+
+                        <div>
+                            <span>Review Status</span>
+                            <strong class="status-approved">
+                                <i class="fas fa-check-circle"></i>
+                                Reviewed
+                            </strong>
+                        </div>
+
+                    </div>
+
+                    <div class="remarks">
+                        <i class="fas fa-quote-left"></i>
+
+                        <div>
+                            <small>JUDGE'S REMARKS</small>
+                            <p>
+                                Excellent use of contrast and layering.
+                            </p>
+                        </div>
+                    </div>
+
+                    <button class="artwork-btn">
+                        <a asp-controller="Home" asp-action="PaintingDetails">
+                        <i class="fas fa-eye"></i>
+                        View Artwork
+                        </a>
+                    </button>
+
+                </div>
+            </article>
+
+
+            <!-- Painting Card -->
+            <article class="artwork-card">
+
+                <div class="artwork-image">
+                    <img src="~/uploads/art2.jpg" alt="Artwork by John">
+
+                    <div class="artwork-badge">
+                        <i class="fas fa-palette"></i>
+                        Art Submission
+                    </div>
+                </div>
+
+                <div class="artwork-content">
+
+                    <div class="artwork-meta">
+                        <span>
+                            <i class="fas fa-trophy"></i>
+                            Modern Expressionism Contest
+                        </span>
+
+                        <span>
+                            <i class="far fa-calendar"></i>
+                            Apr 10, 2024
+                        </span>
+                    </div>
+
+                    <h3>Modern Expressionism Contest</h3>
+
+                    <div class="artist-info">
+                        <div class="artist-avatar">
+                            J
+                        </div>
+
+                        <div>
+                            <small>ARTIST</small>
+                            <strong>John Doe</strong>
+                        </div>
+                    </div>
+
+                    <p class="artwork-description">
+                        Explores emotion through expressive brushstroke
+                        rhythm and modern artistic composition.
+                    </p>
+
+                    <div class="artwork-details">
+
+                        <div>
+                            <span>Grade</span>
+                            <strong class="grade">B</strong>
+                        </div>
+
+                        <div>
+                            <span>Review Status</span>
+                            <strong class="status-reviewed">
+                                <i class="fas fa-check-circle"></i>
+                                Reviewed
+                            </strong>
+                        </div>
+
+                    </div>
+
+                    <div class="remarks">
+                        <i class="fas fa-quote-left"></i>
+
+                        <div>
+                            <small>JUDGE'S REMARKS</small>
+                            <p>
+                                Good effort, but composition could improve.
+                            </p>
+                        </div>
+                    </div>
+
+                    <button class="artwork-btn">
+                        <a asp-controller="Home" asp-action="PaintingDetails">
+                        <i class="fas fa-eye"></i>
+                        View Artwork
+                        </a>
+                    </button>
+
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+</main>

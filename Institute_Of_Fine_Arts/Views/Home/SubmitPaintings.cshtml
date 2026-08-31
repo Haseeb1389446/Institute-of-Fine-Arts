@@ -1,50 +1,198 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@model Painting;
+﻿@model Painting
 
-<div class="submitpantings container">
-    <h2>Submit Your Artwork</h2>
-    <form class="register-form" method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="SubmitPaintings">
-        <label for="title">Painting Name:</label>
-        <input type="text" asp-for="PaintingName" id="title" />
-        <span asp-validation-for="PaintingName" style="color:red;"></span>
+<main class="main-content">
 
-        <input hidden type="text" value="@(ViewData["UserId"])" asp-for="StudentId" />
-         
-        <label for="description">Painting Description:</label>
-        <textarea asp-for="Description" id="description" rows="4"></textarea>
-        <span asp-validation-for="Description" style="color:red;"></span>
+    <section class="painting-submit-section">
 
-      @*   <label for="submission_date">Submission Date:</label>
-        <input type="date" asp-for="DatePosted" id="submission_date" />
-        <span asp-validation-for="DatePosted" style="color:red;"></span> *@
+        <div class="container">
 
-        <label for="remarks">Poem Or Quote:</label>
-        <textarea asp-for="PoemOrQuote" id="PoemOrQuote" rows="3"></textarea>
-        <span asp-validation-for="PoemOrQuote" style="color:red;"></span>
+            <div class="painting-submit-card">
 
-        <label for="remarks">Poem Or Quote:</label>
-        <select asp-for="CompetitionId">
-            @{
-                var competitions = TempData["Competitions"] as List<Competition>;
-                if(competitions != null)
-                {
-                    foreach (var competition in competitions)
-                    {
-                        <option value="@competition.Id">@competition.Title</option>
-                    }
-                    
-                }
-            }
-        </select>
-        <span asp-validation-for="PoemOrQuote" style="color:red;"></span>
+                <!-- Header -->
+                <div class="painting-form-header">
 
-        <label for="image">Upload Artwork:</label>
-        <label for="painting" class="w-100" style="display: inline-block; padding: 6px 12px; background-color: #d1865c; color: white; cursor: pointer; border-radius: 4px; text-align: center;">Upload Painting</label>
-        <input hidden type="file" name="paintingimage" id="painting" />
-        <span asp-validation-for="PaintingImage" style="color:red;"></span>
+                    <div class="painting-icon">
+                        <i class="fas fa-paintbrush"></i>
+                    </div>
 
-        <button class="register-link" type="submit">Submit Painting</button>
-    </form>
-</div>
+                    <div>
+                        <h2>Submit Your Artwork</h2>
+                        <p>Share your creativity with the Institute of Fine Arts.</p>
+                    </div>
+
+                </div>
+
+
+                <form method="post"
+                      enctype="multipart/form-data"
+                      asp-controller="Home"
+                      asp-action="SubmitPaintings"
+                      class="painting-form">
+
+                    <!-- Painting Name -->
+                    <div class="painting-form-group">
+
+                        <label for="title">
+                            <i class="fas fa-heading"></i>
+                            Painting Name
+                        </label>
+
+                        <input type="text"
+                               asp-for="PaintingName"
+                               id="title"
+                               placeholder="Enter your artwork title">
+
+                        <span asp-validation-for="PaintingName"
+                              class="painting-validation"></span>
+
+                    </div>
+
+
+                    <!-- Student ID -->
+                    <input type="hidden"
+                           value="@(ViewData["UserId"])"
+                           asp-for="StudentId" />
+
+
+                    <!-- Description -->
+                    <div class="painting-form-group">
+
+                        <label for="description">
+                            <i class="fas fa-align-left"></i>
+                            Artwork Description
+                        </label>
+
+                        <textarea asp-for="Description"
+                                  id="description"
+                                  rows="5"
+                                  placeholder="Describe your artwork, inspiration, technique, or concept..."></textarea>
+
+                        <span asp-validation-for="Description"
+                              class="painting-validation"></span>
+
+                    </div>
+
+
+                    <!-- Poem / Quote -->
+                    <div class="painting-form-group">
+
+                        <label for="PoemOrQuote">
+                            <i class="fas fa-quote-left"></i>
+                            Poem or Quote
+                            <span class="optional-text">(Optional)</span>
+                        </label>
+
+                        <textarea asp-for="PoemOrQuote"
+                                  id="PoemOrQuote"
+                                  rows="3"
+                                  placeholder="Add a meaningful poem or quote related to your artwork..."></textarea>
+
+                        <span asp-validation-for="PoemOrQuote"
+                              class="painting-validation"></span>
+
+                    </div>
+
+
+                    <!-- Competition -->
+                    <div class="painting-form-group">
+
+                        <label for="competition">
+                            <i class="fas fa-trophy"></i>
+                            Select Competition
+                        </label>
+
+                        <select asp-for="CompetitionId"
+                                id="competition">
+
+                            <option value="">
+                                -- Select Competition --
+                            </option>
+
+                            @{
+                                var competitions =
+                                TempData["Competitions"] as List<Competition>;
+
+                                if (competitions != null)
+                                {
+                                    foreach (var competition in competitions)
+                                    {
+                                        <option value="@competition.Id">
+                                            @competition.Title
+                                        </option>
+                                    }
+                                }
+                            }
+
+                        </select>
+
+                        <span asp-validation-for="CompetitionId"
+                              class="painting-validation"></span>
+
+                    </div>
+
+
+                    <!-- Artwork Upload -->
+                    <div class="painting-form-group">
+
+                        <label>
+                            <i class="fas fa-image"></i>
+                            Upload Artwork
+                        </label>
+
+                        <label for="painting"
+                               class="painting-upload-box">
+
+                            <div class="upload-art-icon">
+                                <i class="fas fa-cloud-arrow-up"></i>
+                            </div>
+
+                            <div class="upload-art-text">
+
+                                <strong>Upload your artwork</strong>
+
+                                <span>
+                                    Click here to choose an image
+                                </span>
+
+                                <small>
+                                    JPG, JPEG or PNG recommended
+                                </small>
+
+                            </div>
+
+                        </label>
+
+                        <input type="file"
+                               name="paintingimage"
+                               id="painting"
+                               hidden />
+
+                        <span asp-validation-for="PaintingImage"
+                              class="painting-validation"></span>
+
+                    </div>
+
+
+                    <!-- Submit -->
+                    <div class="painting-submit-actions">
+
+                        <button type="submit"
+                                class="submit-painting-btn">
+
+                            <i class="fas fa-paper-plane"></i>
+
+                            Submit Artwork
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>

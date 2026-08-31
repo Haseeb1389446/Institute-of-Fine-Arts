@@ -1,40 +1,147 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-@model Exhibition;
+﻿@model Exhibition
 
-<div class="createexhibition container mt-5 mb-5">
-    <h2>Update This Exhibition</h2>
-    <form method="POST" enctype="multipart/form-data" asp-controller="Home" asp-action="UpdateExhibitions">
+<main class="main-content">
+    <section class="exhibition-form-section">
+        <div class="container">
 
-        <label for="title">Exhibition Title:</label>
-        <input type="text" id="title" asp-for="Title">
-        <span asp-validation-for="Title" style="color:red;"></span>
+            <div class="exhibition-form-card">
 
-        <label for="Exhibition_date">Exhibition Date:</label>
-        <input type="date" id="Exhibition_date" asp-for="ExhibitionDate">
-        <span asp-validation-for="ExhibitionDate" style="color:red;"></span>
+                <!-- Header -->
+                <div class="form-header">
+                    <div class="form-icon">
+                        <i class="fas fa-pen-to-square"></i>
+                    </div>
 
-        <label for="location">Location:</label>
-        <input type="text" id="location" asp-for="Location">
-        <span asp-validation-for="Location" style="color:red;"></span>
+                    <div>
+                        <h2>Update Exhibition</h2>
+                        <p>Update exhibition details and banner information.</p>
+                    </div>
+                </div>
 
-        <label for="award_status">Status:</label>
-        <select class="form-control" asp-for="Status">
-            <option>---- Select Status ----</option>
-            <option value="OnGoing">OnGoing</option>
-            <option value="UpComming">UpComming</option>
-            <option value="Completed">Completed</option>
-        </select>
-        <span asp-validation-for="Status" style="color:red;"></span>
+                <form method="POST"
+                      enctype="multipart/form-data"
+                      asp-controller="Home"
+                      asp-action="UpdateExhibitions"
+                      class="modern-exhibition-form">
 
-        <label for="banner">Upload Banner Image:</label>
-        <label for="banner" class="w-100" style="display: inline-block; padding: 6px 12px; background-color: #d1865c; color: white; cursor: pointer; border-radius: 4px; text-align: center;">Upload Banner</label>
-        <input hidden type="file" id="banner" name="exhibitionimage" />
-        <span asp-validation-for="Banner" style="color:red;"></span>
+                    <!-- Exhibition Title -->
+                    <div class="modern-form-group">
+                        <label for="title">
+                            <i class="fas fa-heading"></i>
+                            Exhibition Title
+                        </label>
 
-        <button type="submit">Update Exhibition</button>
-    </form>
-</div>
+                        <input type="text"
+                               id="title"
+                               asp-for="Title"
+                               placeholder="Enter exhibition title">
+
+                        <span asp-validation-for="Title"
+                              class="validation-message"></span>
+                    </div>
+
+                    <!-- Exhibition Date -->
+                    <div class="modern-form-group">
+                        <label for="Exhibition_date">
+                            <i class="fas fa-calendar-alt"></i>
+                            Exhibition Date
+                        </label>
+
+                        <input type="date"
+                               id="Exhibition_date"
+                               asp-for="ExhibitionDate">
+
+                        <span asp-validation-for="ExhibitionDate"
+                              class="validation-message"></span>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="modern-form-group">
+                        <label for="location">
+                            <i class="fas fa-location-dot"></i>
+                            Location
+                        </label>
+
+                        <input type="text"
+                               id="location"
+                               asp-for="Location"
+                               placeholder="Enter exhibition location">
+
+                        <span asp-validation-for="Location"
+                              class="validation-message"></span>
+                    </div>
+
+                    <!-- Status -->
+                    <div class="modern-form-group">
+                        <label for="status">
+                            <i class="fas fa-circle-check"></i>
+                            Exhibition Status
+                        </label>
+
+                        <select id="status"
+                                asp-for="Status">
+
+                            <option value="">-- Select Status --</option>
+                            <option value="OnGoing">OnGoing</option>
+                            <option value="UpComming">UpComming</option>
+                            <option value="Completed">Completed</option>
+
+                        </select>
+
+                        <span asp-validation-for="Status"
+                              class="validation-message"></span>
+                    </div>
+
+                    <!-- Banner -->
+                    <div class="form-section">
+                        <label>
+                            <i class="fas fa-image"></i>
+                            Exhibition Banner
+                        </label>
+
+                        <label for="banner" class="upload-box">
+
+                            <i class="fas fa-cloud-arrow-up"></i>
+
+                            <span>
+                                <strong>Choose a new banner</strong>
+                                <small>Leave unchanged if you don't want to replace it</small>
+                            </span>
+
+                        </label>
+
+                        <input type="file"
+                               id="banner"
+                               name="exhibitionimage"
+                               hidden>
+
+                        <span asp-validation-for="Banner"
+                              class="validation-message"></span>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="exhibition-form-actions">
+
+                        <a asp-controller="Home"
+                           asp-action="Index"
+                           class="cancel-btn">
+                            Cancel
+                        </a>
+
+                        <button type="submit"
+                                class="create-exhibition-btn">
+
+                            <i class="fas fa-save"></i>
+                            Update Exhibition
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+    </section>
+</main>

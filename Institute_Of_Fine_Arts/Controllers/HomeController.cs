@@ -381,6 +381,11 @@ namespace Institute_Of_Fine_Arts.Controllers
         {
             return View();
         }
+        
+        public IActionResult PaintingDetails()
+        {
+            return View();
+        }
 
         public async Task<IActionResult> Student()
         {
