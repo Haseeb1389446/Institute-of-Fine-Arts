@@ -1,36 +1,149 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@{
-}
 
-@model Microsoft.AspNetCore.Identity.IdentityUser;
+@model Microsoft.AspNetCore.Identity.IdentityUser
 
-<!-- Main Content Start -->
-<main class="main-content">
-    <section class="section">
-        <div class="container">
-            <h2>Edit User</h2>
+<main class="edit-user-page">
 
-            <form class="login-form" asp-controller="Home" asp-action="EditUser" method="POST">
+    <div class="edit-user-container">
 
-                <div class="form-group">
-                    <label for="email">Email Address:</label>
-                    <input type="text" id="name" asp-for="UserName">
+        <!-- Header -->
+        <div class="edit-page-header">
+
+            <div>
+                <span class="edit-label">
+                    USER MANAGEMENT
+                </span>
+
+                <h1>Edit User</h1>
+
+                <p>
+                    Update the user's account information and save your changes.
+                </p>
+            </div>
+
+            <div class="edit-header-icon">
+                <i class="fas fa-user-pen"></i>
+            </div>
+
+        </div>
+
+
+        <!-- Edit Card -->
+        <div class="edit-user-card">
+
+            <div class="edit-card-top">
+
+                <div class="profile-icon">
+                    <i class="fas fa-user"></i>
                 </div>
 
-                <div class="form-group">
-                    <label for="email">Email Address:</label>
-                    <input type="email" id="email" asp-for="Email">
+                <div>
+                    <h2>User Information</h2>
+                    <p>Modify the details below.</p>
                 </div>
 
-                <div class="form-group">
-                    <button type="submit" class="btn-submit">Update</button>
+            </div>
+
+
+            <form asp-controller="Home"
+                  asp-action="EditUser"
+                  method="POST"
+                  class="edit-user-form">
+
+                <input type="hidden" asp-for="Id" />
+
+                <!-- Username -->
+                <div class="edit-form-group">
+
+                    <label asp-for="UserName">
+                        <i class="fas fa-user"></i>
+                        Username
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fas fa-user input-icon"></i>
+
+                        <input type="text"
+                               asp-for="UserName"
+                               placeholder="Enter username"
+                               autocomplete="username" />
+
+                    </div>
+
+                </div>
+
+
+                <!-- Email -->
+                <div class="edit-form-group">
+
+                    <label asp-for="Email">
+                        <i class="fas fa-envelope"></i>
+                        Email Address
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fas fa-envelope input-icon"></i>
+
+                        <input type="email"
+                               asp-for="Email"
+                               placeholder="Enter email address"
+                               autocomplete="email" />
+
+                    </div>
+
+                </div>
+
+
+                <!-- Buttons -->
+                <div class="edit-form-actions">
+
+                    <a asp-controller="Home"
+                       asp-action="Index"
+                       class="cancel-btn">
+
+                        <i class="fas fa-arrow-left"></i>
+                        Cancel
+
+                    </a>
+
+
+                    <button type="submit"
+                            class="update-user-btn">
+
+                        <i class="fas fa-check"></i>
+                        Update User
+
+                    </button>
+
                 </div>
 
             </form>
 
         </div>
-    </section>
+
+
+        <!-- Security Note -->
+        <div class="edit-security-note">
+
+            <div class="security-icon">
+                <i class="fas fa-shield-halved"></i>
+            </div>
+
+            <div>
+                <strong>Account Security</strong>
+
+                <p>
+                    User credentials are securely managed by
+                    ASP.NET Core Identity.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
 </main>
-<!-- Main Content End -->

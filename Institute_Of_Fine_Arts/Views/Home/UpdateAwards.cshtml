@@ -1,27 +1,98 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model Award
 
-@model Award;
+<main class="main-content">
+    <section class="award-form-section">
+        <div class="container">
 
-<div class="craeteawards container">
-    <h2>Update Award</h2>
-    <form method="post" asp-controller="Home" asp-action="UpdateAwards">
-        <label for="awardName">Award Name</label>
-        <input type="text" id="awardName" asp-for="AwardTitle" placeholder="Enter award name">
-        <span asp-validation-for="AwardTitle" style="color: red;"></span>
+            <div class="award-form-card">
 
-        <label for="dateGiven">Date Given</label>
-        <input type="date" asp-for="AwardedDate" id="dateGiven">
-        <span asp-validation-for="AwardedDate" style="color: red;"></span>
+                <!-- Header -->
+                <div class="form-header">
+                    <div class="form-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
 
-        <label for="role">Select Winner:</label>
-        <select id="role" asp-for="StudentId" asp-items="@(new SelectList(ViewBag.students, "Id", "UserName"))">
-            <option value="">Student</option>
-        </select>
+                    <div>
+                        <h2>Update Award</h2>
+                        <p>Modify the award details and winner information.</p>
+                    </div>
+                </div>
 
-        <button type="submit">Update</button>
-    </form>
-</div>
+                <form method="post"
+                      asp-controller="Home"
+                      asp-action="UpdateAwards"
+                      class="modern-award-form">
+
+                    <!-- Award Name -->
+                    <div class="modern-form-group">
+                        <label for="awardName">
+                            <i class="fas fa-award"></i>
+                            Award Name
+                        </label>
+
+                        <input type="text"
+                               id="awardName"
+                               asp-for="AwardTitle"
+                               placeholder="Enter award name" />
+
+                        <span asp-validation-for="AwardTitle"
+                              class="validation-message"></span>
+                    </div>
+
+                    <!-- Date -->
+                    <div class="modern-form-group">
+                        <label for="dateGiven">
+                            <i class="fas fa-calendar-alt"></i>
+                            Award Date
+                        </label>
+
+                        <input type="date"
+                               asp-for="AwardedDate"
+                               id="dateGiven" />
+
+                        <span asp-validation-for="AwardedDate"
+                              class="validation-message"></span>
+                    </div>
+
+                    <!-- Winner -->
+                    <div class="modern-form-group">
+                        <label for="student">
+                            <i class="fas fa-user-graduate"></i>
+                            Select Winner
+                        </label>
+
+                        <select id="student"
+                                asp-for="StudentId"
+                                asp-items="@(new SelectList(ViewBag.students, "Id", "UserName"))">
+
+                            <option value="">-- Select Student --</option>
+
+                        </select>
+
+                        <span asp-validation-for="StudentId"
+                              class="validation-message"></span>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="award-form-actions">
+
+                        <a asp-controller="Home"
+                           asp-action="Index"
+                           class="cancel-btn">
+                            Cancel
+                        </a>
+
+                        <button type="submit" class="update-award-btn">
+                            <i class="fas fa-save"></i>
+                            Update Award
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+    </section>
+</main>

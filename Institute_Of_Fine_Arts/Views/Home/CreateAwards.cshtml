@@ -1,27 +1,194 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model Award;
 
-@model Award;
+<main class="competition-page">
 
-<div class="craeteawards container">
-    <h2>Create Award</h2>
-    <form method="post" asp-controller="Home" asp-action="CreateAwards">
-        <label for="awardName">Award Name</label>
-        <input type="text" id="awardName" asp-for="AwardTitle" placeholder="Enter award name">
-        <span asp-validation-for="AwardTitle" style="color: red;"></span>
+    <div class="competition-wrapper">
 
-        <label for="dateGiven">Date Given</label>
-        <input type="date" asp-for="AwardedDate" id="dateGiven">
-        <span asp-validation-for="AwardedDate" style="color: red;"></span>
+        <!-- Page Header -->
+        <div class="competition-header">
 
-        <label for="role">Select Winner:</label>
-        <select id="role" asp-for="StudentId" asp-items="@(new SelectList(ViewBag.students, "Id", "UserName"))">
-            <option value="">-- Select Student --</option>
-        </select>
+            <div>
+                <span class="page-eyebrow">
+                    <i class="fas fa-award"></i> AWARD MANAGEMENT
+                </span>
 
-        <button type="submit">Submit</button>
-    </form>
-</div>
+                <h1>Create New Award</h1>
+
+                <p>
+                    Create an award and recognize outstanding student achievements.
+                </p>
+            </div>
+
+            <div class="header-icon">
+                <i class="fas fa-trophy"></i>
+            </div>
+
+        </div>
+
+
+        <!-- Award Card -->
+        <div class="competition-card">
+
+            <form method="post"
+                  asp-controller="Home"
+                  asp-action="CreateAwards">
+
+
+                <!-- Award Information -->
+                <div class="form-section">
+
+                    <div class="form-section-title">
+
+                        <div class="section-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+
+                        <div>
+                            <h3>Award Information</h3>
+                            <p>
+                                Enter the award details and select the winning student.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <!-- Award Name -->
+                        <div class="input-group full-width">
+
+                            <label for="awardName">
+                                Award Name
+                                <span>*</span>
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fas fa-award"></i>
+
+                                <input type="text"
+                                       id="awardName"
+                                       asp-for="AwardTitle"
+                                       placeholder="e.g. Best Creative Artist" />
+
+                            </div>
+
+                            <span asp-validation-for="AwardTitle"
+                                  class="validation-message">
+                            </span>
+
+                        </div>
+
+
+                        <!-- Date -->
+                        <div class="input-group">
+
+                            <label for="dateGiven">
+                                Award Date
+                                <span>*</span>
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="far fa-calendar-alt"></i>
+
+                                <input type="date"
+                                       id="dateGiven"
+                                       asp-for="AwardedDate" />
+
+                            </div>
+
+                            <span asp-validation-for="AwardedDate"
+                                  class="validation-message">
+                            </span>
+
+                        </div>
+
+
+                        <!-- Winner -->
+                        <div class="input-group">
+
+                            <label for="winner">
+                                Select Winner
+                                <span>*</span>
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fas fa-user-graduate"></i>
+
+                                <select id="winner"
+                                        asp-for="StudentId"
+                                        asp-items="@(new SelectList(ViewBag.students, "Id", "UserName"))">
+
+                                    <option value="">
+                                        Select Student
+                                    </option>
+
+                                </select>
+
+                                <i class="fas fa-chevron-down select-arrow"></i>
+
+                            </div>
+
+                            <span asp-validation-for="StudentId"
+                                  class="validation-message">
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Award Preview -->
+                <div class="award-preview">
+
+                    <div class="preview-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+
+                    <div>
+                        <strong>Recognition Matters</strong>
+
+                        <p>
+                            Celebrate creativity, dedication and artistic excellence
+                            by recognizing deserving students.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Actions -->
+                <div class="form-actions">
+
+                    <a asp-controller="Home"
+                       asp-action="StaffDashboard"
+                       class="btn-cancel">
+
+                        <i class="fas fa-arrow-left"></i>
+                        Cancel
+
+                    </a>
+
+
+                    <button type="submit"
+                            class="btn-create">
+
+                        <i class="fas fa-plus-circle"></i>
+                        Create Award
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</main>

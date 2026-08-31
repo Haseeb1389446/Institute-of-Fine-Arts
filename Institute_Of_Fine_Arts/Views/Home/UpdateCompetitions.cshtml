@@ -1,60 +1,353 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model Competition;
 
-@model Competition;
+<main class="competition-page">
 
-<div class="createcompetitions container">
-    <h2>Update This Competition</h2>
-    <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="UpdateCompetitions">
+    <div class="competition-wrapper">
 
-        <label for="title">Competition Title:</label>
-        <input type="text" id="title" asp-for="Title" />
-        <span asp-validation-for="Title" style="color:red;"></span>
+        <!-- Page Header -->
+        <div class="competition-header">
 
-        <label for="description">Description:</label>
-        <textarea id="description" asp-for="Description" rows="4"></textarea>
-        <span asp-validation-for="Description  " style="color:red;"></span>
+            <div>
+                <span class="page-eyebrow">
+                    <i class="fas fa-edit"></i> COMPETITION MANAGEMENT
+                </span>
 
-        <label for="start_date">Start Date:</label>
-        <input type="date" id="start_date" asp-for="StartDate" />
-        <span asp-validation-for="StartDate" style="color:red;"></span>
+                <h1>Update Competition</h1>
 
-        <label for="end_date">End Date:</label>
-        <input type="date" id="end_date" asp-for="EndDate" />
-        <span asp-validation-for="EndDate" style="color:red;"></span>
+                <p>
+                    Modify the competition details and keep the information up to date.
+                </p>
+            </div>
 
-        <label for="award_details">Award Details:</label>
-        <select class="form-control" asp-for="AwardId">
-            <option value="">---- Select Award ----</option>
-            @foreach (var award in ViewBag.awards)
-            {
-                <option value="@award.Id">@award.AwardTitle</option>
-            }
-        </select>
-        <span asp-validation-for="AwardId" style="color:red;"></span>
+            <div class="header-icon">
+                <i class="fas fa-pen"></i>
+            </div>
 
-        <label for="award_status">Award Status:</label>
-        <select class="form-control" asp-for="Status">
-            <option value="">---- Select Status ----</option>
-            <option value="OnGoing">OnGoing</option>
-            <option value="UpComming">UpComming</option>
-            <option value="Completed">Completed</option>
-        </select>
-        <span asp-validation-for="Status" style="color:red;"></span>
+        </div>
 
-        <label for="banner">Upload Banner Image (optional):</label>
-        <label for="banner" class="w-100" style="display: inline-block; padding: 6px 12px; background-color: #d1865c; color: white; cursor: pointer; border-radius: 4px; text-align: center;">Upload Banner</label>
-        <input hidden type="file" id="banner" name="competitionimage" />
-        <span asp-validation-for="Banner" style="color:red;"></span>
 
-        <button type="submit">Update Competition</button>
-    </form>
-</div>
+        <!-- Main Card -->
+        <div class="competition-card">
+
+            <form method="post"
+                  enctype="multipart/form-data"
+                  asp-controller="Home"
+                  asp-action="UpdateCompetitions">
+
+
+                <!-- Competition Information -->
+                <div class="form-section">
+
+                    <div class="form-section-title">
+
+                        <div class="section-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+
+                        <div>
+                            <h3>Competition Information</h3>
+                            <p>Update the basic information of this competition.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <!-- Title -->
+                        <div class="input-group full-width">
+
+                            <label for="title">
+                                Competition Title
+                                <span>*</span>
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fas fa-heading"></i>
+
+                                <input type="text"
+                                       id="title"
+                                       asp-for="Title"
+                                       placeholder="Enter competition title" />
+
+                            </div>
+
+                            <span asp-validation-for="Title"
+                                  class="validation-message">
+                            </span>
+
+                        </div>
+
+
+                        <!-- Description -->
+                        <div class="input-group full-width">
+
+                            <label for="description">
+                                Description
+                                <span>*</span>
+                            </label>
+
+                            <div class="input-wrapper textarea-wrapper">
+
+                                <i class="fas fa-align-left"></i>
+
+                                <textarea id="description"
+                                          asp-for="Description"
+                                          rows="5"
+                                          placeholder="Describe the competition..."></textarea>
+
+                            </div>
+
+                            <span asp-validation-for="Description"
+                                  class="validation-message">
+                            </span>
+
+                        </div>
+
+
+                        <!-- Start Date -->
+                        <div class="input-group">
+
+                            <label for="start_date">
+                                Start Date
+                                <span>*</span>
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="far fa-calendar-alt"></i>
+
+                                <input type="date"
+                                       id="start_date"
+                                       asp-for="StartDate" />
+
+                            </div>
+
+                            <span asp-validation-for="StartDate"
+                                  class="validation-message">
+                            </span>
+
+                        </div>
+
+
+                        <!-- End Date -->
+                        <div class="input-group">
+
+                            <label for="end_date">
+                                End Date
+                                <span>*</span>
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="far fa-calendar-check"></i>
+
+                                <input type="date"
+                                       id="end_date"
+                                       asp-for="EndDate" />
+
+                            </div>
+
+                            <span asp-validation-for="EndDate"
+                                  class="validation-message">
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Competition Settings -->
+                <div class="form-section">
+
+                    <div class="form-section-title">
+
+                        <div class="section-icon">
+                            <i class="fas fa-sliders-h"></i>
+                        </div>
+
+                        <div>
+                            <h3>Competition Settings</h3>
+                            <p>Update award and current competition status.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <!-- Award -->
+                        <div class="input-group">
+
+                            <label for="award">
+                                Award
+                                <span>*</span>
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fas fa-award"></i>
+
+                                <select asp-for="AwardId" id="award">
+
+                                    <option value="">
+                                        Select Award
+                                    </option>
+
+                                    @foreach (var award in ViewBag.awards)
+                                    {
+                                        <option value="@award.Id">
+                                            @award.AwardTitle
+                                        </option>
+                                    }
+
+                                </select>
+
+                                <i class="fas fa-chevron-down select-arrow"></i>
+
+                            </div>
+
+                            <span asp-validation-for="AwardId"
+                                  class="validation-message">
+                            </span>
+
+                        </div>
+
+
+                        <!-- Status -->
+                        <div class="input-group">
+
+                            <label for="status">
+                                Competition Status
+                                <span>*</span>
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fas fa-circle-notch"></i>
+
+                                <select asp-for="Status" id="status">
+
+                                    <option value="">
+                                        Select Status
+                                    </option>
+
+                                    <option value="OnGoing">
+                                        On Going
+                                    </option>
+
+                                    <option value="UpComming">
+                                        Upcoming
+                                    </option>
+
+                                    <option value="Completed">
+                                        Completed
+                                    </option>
+
+                                </select>
+
+                                <i class="fas fa-chevron-down select-arrow"></i>
+
+                            </div>
+
+                            <span asp-validation-for="Status"
+                                  class="validation-message">
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Banner -->
+                <div class="form-section">
+
+                    <div class="form-section-title">
+
+                        <div class="section-icon">
+                            <i class="fas fa-image"></i>
+                        </div>
+
+                        <div>
+                            <h3>Competition Banner</h3>
+                            <p>Replace the current banner if required.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="upload-area">
+
+                        <input type="file"
+                               id="banner"
+                               name="competitionimage"
+                               accept="image/*" />
+
+                        <label for="banner" class="upload-box">
+
+                            <div class="upload-icon">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Replace Competition Banner
+                                </strong>
+
+                                <span>
+                                    Click to browse or drag & drop a new image
+                                </span>
+
+                                <small>
+                                    PNG, JPG or JPEG • Recommended 1200 × 600px
+                                </small>
+
+                            </div>
+
+                        </label>
+
+                        <span asp-validation-for="Banner"
+                              class="validation-message">
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Actions -->
+                <div class="form-actions">
+
+                    <a asp-controller="Home"
+                       asp-action="StaffDashboard"
+                       class="btn-cancel">
+
+                        <i class="fas fa-arrow-left"></i>
+                        Cancel
+
+                    </a>
+
+
+                    <button type="submit"
+                            class="btn-create">
+
+                        <i class="fas fa-save"></i>
+                        Save Changes
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</main>
